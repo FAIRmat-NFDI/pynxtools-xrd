@@ -13,7 +13,7 @@ from pynxtools.dataconverter.helpers import (
 from pynxtools.dataconverter.template import Template
 from pynxtools.nexus.nxdl_utils import get_nexus_definitions_path
 
-from pynxtools_stm.reader import XRDReader
+from pynxtools_xrd.reader import XRDReader
 
 
 def test_example_data():
