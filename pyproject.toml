@@ -23,7 +23,6 @@ classifiers = [
 ]
 dependencies = [
     "pynxtools>=0.0.10",
-    "ipython<8.22.1" # python 3.9
 ]
 
 [project.urls]
