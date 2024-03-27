@@ -22,7 +22,6 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    # "pynxtools>=0.0.10",
 ]
 
 [project.urls]
@@ -39,7 +38,7 @@ dev = [
 ]
 
 [project.entry-points."pynxtools.reader"]
-srd = "pynxtools_xrd.reader:XRDReader"
+xrd = "pynxtools_xrd.reader:XRDReader"
 
 [tool.setuptools.packages.find]
 where = ["."]
