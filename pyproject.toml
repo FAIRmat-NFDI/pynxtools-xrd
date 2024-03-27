@@ -22,8 +22,6 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "pynxtools>=0.0.10",
-    "ipython<8.22.1" # python 3.9
 ]
 
 [project.urls]
@@ -40,7 +38,7 @@ dev = [
 ]
 
 [project.entry-points."pynxtools.reader"]
-srd = "pynxtools_xrd.reader:XRDReader"
+xrd = "pynxtools_xrd.reader:XRDReader"
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -27,7 +27,7 @@ from pynxtools.dataconverter.helpers import (
     transform_to_intended_dt,
     remove_namespace_from_tag,
 )
-from pynxtools.dataconverter.readers.xrd.xrd_helper import feed_xrdml_to_template
+from pynxtools_xrd.xrd_helper import feed_xrdml_to_template
 
 
 def fill_slash_sep_dict_from_nested_dict(
@@ -420,7 +420,7 @@ class FormatParser:
 
         xrd_dict = self.parse()
         if len(config_dict) == 0 and self.file_parser.xrdml_version == "1.5":
-            from pynxtools.dataconverter.readers.xrd.config import xrdml
+            from pynxtools_xrd.config import xrdml
 
             config_dict = xrdml
         feed_xrdml_to_template(

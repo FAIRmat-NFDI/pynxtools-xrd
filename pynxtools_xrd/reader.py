@@ -27,7 +27,7 @@ from pynxtools.dataconverter.helpers import (
     validate_data_dict,
 )
 from pynxtools.dataconverter.template import Template
-from pynxtools.dataconverter.readers.xrd.xrd_parser import parse_and_fill_template
+from pynxtools_xrd.xrd_parser import parse_and_fill_template
 from pynxtools.dataconverter.readers.utils import flatten_and_replace, FlattenSettings
 from pynxtools.dataconverter.readers.base.reader import BaseReader
 
