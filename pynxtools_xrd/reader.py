@@ -19,111 +19,70 @@ from typing import Tuple, Any, Dict, Union
 import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
+import re
 
 import yaml
+
 
 from pynxtools.dataconverter.helpers import (
     generate_template_from_nxdl,
     validate_data_dict,
 )
 from pynxtools.dataconverter.template import Template
-from pynxtools_xrd.xrd_parser import parse_and_fill_template
-from pynxtools.dataconverter.readers.utils import flatten_and_replace, FlattenSettings
+from pynxtools_xrd.read_file_formats import read_file, formats, ureg
 from pynxtools.dataconverter.readers.base.reader import BaseReader
-
-CONVERT_DICT: Dict[str, str] = {
-    "unit": "@units",
-    "Instrument": "INSTRUMENT[instrument]",
-    "Source": "SOURCE[source]",
-    "Detector": "DETECTOR[detector]",
-    "Collection": "COLLECTION[collection]",
-    "Sample": "SAMPLE[sample]",
-    "version": "@version",
-    "User": "USER[user]",
-}
-
-
-# Global var to collect the root from get_template_from_nxdl_name()
-# and use it in the the the varidate_data_dict()
-ROOT: ET.Element = None
-REPLACE_NESTED: Dict[str, Any] = {}
-XRD_FILE_EXTENSIONS = [".xrdml", "xrdml", ".udf", ".raw", ".xye"]
-
-
-def get_template_from_nxdl_name(nxdl_name):
-    """Generate template from nxdl name.
-
-    Example of nxdl name could be NXxrd_pan.
-    Parameters
-    ----------
-    nxdl_name : str
-        Name of nxdl file e.g. NXmpes
-
-    Returns
-    -------
-    Template
-        Empty template.
-
-    Raises
-    ------
-    ValueError
-        Error if nxdl file is not found.
-    """
-    nxdl_file = nxdl_name + ".nxdl.xml"
-    current_path = Path(__file__)
-    def_path = current_path.parent.parent.parent.parent / "definitions"
-    # Check contributed defintions
-    full_nxdl_path = Path(def_path, "contributed_definitions", nxdl_file)
-    root = None
-    if full_nxdl_path.exists():
-        root = ET.parse(full_nxdl_path).getroot()
-    else:
-        # Check application definition
-        full_nxdl_path = Path(def_path, "applications", nxdl_file)
-
-    if root is None and full_nxdl_path.exists():
-        root = ET.parse(full_nxdl_path).getroot()
-    else:
-        full_nxdl_path = Path(def_path, "base_classes", nxdl_file)
-
-    if root is None and full_nxdl_path.exists():
-        root = ET.parse(full_nxdl_path).getroot()
-    elif root is None:
-        raise ValueError("Need correct NXDL name")
-
-    template = Template()
-    generate_template_from_nxdl(root=root, template=template)
-    return template
-
-
-def get_template_from_xrd_reader(nxdl_name, file_paths):
-    """Get filled template from reader.
-
-    Parameters
-    ----------
-    nxdl_name : str
-        Name of nxdl definition
-    file_paths : Tuple[str]
-        Tuple of path of files.
-
-    Returns
-    -------
-    Template
-        Template which is a map from NeXus concept path to value.
-    """
-
-    template = get_template_from_nxdl_name(nxdl_name)
-
-    data = XRDReader().read(template=template, file_paths=file_paths)
-    validate_data_dict(template=template, data=data, nxdl_root=ROOT)
-    return data
-
+from pynxtools.dataconverter.readers.json_map.reader import fill_undocumented, fill_documented
 
 # pylint: disable=too-few-public-methods
 class XRDReader(BaseReader):
     """Reader for XRD."""
 
     supported_nxdls = ["NXxrd_pan"]
+    supported_formats = formats
+
+    mapping = {
+        '/ENTRY[entry]/definition': 'NXxrd_pan',  # Any JSON data gets copied over.
+        '/ENTRY[entry]/method': 'X-Ray Diffraction (XRD)',
+        '/ENTRY[entry]/2theta_plot/intensity': '/intensity',  # /path like strings are the hierarchy in the dict returned by read_file_formats.py:read_file
+        '/ENTRY[entry]/2theta_plot/two_theta': '/2Theta',
+        '/ENTRY[entry]/2theta_plot/two_theta/@units': '/2Theta@units',  # Units are added in convert_quantity_to_value_units in the dict returned by read_file_formats.py:read_file
+        '/ENTRY[entry]/2theta_plot/omega': '/Omega',
+        '/ENTRY[entry]/2theta_plot/omega/@units': '/Omega@units',
+        '/ENTRY[entry]/2theta_plot/chi': '/Chi',
+        '/ENTRY[entry]/2theta_plot/phi': '/Phi',
+        '/ENTRY[entry]/2theta_plot/phi/@units': '/Phi@units',
+        '/ENTRY[entry]/COLLECTION[collection]/count_time': '/countTime',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/DETECTOR[detector]/scan_axis': '/metadata/scan_axis',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_material': '/metadata/source/anode_material',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one': '/metadata/source/kAlpha1',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one/@units': '/metadata/source/kAlpha1@units',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_two': '/metadata/source/kAlpha2',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_two/@units': '/metadata/source/kAlpha2@units',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone': '/metadata/source/ratioKAlpha2KAlpha1',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone/@units': '/metadata/source/ratioKAlpha2KAlpha1@units',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/kbeta': '/metadata/source/kBeta',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage': '/metadata/source/voltage',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage/@units': '/metadata/source/voltage@units',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current': '/metadata/source/current',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current/@units': '/metadata/source/current@units',
+        '/ENTRY[entry]/SAMPLE[sample]/sample_id': '/metadata/sample_id',
+        '/ENTRY[entry]/INSTRUMENT[instrument]/DETECTOR[detector]/scan_mode': '/metadata/scan_type'
+    }
+
+    def convert_quantity_to_value_units(self, data_dict):
+        """
+        In a dict, recursively convert every pint.Quantity into value and @units for template
+
+        Args:
+            data_dict (dict): A nested dictionary containing pint.Quantity and other data.
+        """
+        for k, v in list(data_dict.items()):
+            if isinstance(v, ureg.Quantity):
+                data_dict[k] = v.magnitude
+                data_dict[f"{k}@units"] = format(v.units, '~')
+            if isinstance(v, dict):
+                data_dict[k] = self.convert_quantity_to_value_units(v)
+        return data_dict
 
     def read(
         self,
@@ -131,50 +90,22 @@ class XRDReader(BaseReader):
         file_paths: Tuple[str] = None,
         objects: Tuple[Any] = None,
     ):
-        """General read menthod to prepare the template."""
+        """Read method that returns a filled in pynxtools dataconverter template."""
 
-        if not isinstance(file_paths, tuple) and not isinstance(file_paths, list):
-            file_paths = (file_paths,)
-        filled_template: Union[Dict, None] = Template()
-        eln_dict: Union[Dict[str, Any], None] = None
-        config_dict: Dict = {}
-        xrd_file: str = ""
-        xrd_file_ext: str = ""
-        for file in file_paths:
-            ext = "".join(Path(file).suffixes)
-            if ext == ".json":
-                with open(file, mode="r", encoding="utf-8") as fl_obj:
-                    config_dict = json.load(fl_obj)
-            elif ext in [".yaml", ".yml"]:
-                with open(file, mode="r", encoding="utf-8") as fl_obj:
-                    eln_dict = flatten_and_replace(
-                        FlattenSettings(
-                            yaml.safe_load(fl_obj), CONVERT_DICT, REPLACE_NESTED
-                        )
-                    )
-            elif ext in XRD_FILE_EXTENSIONS:
-                xrd_file_ext = ext
-                xrd_file = file
-        if xrd_file:
-            parse_and_fill_template(template, xrd_file, config_dict, eln_dict)
-        else:
-            raise ValueError(
-                f"Allowed XRD experimental with extenstion from"
-                f" {XRD_FILE_EXTENSIONS} found {xrd_file_ext}"
-            )
-
-        # Get rid of empty concept and cleaning up Template
-        for key, val in template.items():
-            if val is None:
-                del template[key]
+        try:
+            xrd_file_path = list(filter(lambda paths : any(format in paths for format in self.supported_formats), file_paths))[0]
+            xrd_data = self.convert_quantity_to_value_units(read_file(xrd_file_path))
+        except IndexError:
+            if objects[0] is not None and isinstance(objects[0], dict):
+                xrd_data = self.convert_quantity_to_value_units(objects[0])
             else:
-                filled_template[key] = val
-        if not filled_template.keys():
-            raise ValueError(
-                "Reader could not read anything! Check for input files and the"
-                " corresponding extention."
-            )
-        return filled_template
+                raise ValueError("You need to provide one of the following file formats as --input-file to the converter: " + str(self.supported_formats))
+            
+
+        fill_documented(template, self.mapping, template, xrd_data)
+        fill_undocumented(self.mapping, template, xrd_data)
+
+        return template
 
 
 READER = XRDReader
