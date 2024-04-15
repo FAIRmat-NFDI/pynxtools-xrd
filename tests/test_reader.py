@@ -11,7 +11,7 @@ from pynxtools.dataconverter.helpers import (
     validate_data_dict,
 )
 from pynxtools.dataconverter.template import Template
-from pynxtools.nexus.nxdl_utils import get_nexus_definitions_path
+from pynxtools.definitions.dev_tools.utils.nxdl_utils import get_nexus_definitions_path
 
 from pynxtools_xrd.reader import XRDReader
 
