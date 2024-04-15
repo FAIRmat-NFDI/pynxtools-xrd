@@ -100,7 +100,7 @@ class XRDReader(BaseReader):
                 xrd_data = self.convert_quantity_to_value_units(objects[0])
             else:
                 raise ValueError("You need to provide one of the following file formats as --input-file to the converter: " + str(self.supported_formats))
-            
+
 
         fill_documented(template, self.mapping, template, xrd_data)
         fill_undocumented(self.mapping, template, xrd_data)
