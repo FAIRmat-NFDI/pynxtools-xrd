@@ -23,6 +23,7 @@ from typing import (
     Any,
 )
 from pint import UnitRegistry
+import pint
 
 ureg = UnitRegistry()
 
@@ -151,11 +152,11 @@ def are_all_identical(arr_list):
         bool: True if all the arrays are identical, False otherwise.
     '''
     first_arr = arr_list[0]
-    if isinstance(first_arr, ureg.Quantity):
+    if isinstance(first_arr, pint.Quantity):
         first_arr = first_arr.magnitude
 
     for arr in arr_list[1:]:
-        if isinstance(arr, ureg.Quantity):
+        if isinstance(arr, pint.Quantity):
             arr = arr.magnitude
         if not np.array_equal(first_arr, arr):
             return False

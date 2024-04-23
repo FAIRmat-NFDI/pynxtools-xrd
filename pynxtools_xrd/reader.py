@@ -22,6 +22,7 @@ import xml.etree.ElementTree as ET
 import re
 
 import yaml
+import pint
 
 
 from pynxtools.dataconverter.helpers import (
@@ -77,7 +78,7 @@ class XRDReader(BaseReader):
             data_dict (dict): A nested dictionary containing pint.Quantity and other data.
         """
         for k, v in list(data_dict.items()):
-            if isinstance(v, ureg.Quantity):
+            if isinstance(v, pint.Quantity):
                 data_dict[k] = v.magnitude
                 data_dict[f"{k}@units"] = format(v.units, '~')
             if isinstance(v, dict):
@@ -101,9 +102,11 @@ class XRDReader(BaseReader):
             else:
                 raise ValueError("You need to provide one of the following file formats as --input-file to the converter: " + str(self.supported_formats))
 
-
-        fill_documented(template, self.mapping, template, xrd_data)
-        fill_undocumented(self.mapping, template, xrd_data)
+        try:
+            fill_documented(template, self.mapping, template, xrd_data)
+            fill_undocumented(self.mapping, template, xrd_data)
+        except KeyError as e:
+            print(f"Skipping key, {e}, from intermediate dict.")
 
         return template
 
