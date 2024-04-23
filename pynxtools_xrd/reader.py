@@ -32,7 +32,11 @@ from pynxtools.dataconverter.helpers import (
 from pynxtools.dataconverter.template import Template
 from pynxtools_xrd.read_file_formats import read_file, formats, ureg
 from pynxtools.dataconverter.readers.base.reader import BaseReader
-from pynxtools.dataconverter.readers.json_map.reader import fill_undocumented, fill_documented
+from pynxtools.dataconverter.readers.json_map.reader import (
+    fill_undocumented,
+    fill_documented,
+)
+
 
 # pylint: disable=too-few-public-methods
 class XRDReader(BaseReader):
@@ -42,32 +46,32 @@ class XRDReader(BaseReader):
     supported_formats = formats
 
     mapping = {
-        '/ENTRY[entry]/definition': 'NXxrd_pan',  # Any JSON data gets copied over.
-        '/ENTRY[entry]/method': 'X-Ray Diffraction (XRD)',
-        '/ENTRY[entry]/2theta_plot/intensity': '/intensity',  # /path like strings are the hierarchy in the dict returned by read_file_formats.py:read_file
-        '/ENTRY[entry]/2theta_plot/two_theta': '/2Theta',
-        '/ENTRY[entry]/2theta_plot/two_theta/@units': '/2Theta@units',  # Units are added in convert_quantity_to_value_units in the dict returned by read_file_formats.py:read_file
-        '/ENTRY[entry]/2theta_plot/omega': '/Omega',
-        '/ENTRY[entry]/2theta_plot/omega/@units': '/Omega@units',
-        '/ENTRY[entry]/2theta_plot/chi': '/Chi',
-        '/ENTRY[entry]/2theta_plot/phi': '/Phi',
-        '/ENTRY[entry]/2theta_plot/phi/@units': '/Phi@units',
-        '/ENTRY[entry]/COLLECTION[collection]/count_time': '/countTime',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/DETECTOR[detector]/scan_axis': '/metadata/scan_axis',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_material': '/metadata/source/anode_material',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one': '/metadata/source/kAlpha1',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one/@units': '/metadata/source/kAlpha1@units',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_two': '/metadata/source/kAlpha2',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_two/@units': '/metadata/source/kAlpha2@units',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone': '/metadata/source/ratioKAlpha2KAlpha1',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone/@units': '/metadata/source/ratioKAlpha2KAlpha1@units',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/kbeta': '/metadata/source/kBeta',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage': '/metadata/source/voltage',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage/@units': '/metadata/source/voltage@units',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current': '/metadata/source/current',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current/@units': '/metadata/source/current@units',
-        '/ENTRY[entry]/SAMPLE[sample]/sample_id': '/metadata/sample_id',
-        '/ENTRY[entry]/INSTRUMENT[instrument]/DETECTOR[detector]/scan_mode': '/metadata/scan_type'
+        "/ENTRY[entry]/definition": "NXxrd_pan",  # Any JSON data gets copied over.
+        "/ENTRY[entry]/method": "X-Ray Diffraction (XRD)",
+        "/ENTRY[entry]/2theta_plot/intensity": "/intensity",  # /path like strings are the hierarchy in the dict returned by read_file_formats.py:read_file
+        "/ENTRY[entry]/2theta_plot/two_theta": "/2Theta",
+        "/ENTRY[entry]/2theta_plot/two_theta/@units": "/2Theta@units",  # Units are added in convert_quantity_to_value_units in the dict returned by read_file_formats.py:read_file
+        "/ENTRY[entry]/2theta_plot/omega": "/Omega",
+        "/ENTRY[entry]/2theta_plot/omega/@units": "/Omega@units",
+        "/ENTRY[entry]/2theta_plot/chi": "/Chi",
+        "/ENTRY[entry]/2theta_plot/phi": "/Phi",
+        "/ENTRY[entry]/2theta_plot/phi/@units": "/Phi@units",
+        "/ENTRY[entry]/COLLECTION[collection]/count_time": "/countTime",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/DETECTOR[detector]/scan_axis": "/metadata/scan_axis",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_material": "/metadata/source/anode_material",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one": "/metadata/source/kAlpha1",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one/@units": "/metadata/source/kAlpha1@units",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_two": "/metadata/source/kAlpha2",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_two/@units": "/metadata/source/kAlpha2@units",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone": "/metadata/source/ratioKAlpha2KAlpha1",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone/@units": "/metadata/source/ratioKAlpha2KAlpha1@units",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/kbeta": "/metadata/source/kBeta",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage": "/metadata/source/voltage",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage/@units": "/metadata/source/voltage@units",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current": "/metadata/source/current",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current/@units": "/metadata/source/current@units",
+        "/ENTRY[entry]/SAMPLE[sample]/sample_id": "/metadata/sample_id",
+        "/ENTRY[entry]/INSTRUMENT[instrument]/DETECTOR[detector]/scan_mode": "/metadata/scan_type",
     }
 
     def convert_quantity_to_value_units(self, data_dict):
@@ -80,7 +84,7 @@ class XRDReader(BaseReader):
         for k, v in list(data_dict.items()):
             if isinstance(v, pint.Quantity):
                 data_dict[k] = v.magnitude
-                data_dict[f"{k}@units"] = format(v.units, '~')
+                data_dict[f"{k}@units"] = format(v.units, "~")
             if isinstance(v, dict):
                 data_dict[k] = self.convert_quantity_to_value_units(v)
         return data_dict
@@ -94,13 +98,23 @@ class XRDReader(BaseReader):
         """Read method that returns a filled in pynxtools dataconverter template."""
 
         try:
-            xrd_file_path = list(filter(lambda paths : any(format in paths for format in self.supported_formats), file_paths))[0]
+            xrd_file_path = list(
+                filter(
+                    lambda paths: any(
+                        format in paths for format in self.supported_formats
+                    ),
+                    file_paths,
+                )
+            )[0]
             xrd_data = self.convert_quantity_to_value_units(read_file(xrd_file_path))
         except IndexError:
             if objects[0] is not None and isinstance(objects[0], dict):
                 xrd_data = self.convert_quantity_to_value_units(objects[0])
             else:
-                raise ValueError("You need to provide one of the following file formats as --input-file to the converter: " + str(self.supported_formats))
+                raise ValueError(
+                    "You need to provide one of the following file formats as --input-file to the converter: "
+                    + str(self.supported_formats)
+                )
 
         try:
             fill_documented(template, self.mapping, template, xrd_data)

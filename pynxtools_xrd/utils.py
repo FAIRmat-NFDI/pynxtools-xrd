@@ -40,41 +40,42 @@ if TYPE_CHECKING:
 
 
 def get_reference(upload_id: str, entry_id: str) -> str:
-    return f'../uploads/{upload_id}/archive/{entry_id}#data'
+    return f"../uploads/{upload_id}/archive/{entry_id}#data"
 
 
-def get_entry_id_from_file_name(file_name: str, archive: 'EntryArchive') -> str:
+def get_entry_id_from_file_name(file_name: str, archive: "EntryArchive") -> str:
     from nomad.utils import hash
+
     return hash(archive.metadata.upload_id, file_name)
 
 
 def create_archive(
-        entity: 'ArchiveSection',
-        archive: 'EntryArchive',
-        file_name: str,
-    ) -> str:
+    entity: "ArchiveSection",
+    archive: "EntryArchive",
+    file_name: str,
+) -> str:
     import json
     from nomad.datamodel.context import ClientContext
+
     entity_entry = entity.m_to_dict(with_root_def=True)
     if isinstance(archive.m_context, ClientContext):
-        with open(file_name, 'w') as outfile:
+        with open(file_name, "w") as outfile:
             json.dump({"data": entity_entry}, outfile, indent=4)
         return os.path.abspath(file_name)
     if not archive.m_context.raw_path_exists(file_name):
-        with archive.m_context.raw_file(file_name, 'w') as outfile:
+        with archive.m_context.raw_file(file_name, "w") as outfile:
             json.dump({"data": entity_entry}, outfile)
         archive.m_context.process_updated_raw_file(file_name)
     return get_reference(
-        archive.metadata.upload_id,
-        get_entry_id_from_file_name(file_name, archive)
+        archive.metadata.upload_id, get_entry_id_from_file_name(file_name, archive)
     )
 
 
 def merge_sections(
-        section: 'ArchiveSection',
-        update: 'ArchiveSection',
-        logger: 'BoundLogger'=None,
-    ) -> None:
+    section: "ArchiveSection",
+    update: "ArchiveSection",
+    logger: "BoundLogger" = None,
+) -> None:
     if update is None:
         return
     if section is None:
@@ -82,8 +83,8 @@ def merge_sections(
         return
     if not isinstance(section, type(update)):
         raise TypeError(
-            'Cannot merge sections of different types: '
-            f'{type(section)} and {type(update)}'
+            "Cannot merge sections of different types: "
+            f"{type(section)} and {type(update)}"
         )
     for name, quantity in update.m_def.all_quantities.items():
         if not update.m_is_set(quantity):
@@ -91,8 +92,10 @@ def merge_sections(
         if not section.m_is_set(quantity):
             section.m_set(quantity, update.m_get(quantity))
         elif (
-            quantity.is_scalar and section.m_get(quantity) != update.m_get(quantity)
-            or quantity.repeats and (section.m_get(quantity) != update.m_get(quantity)).any()
+            quantity.is_scalar
+            and section.m_get(quantity) != update.m_get(quantity)
+            or quantity.repeats
+            and (section.m_get(quantity) != update.m_get(quantity)).any()
         ):
             warning = f'Merging sections with different values for quantity "{name}".'
             if logger:
@@ -112,15 +115,17 @@ def merge_sections(
                     logger,
                 )
         elif update.m_sub_section_count(sub_section_def) > 0:
-            warning = f'Merging sections with different number of "{name}" sub sections.'
+            warning = (
+                f'Merging sections with different number of "{name}" sub sections.'
+            )
             if logger:
                 logger.warning(warning)
             else:
                 print(warning)
 
 
-def to_pint_quantity(value: Any=None, unit: str=None) -> Any:
-    '''
+def to_pint_quantity(value: Any = None, unit: str = None) -> Any:
+    """
     Attempts to generate a pint quantity.
     In case the value is a string, it is returned as is.
     If the value is a pint quantity, it is converted to the given unit.
@@ -131,7 +136,7 @@ def to_pint_quantity(value: Any=None, unit: str=None) -> Any:
 
     Returns:
         Any: Processed quantity with datatype depending on the value.
-    '''
+    """
     if isinstance(value, str) or value is None:
         return value
     if isinstance(value, ureg.Quantity):
@@ -140,8 +145,9 @@ def to_pint_quantity(value: Any=None, unit: str=None) -> Any:
         return value.to(unit)
     return value * ureg(unit)
 
+
 def are_all_identical(arr_list):
-    '''
+    """
     Check if all the arrays in the list are identical. Also works if the arrays are
     pint.Quantity.
 
@@ -150,7 +156,7 @@ def are_all_identical(arr_list):
 
     Returns:
         bool: True if all the arrays are identical, False otherwise.
-    '''
+    """
     first_arr = arr_list[0]
     if isinstance(first_arr, pint.Quantity):
         first_arr = first_arr.magnitude
@@ -162,8 +168,9 @@ def are_all_identical(arr_list):
             return False
     return True
 
+
 def detect_scan_type(scan_data):
-    '''
+    """
     Based on the shape of data vectors, decide whether the scan_type is `line` (single
     line scan), `multiline` (multiple line scans), or `rsm` (reciprocal space mapping).
     For a 2D scan, if the conditions for `rsm` are not met, it is considered a `multiline`
@@ -175,25 +182,25 @@ def detect_scan_type(scan_data):
 
     Returns:
         str: The type of scan.
-    '''
-    if len(scan_data['intensity']) == 1:
-        return 'line'
+    """
+    if len(scan_data["intensity"]) == 1:
+        return "line"
 
     # if intensity data is not a regular 2D array, it is not `rsm`
-    for scan_intensity in scan_data['intensity'][1:]:
-        if scan_intensity.shape != scan_data['intensity'][0].shape:
-            return 'multiline'
+    for scan_intensity in scan_data["intensity"][1:]:
+        if scan_intensity.shape != scan_data["intensity"][0].shape:
+            return "multiline"
 
-    intensity_data = np.array(scan_data['intensity']).squeeze()
+    intensity_data = np.array(scan_data["intensity"]).squeeze()
     if intensity_data.ndim > 2:
-        raise AssertionError(f'Scan type not detected. `intensity.ndim` must be 1 or 2.\
-                             Found: {intensity_data.ndim}')
+        raise AssertionError(f"Scan type not detected. `intensity.ndim` must be 1 or 2.\
+                             Found: {intensity_data.ndim}")
 
-    if not are_all_identical(scan_data['2Theta']):
-        return 'multiline'
+    if not are_all_identical(scan_data["2Theta"]):
+        return "multiline"
     # find axis that updates from one scan to other
     var_axis = []
-    for key in ['Omega', 'Chi', 'Phi', 'Theta']:
+    for key in ["Omega", "Chi", "Phi", "Theta"]:
         if key not in scan_data:
             continue
         data = scan_data[key]
@@ -202,17 +209,18 @@ def detect_scan_type(scan_data):
     # if only one var_axis
     # and dimensions of 2theta, var_axis, and intensity are consistent, it is a rsm
     if len(var_axis) == 1:
-        two_theta = np.array(scan_data['2Theta'])
+        two_theta = np.array(scan_data["2Theta"])
         var_axis_data = np.array(scan_data[var_axis[0]])
         if (
             intensity_data.shape == two_theta.shape
             and intensity_data.shape[0] == np.unique(var_axis_data).shape[0]
         ):
-            return 'rsm'
-    return 'multiline'
+            return "rsm"
+    return "multiline"
+
 
 def modify_scan_data(scan_data: dict, scan_type: str):
-    '''
+    """
     Modifies the scan data based on the scan type:
 
     If the scan type is `line`, the data is converted to 1D arrays.
@@ -234,13 +242,13 @@ def modify_scan_data(scan_data: dict, scan_type: str):
 
     Returns:
         dict: scan_data containing same keys but modified values.
-    '''
+    """
     output = collections.defaultdict(lambda: None)
 
-    if scan_type not in ['line', 'rsm', 'multiline']:
-        raise ValueError(f'Invalid scan type: {scan_type}')
+    if scan_type not in ["line", "rsm", "multiline"]:
+        raise ValueError(f"Invalid scan type: {scan_type}")
 
-    if scan_type == 'line':
+    if scan_type == "line":
         for key, value in scan_data.items():
             if value is None:
                 continue
@@ -251,10 +259,10 @@ def modify_scan_data(scan_data: dict, scan_type: str):
             output[key] = data * value[0].units
         return output
 
-    elif scan_type == 'multiline':
-        raise NotImplementedError(f'Scan type {scan_type} is not supported.')
+    elif scan_type == "multiline":
+        raise NotImplementedError(f"Scan type {scan_type} is not supported.")
 
-    elif scan_type == 'rsm':
+    elif scan_type == "rsm":
         for key, value in scan_data.items():
             if value is None:
                 continue
@@ -268,8 +276,9 @@ def modify_scan_data(scan_data: dict, scan_type: str):
             output[key] = data * value[0].units
         return output
 
+
 def get_bounding_range_2d(ax1, ax2):
-    '''
+    """
     Calculates the range of the smallest rectangular grid that can contain arbitrarily
     distributed 2D data.
 
@@ -279,23 +288,23 @@ def get_bounding_range_2d(ax1, ax2):
 
     Returns:
         (list, list): ax1_range, ax2_range
-    '''
+    """
     ax1_range_length = np.max(ax1) - np.min(ax1)
     ax2_range_length = np.max(ax2) - np.min(ax2)
 
     if ax1_range_length > ax2_range_length:
-        ax1_range = [np.min(ax1),np.max(ax1)]
-        ax2_mid = np.min(ax2) + ax2_range_length/2
+        ax1_range = [np.min(ax1), np.max(ax1)]
+        ax2_mid = np.min(ax2) + ax2_range_length / 2
         ax2_range = [
-            ax2_mid-ax1_range_length/2,
-            ax2_mid+ax1_range_length/2,
+            ax2_mid - ax1_range_length / 2,
+            ax2_mid + ax1_range_length / 2,
         ]
     else:
-        ax2_range = [np.min(ax2),np.max(ax2)]
-        ax1_mid = np.min(ax1) + ax1_range_length/2
+        ax2_range = [np.min(ax2), np.max(ax2)]
+        ax1_mid = np.min(ax1) + ax1_range_length / 2
         ax1_range = [
-            ax1_mid-ax2_range_length/2,
-            ax1_mid+ax2_range_length/2,
+            ax1_mid - ax2_range_length / 2,
+            ax1_mid + ax2_range_length / 2,
         ]
 
     return ax1_range, ax2_range
