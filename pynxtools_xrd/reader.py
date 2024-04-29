@@ -21,7 +21,6 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 import re
 
-import yaml
 import pint
 
 
@@ -96,7 +95,6 @@ class XRDReader(BaseReader):
         objects: Tuple[Any] = None,
     ):
         """Read method that returns a filled in pynxtools dataconverter template."""
-
         try:
             xrd_file_path = list(
                 filter(
@@ -117,8 +115,8 @@ class XRDReader(BaseReader):
                 )
 
         try:
-            fill_documented(template, self.mapping, template, xrd_data)
-            fill_undocumented(self.mapping, template, xrd_data)
+            fill_documented(template, dict(self.mapping), template, xrd_data)
+            fill_undocumented(dict(self.mapping), template, xrd_data)
         except KeyError as e:
             print(f"Skipping key, {e}, from intermediate dict.")
 
