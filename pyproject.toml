@@ -23,7 +23,8 @@ classifiers = [
 ]
 dependencies = [
     "xmltodict",
-    "pint"
+    "pint",
+    "fairmat-readers-xrd"
 ]
 
 [project.urls]
