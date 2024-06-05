@@ -3,47 +3,41 @@ Basic example based test for the stm reader
 """
 
 import os
-import xml.etree.ElementTree as ET
-from glob import glob
 
-from pynxtools.dataconverter.helpers import (
-    generate_template_from_nxdl,
+import pytest
+from pynxtools.testing.nexus_conversion import ReaderTest
+
+# e.g. module_dir = /pynxtools-foo/tests
+module_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+@pytest.mark.parametrize(
+    "nxdl,reader_name,files_or_dir",
+    [
+        ("NXxrd_pan", "xrd", f"{module_dir}/../tests/data/xrdml_918-16_10"),
+    ],
 )
-from pynxtools.dataconverter.validation import validate_dict_against
-from pynxtools.dataconverter.template import Template
-from pynxtools.definitions.dev_tools.utils.nxdl_utils import get_nexus_definitions_path
+def test_foo_reader(nxdl, reader_name, files_or_dir, tmp_path, caplog):
+    """Test for the XRD reader plugin.
 
-from pynxtools_xrd.reader import XRDReader
-
-
-def test_example_data():
+    Parameters
+    ----------
+    nxdl : str
+        Name of the NXDL application definition that is to be tested by
+        this reader plugin without the file ending .nxdl.xml.
+    reader_name : str
+        Name of the class of the reader )
+    files_or_dir : class
+        Name of the class of the reader.
+    tmp_path : pytest.fixture
+        Pytest fixture variable, used to create temporary file and clean up the generated files
+        after test.
+    caplog : pytest.fixture
+        Pytest fixture variable, used to capture the log messages during the test.
     """
-    Test the example data for the stm reader
-    """
-    reader = XRDReader
-    assert callable(reader.read)
-
-    def_dir = get_nexus_definitions_path()
-
-    data_dir = os.path.join(os.path.dirname(__file__), "data")
-    input_files = sorted(glob(os.path.join(data_dir, "*")))
-
-    for supported_nxdl in reader.supported_nxdls:
-        nxdl_file = os.path.join(
-            def_dir, "contributed_definitions", f"{supported_nxdl}.nxdl.xml"
-        )
-
-        root = ET.parse(nxdl_file).getroot()
-        template = Template()
-        generate_template_from_nxdl(root, template)
-
-        read_data = reader().read(
-            template=Template(template), file_paths=tuple(input_files)
-        )
-
-        assert isinstance(read_data, Template)
-        validate_dict_against(
-            supported_nxdl,
-            read_data,
-            ignore_undocumented=True,
-        )
+    # test plugin reader
+    test = ReaderTest(nxdl, reader_name, files_or_dir, tmp_path, caplog)
+    test.convert_to_nexus(caplog_level="ERROR", ignore_undocumented=True)
+    # Use `ignore_undocumented` to skip undocumented fields
+    # test.convert_to_nexus(ignore_undocumented=True)
+    test.check_reproducibility_of_nexus()

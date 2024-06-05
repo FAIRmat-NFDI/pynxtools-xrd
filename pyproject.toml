@@ -24,7 +24,8 @@ classifiers = [
 dependencies = [
     "xmltodict",
     "pint",
-    "fairmat-readers-xrd"
+    "fairmat-readers-xrd",
+    "pynxtools>=0.3.2",
 ]
 
 [project.urls]
