@@ -17,6 +17,7 @@
 
 from typing import Tuple, Any, Dict, Union
 import json
+import os
 from pathlib import Path
 import xml.etree.ElementTree as ET
 import re
@@ -43,41 +44,12 @@ class XRDReader(BaseReader):
     supported_nxdls = ["NXxrd_pan"]
     supported_formats = [".rasx", ".xrdml", ".brml"]
 
-    mapping = {
-        "/ENTRY[entry]/definition": "NXxrd_pan",  # Any JSON data gets copied over.
-        "/ENTRY[entry]/method": "X-Ray Diffraction (XRD)",
-        "/ENTRY[entry]/2theta_plot/intensity": "/intensity",  # /path like strings are the hierarchy in the dict returned by fairmat_readers_xrd.read_file
-        "/ENTRY[entry]/2theta_plot/two_theta": "/2Theta",
-        "/ENTRY[entry]/2theta_plot/two_theta/@units": "/2Theta@units",  # Units are added in convert_quantity_to_value_units in the dict returned by fairmat_readers_xrd.read_file
-        "/ENTRY[entry]/2theta_plot/omega": "/Omega",
-        "/ENTRY[entry]/2theta_plot/omega/@units": "/Omega@units",
-        "/ENTRY[entry]/2theta_plot/chi": "/Chi",
-        "/ENTRY[entry]/2theta_plot/phi": "/Phi",
-        "/ENTRY[entry]/2theta_plot/phi/@units": "/Phi@units",
-        "/ENTRY[entry]/COLLECTION[collection]/measurement_type": "/metadata/measurement_type",
-        "/ENTRY[entry]/COLLECTION[collection]/2theta": {
-            "link": "/ENTRY[entry]/2theta_plot/two_theta"
-        },
-        "/ENTRY[entry]/COLLECTION[collection]/omega": "/Omega",
-        "/ENTRY[entry]/COLLECTION[collection]/count_time": "/countTime",
-        "/ENTRY[entry]/COLLECTION[collection]/count_time/@units": "/countTime@units",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/DETECTOR[detector]/scan_axis": "/metadata/scan_axis",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_material": "/metadata/source/anode_material",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one": "/metadata/source/kAlpha1",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one/@units": "/metadata/source/kAlpha1@units",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_two": "/metadata/source/kAlpha2",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_two/@units": "/metadata/source/kAlpha2@units",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone": "/metadata/source/ratioKAlpha2KAlpha1",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone/@units": "/metadata/source/ratioKAlpha2KAlpha1@units",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/kbeta": "/metadata/source/kBeta",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/kbeta": "/kBeta@units",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage": "/metadata/source/voltage",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage/@units": "/metadata/source/voltage@units",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current": "/metadata/source/current",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current/@units": "/metadata/source/current@units",
-        "/ENTRY[entry]/SAMPLE[sample]/sample_id": "/metadata/sample_id",
-        "/ENTRY[entry]/INSTRUMENT[instrument]/DETECTOR[detector]/scan_mode": "/metadata/scan_type",
-    }
+    def __init__(self):
+        """Initializes the reader and sets up the supported mapping."""
+        with open(
+            os.path.dirname(os.path.realpath(__file__)) + os.sep + "xrd.mapping.json"
+        ) as mapping_file:
+            self.mapping = json.load(mapping_file)
 
     def convert_quantity_to_value_units(self, data_dict):
         """
