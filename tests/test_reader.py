@@ -17,7 +17,7 @@ module_dir = os.path.dirname(os.path.abspath(__file__))
         ("NXxrd_pan", "xrd", f"{module_dir}/../tests/data/xrdml_918-16_10"),
     ],
 )
-def test_foo_reader(nxdl, reader_name, files_or_dir, tmp_path, caplog):
+def test_xrd_reader(nxdl, reader_name, files_or_dir, tmp_path, caplog):
     """Test for the XRD reader plugin.
 
     Parameters

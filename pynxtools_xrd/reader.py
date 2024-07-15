@@ -15,21 +15,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import Tuple, Any, Dict, Union
+from typing import Tuple, Any
 import json
 import os
-from pathlib import Path
-import xml.etree.ElementTree as ET
-import re
 
 import pint
 
-from pynxtools.dataconverter.helpers import (
-    generate_template_from_nxdl,
-    validate_data_dict,
-)
-from pynxtools.dataconverter.template import Template
-from fairmat_readers_xrd import read_file, ureg
+from fairmat_readers_xrd import read_file
 from pynxtools.dataconverter.readers.base.reader import BaseReader
 from pynxtools.dataconverter.readers.json_map.reader import (
     fill_undocumented,

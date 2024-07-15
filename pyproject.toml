@@ -25,7 +25,7 @@ dependencies = [
     "xmltodict",
     "pint",
     "fairmat-readers-xrd",
-    "pynxtools>=0.3.2",
+    "pynxtools>=0.5.0",
 ]
 
 [project.urls]
