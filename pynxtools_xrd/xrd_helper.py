@@ -73,9 +73,9 @@ def feed_xrdml_to_template(template, xrd_dict, eln_dict, file_term, config_dict=
         Dictionary from config file that maps NeXus concept to data from different data file
         versions. E.g.
         {
-         "/ENTRY[entry]/2theta_plot/chi": {"file_exp": {"value": "",
+         "/ENTRY[entry]/two_theta_plot/chi": {"file_exp": {"value": "",
                                                         "@units": ""},},
-         "/ENTRY[entry]/2theta_plot/intensity": {"file_exp": {"value": "/detector",
+         "/ENTRY[entry]/two_theta_plot/intensity": {"file_exp": {"value": "/detector",
                                                               "@units": ""},}
          }
     """
@@ -89,9 +89,9 @@ def feed_xrdml_to_template(template, xrd_dict, eln_dict, file_term, config_dict=
         config_dict : dict
             Python dict that is nested dict for different file versions.
             e.g.
-            {"/ENTRY[entry]/2theta_plot/chi": {"file_exp": {"value": "",
+            {"/ENTRY[entry]/two_theta_plot/chi": {"file_exp": {"value": "",
                                                     "@units": ""},},
-            "/ENTRY[entry]/2theta_plot/intensity": {"file_exp": {"value": "/detector",
+            "/ENTRY[entry]/two_theta_plot/intensity": {"file_exp": {"value": "/detector",
                                                             "@units": ""},}
             }
         template : Template
@@ -128,32 +128,32 @@ def feed_xrdml_to_template(template, xrd_dict, eln_dict, file_term, config_dict=
 
     def two_theta_plot():
         intesity = transform_to_intended_dt(
-            template.get("/ENTRY[entry]/2theta_plot/intensity", None)
+            template.get("/ENTRY[entry]/two_theta_plot/intensity", None)
         )
         if intesity is not None:
             intsity_len = np.shape(intesity)[0]
         else:
             raise ValueError("No intensity is found")
 
-        two_theta_gr = "/ENTRY[entry]/2theta_plot/"
+        two_theta_gr = "/ENTRY[entry]/two_theta_plot/"
         if template.get(f"{two_theta_gr}omega", None) is None:
             omega_start = template.get(
-                "/ENTRY[entry]/COLLECTION[collection]/omega/start", None
+                "/ENTRY[entry]/OBJECT[experiment_config]/omega/start", None
             )
             omega_end = template.get(
-                "/ENTRY[entry]/COLLECTION[collection]/omega/end", None
+                "/ENTRY[entry]/OBJECT[experiment_config]/omega/end", None
             )
 
-            template["/ENTRY[entry]/2theta_plot/omega"] = np.linspace(
+            template["/ENTRY[entry]/two_theta_plot/omega"] = np.linspace(
                 float(omega_start), float(omega_end), intsity_len
             )
 
         if template.get(f"{two_theta_gr}two_theta", None) is None:
             tw_theta_start = template.get(
-                "/ENTRY[entry]/COLLECTION[collection]/2theta/start", None
+                "/ENTRY[entry]/OBJECT[experiment_config]/two_theta/start", None
             )
             tw_theta_end = template.get(
-                "/ENTRY[entry]/COLLECTION[collection]/2theta/end", None
+                "/ENTRY[entry]/OBJECT[experiment_config]/two_theta/end", None
             )
             template[f"{two_theta_gr}two_theta"] = np.linspace(
                 float(tw_theta_start), float(tw_theta_end), intsity_len
@@ -170,7 +170,7 @@ def feed_xrdml_to_template(template, xrd_dict, eln_dict, file_term, config_dict=
             "/ENTRY[entry]/INSTRUMENT[instrument]/SOURCE[source]/k_alpha_one", None
         )
         two_theta: np.ndarray = template.get(
-            "/ENTRY[entry]/2theta_plot/two_theta", None
+            "/ENTRY[entry]/two_theta_plot/two_theta", None
         )
         if two_theta is None:
             raise ValueError("Two-theta data is not found")
@@ -191,7 +191,7 @@ def feed_xrdml_to_template(template, xrd_dict, eln_dict, file_term, config_dict=
     def handle_special_fields():
         """Some fields need special treatment."""
 
-        key = "/ENTRY[entry]/COLLECTION[collection]/goniometer_x"
+        key = "/ENTRY[entry]/OBJECT[experiment_config]/goniometer_x"
         gonio_x = template.get(key, None)
 
         template[key] = (
@@ -200,7 +200,7 @@ def feed_xrdml_to_template(template, xrd_dict, eln_dict, file_term, config_dict=
             else gonio_x
         )
 
-        key = "/ENTRY[entry]/COLLECTION[collection]/goniometer_y"
+        key = "/ENTRY[entry]/OBJECT[experiment_config]/goniometer_y"
         gonio_y = template.get(key, None)
 
         template[key] = (
@@ -209,7 +209,7 @@ def feed_xrdml_to_template(template, xrd_dict, eln_dict, file_term, config_dict=
             else gonio_y
         )
 
-        key = "/ENTRY[entry]/COLLECTION[collection]/goniometer_z"
+        key = "/ENTRY[entry]/OBJECT[experiment_config]/goniometer_z"
         gonio_z = template.get(key, None)
 
         template[key] = (
@@ -218,7 +218,7 @@ def feed_xrdml_to_template(template, xrd_dict, eln_dict, file_term, config_dict=
             else gonio_z
         )
 
-        key = "/ENTRY[entry]/COLLECTION[collection]/count_time"
+        key = "/ENTRY[entry]/OBJECT[experiment_config]/count_time"
         count_time = template.get(key, None)
 
         template[key] = (
