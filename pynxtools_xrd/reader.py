@@ -83,8 +83,8 @@ class XRDReader(BaseReader):
                     "You need to provide one of the following file formats as --input-file to the converter: "
                     + str(self.supported_formats)
                 )
-        print(' #### : xrd_data', xrd_data)
-        print(' #### : template', template)
+        print(" #### : xrd_data", xrd_data)
+        print(" #### : template", template)
         try:
             fill_documented(template, dict(self.mapping), template, xrd_data)
             fill_undocumented(dict(self.mapping), template, xrd_data)
