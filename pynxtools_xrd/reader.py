@@ -83,14 +83,13 @@ class XRDReader(BaseReader):
                     "You need to provide one of the following file formats as --input-file to the converter: "
                     + str(self.supported_formats)
                 )
-        print(" #### : xrd_data", xrd_data)
-        print(" #### : template", template)
         try:
             fill_documented(template, dict(self.mapping), template, xrd_data)
             fill_undocumented(dict(self.mapping), template, xrd_data)
         except KeyError as e:
             print(f"Skipping key, {e}, from intermediate dict.")
-
+        template["//ENTRY[entry]/@default"] = "two_theta_plot"
+        template["/ENTRY[entry]/two_theta_plot/@default"] = "intensity"
         return template
 
 
