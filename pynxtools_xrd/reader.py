@@ -18,9 +18,9 @@
 from typing import Tuple, Any
 import json
 import os
+import re
 
 import pint
-
 from fairmat_readers_xrd import read_file
 from pynxtools.dataconverter.readers.base.reader import BaseReader
 from pynxtools.dataconverter.readers.json_map.reader import (
@@ -30,6 +30,40 @@ from pynxtools.dataconverter.readers.json_map.reader import (
 
 
 # pylint: disable=too-few-public-methods
+def convert_to_hdf_file_path(nexus_path):
+    """Converts a nexus path to a hdf file path"""
+    pattern = r"\[(.*?)]"
+    path_chain = nexus_path.split("/")
+    hdf_path_component = []
+    for path in path_chain:
+        re_match = re.search(pattern, path)
+        if re_match:
+            hdf_path_component.append(re_match.group(1))
+        else:
+            hdf_path_component.append(path)
+    return "/".join(hdf_path_component)
+
+
+def clean_unavailable_data_path(mapping):
+    def is_link_path_exists(link_dict, mapping):
+        """Checks if data exists at a given path in the data dictionary"""
+        data_path = link_dict["link"]
+        if mapping.get(data_path, None):
+            return True
+        return False
+
+    for key, value in list(mapping.items()):
+        if isinstance(value, dict):
+            if "link" in value:
+                if not is_link_path_exists(value, mapping):
+                    del mapping[key]
+                else:
+                    value["link"] = convert_to_hdf_file_path(value["link"])
+
+        elif not value:
+            del mapping[key]
+
+
 class XRDReader(BaseReader):
     """Reader for XRD."""
 
@@ -75,7 +109,6 @@ class XRDReader(BaseReader):
                 )
             )[0]
             xrd_data = self.convert_quantity_to_value_units(read_file(xrd_file_path))
-
         except IndexError:
             if objects[0] is not None and isinstance(objects[0], dict):
                 xrd_data = self.convert_quantity_to_value_units(objects[0])
@@ -84,13 +117,15 @@ class XRDReader(BaseReader):
                     "You need to provide one of the following file formats as --input-file to the converter: "
                     + str(self.supported_formats)
                 )
-
         try:
+            clean_unavailable_data_path(self.mapping)
             fill_documented(template, dict(self.mapping), template, xrd_data)
             fill_undocumented(dict(self.mapping), template, xrd_data)
         except KeyError as e:
             print(f"Skipping key, {e}, from intermediate dict.")
-
+        template["//ENTRY[entry]/@default"] = "experiment_result"
+        template["/ENTRY[entry]/experiment_result/@signal"] = "intensity"
+        template["/ENTRY[entry]/experiment_result/@axes"] = "two_theta"
         return template
 
 
