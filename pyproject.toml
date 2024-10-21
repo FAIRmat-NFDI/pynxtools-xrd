@@ -35,7 +35,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "mypy",
-    "ruff==0.3.4",
+    "ruff>=0.6.0",
     "pytest",
     "types-pyyaml",
     "pip-tools",
