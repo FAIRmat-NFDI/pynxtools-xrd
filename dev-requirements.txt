@@ -111,7 +111,7 @@ pyyaml==6.0.1
     # via
     #   pre-commit
     #   pynxtools
-ruff==0.7.0
+ruff==0.8.0
     # via pynxtools-xrd (pyproject.toml)
 scipy==1.13.1
     # via ase
