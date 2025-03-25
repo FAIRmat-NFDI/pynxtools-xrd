@@ -57,7 +57,7 @@ pint==0.17
     #   pynxtools-xrd (pyproject.toml)
     #   fairmat-readers-xrd
     #   pynxtools
-pynxtools==0.10.0
+pynxtools==0.10.1
     # via pynxtools-xrd (pyproject.toml)
 pyparsing==3.2.3
     # via matplotlib
