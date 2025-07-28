@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=78.1.1", "setuptools-scm[toml]>=6.2"]
+requires = ["setuptools>=64.0.1", "setuptools-scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -11,57 +11,43 @@ authors = [
 description = "A plugin for pynxtools to convert XRD into NeXus application definitions."
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 classifiers = [
+    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "pynxtools>=0.10.1",
     "xmltodict",
     "pint",
     "fairmat-readers-xrd",
+    "pynxtools>=0.10.1",
+    #  "pynxtools @ git+https://github.com/FAIRmat-NFDI/pynxtools.git@jumpToReference_EmApmCgMs_2nd#egg=pynxtools"
 ]
+
+[project.urls]
+"GitHub page" = "https://github.com/FAIRmat-NFDI/pynxtools-xrd"
+"Parent Project" =  "https://github.com/FAIRmat-NFDI"
 
 [project.optional-dependencies]
 dev = [
     "mypy",
-    "ruff>=0.12.0",
+    "ruff>=0.6.0",
     "pytest",
-    "pytest-cov",
-    "pytest-timeout",
-    "structlog",
     "types-pyyaml",
-    "types-pytz",
-    "types-requests",
-    "uv",
-    "pre-commit",
+    "pip-tools",
+    "pre-commit"
 ]
-docs = [
-    "mkdocs",
-    "mkdocs-material",
-    "mkdocs-material-extensions",
-    "mkdocs-macros-plugin",
-    "pymdown-extensions",
-    "mkdocs-click"
-]
-
-[project.urls]
-"Homepage" = "https://github.com/FAIRmat-NFDI/pynxtools-xrd"
-"Parent Project" = "https://github.com/FAIRmat-NFDI"
 
 [project.entry-points."pynxtools.reader"]
 xrd = "pynxtools_xrd.reader:XRDReader"
 
 [tool.setuptools.packages.find]
-where = [
-    "src",
-]
+where = ["."]
 include = ["pynxtools_xrd"]
 
 [tool.setuptools_scm]
@@ -69,7 +55,7 @@ version_scheme = "no-guess-dev"
 local_scheme = "node-and-date"
 
 [tool.ruff]
-include = ["src/*.py", "tests/*.py"]
+include = ["pynxtools_xrd/*.py", "tests/*.py"]
 line-length = 88
 indent-width = 4
 
