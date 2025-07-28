@@ -42,10 +42,6 @@ The XRD reader calls a program or class (called parser) that reads the experimen
 
         This method can be used to check if all the data from the input file have been read or not, it returns the slash separated dict as described.
 
-
-### Other Parsers
-    **Coming Soon!!**
-
 ### How To
 The reader can be run from Jupyter-notebook or Jupyter-lab with the following command:
 
@@ -68,7 +64,7 @@ Install the package with its dependencies:
 
 ```shell
 git clone https://github.com/FAIRmat-NFDI/pynxtools-xrd.git \\
-    --branch master \\
+    --branch main \\
     --recursive pynxtools_xrd
 cd pynxtools_xrd
 python -m pip install --upgrade pip
@@ -84,5 +80,5 @@ pre-commit install
 ```
 from the root of this repository.
 
-## Contact Person in FAIRmat
+## Contact person in FAIRmat
 In principle, you can reach out to any member of Area B of the FAIRmat consortium, but Rubel Mozumder could be more reasonable for the early response.
