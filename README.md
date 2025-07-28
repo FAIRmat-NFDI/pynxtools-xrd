@@ -80,5 +80,5 @@ pre-commit install
 ```
 from the root of this repository.
 
-## Contact person in FAIRmat
+## Contact Person in FAIRmat
 In principle, you can reach out to any member of Area B of the FAIRmat consortium, but Rubel Mozumder could be more reasonable for the early response.
