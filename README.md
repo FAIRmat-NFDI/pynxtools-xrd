@@ -14,7 +14,7 @@ With the XRD reader, data from X-ray diffraction experiment can be read and writ
 
 # Installation
 
-It is recommended to use python 3.11 with a dedicated virtual environment for this package.
+It is recommended to use python 3.12 with a dedicated virtual environment for this package.
 Learn how to manage [python versions](https://github.com/pyenv/pyenv) and
 [virtual environments](https://realpython.com/python-virtual-environments-a-primer/).
 
@@ -80,5 +80,5 @@ pre-commit install
 ```
 from the root of this repository.
 
-## Contact Person in FAIRmat
+## Contact person in FAIRmat
 In principle, you can reach out to any member of Area B of the FAIRmat consortium, but Rubel Mozumder could be more reasonable for the early response.
