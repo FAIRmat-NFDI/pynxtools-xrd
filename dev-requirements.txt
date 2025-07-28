@@ -4,24 +4,22 @@ anytree==2.13.0
     # via pynxtools
 ase==3.25.0
     # via pynxtools
-build==1.2.2.post1
-    # via pip-tools
 cfgv==3.4.0
     # via pre-commit
 click==8.2.1
     # via
     #   click-default-group
-    #   pip-tools
     #   pynxtools
 click-default-group==1.2.4
     # via pynxtools
-colorama==0.4.6 ; (platform_system != 'Windows' and sys_platform == 'win32') or platform_system == 'Windows' or os_name == 'nt'
+colorama==0.4.6 ; sys_platform == 'win32'
     # via
-    #   build
     #   click
     #   pytest
 contourpy==1.3.3
     # via matplotlib
+coverage==7.10.1
+    # via pytest-cov
 cycler==0.12.1
     # via matplotlib
 distlib==0.4.0
@@ -71,7 +69,6 @@ numpy==1.26.4
     #   xarray
 packaging==25.0
     # via
-    #   build
     #   matplotlib
     #   pytest
     #   xarray
@@ -88,16 +85,14 @@ pint==0.24.4
     #   pynxtools-xrd (pyproject.toml)
     #   fairmat-readers-xrd
     #   pynxtools
-pip==25.1.1
-    # via pip-tools
-pip-tools==7.4.1
-    # via pynxtools-xrd (pyproject.toml)
 platformdirs==4.3.8
     # via
     #   pint
     #   virtualenv
 pluggy==1.6.0
-    # via pytest
+    # via
+    #   pytest
+    #   pytest-cov
 pre-commit==4.2.0
     # via pynxtools-xrd (pyproject.toml)
 pygments==2.19.2
@@ -106,11 +101,14 @@ pynxtools==0.10.9
     # via pynxtools-xrd (pyproject.toml)
 pyparsing==3.2.3
     # via matplotlib
-pyproject-hooks==1.2.0
-    # via
-    #   build
-    #   pip-tools
 pytest==8.4.1
+    # via
+    #   pynxtools-xrd (pyproject.toml)
+    #   pytest-cov
+    #   pytest-timeout
+pytest-cov==6.2.1
+    # via pynxtools-xrd (pyproject.toml)
+pytest-timeout==2.4.0
     # via pynxtools-xrd (pyproject.toml)
 python-dateutil==2.9.0.post0
     # via
@@ -126,13 +124,17 @@ ruff==0.12.5
     # via pynxtools-xrd (pyproject.toml)
 scipy==1.16.1
     # via ase
-setuptools==80.9.0
-    # via pip-tools
 six==1.17.0
     # via python-dateutil
+structlog==25.4.0
+    # via pynxtools-xrd (pyproject.toml)
 toposort==1.10
     # via pynxtools
+types-pytz==2025.2.0.20250516
+    # via pynxtools-xrd (pyproject.toml)
 types-pyyaml==6.0.12.20250516
+    # via pynxtools-xrd (pyproject.toml)
+types-requests==2.32.4.20250611
     # via pynxtools-xrd (pyproject.toml)
 typing-extensions==4.14.1
     # via
@@ -142,10 +144,12 @@ typing-extensions==4.14.1
     #   pint
 tzdata==2025.2
     # via pandas
+urllib3==2.5.0
+    # via types-requests
+uv==0.8.3
+    # via pynxtools-xrd (pyproject.toml)
 virtualenv==20.32.0
     # via pre-commit
-wheel==0.45.1
-    # via pip-tools
 xarray==2025.7.1
     # via pynxtools
 xmltodict==0.13.0
