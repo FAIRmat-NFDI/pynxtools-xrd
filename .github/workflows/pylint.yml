@@ -2,33 +2,24 @@ name: linting
 
 on: [push]
 
-env:
-  UV_SYSTEM_PYTHON: true
-
 jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+      - name: Install uv and set the python version to 3.12
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: "3.11"
-      - name: Install dependencies
-        run: |
-          git submodule sync --recursive
-          git submodule update --init --recursive --jobs=4
-          curl -LsSf https://astral.sh/uv/install.sh | sh
+          python-version: 3.12
       - name: Install package and dev dependencies
         run: |
-          uv pip install --no-deps .
-          uv pip install -r dev-requirements.txt
+          uv pip install ".[dev]"
       - name: ruff check
         run: |
-          ruff check pynxtools_xrd tests
+          ruff check src/pynxtools_xrd tests
       - name: ruff format
         run: |
-          ruff format --check pynxtools_xrd tests
+          ruff format --check src/pynxtools_xrd tests
       - name: mypy
         run: |
-          mypy pynxtools_xrd tests
+          mypy src/pynxtools_xrd tests
