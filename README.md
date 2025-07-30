@@ -6,6 +6,7 @@
 ![](https://img.shields.io/pypi/l/pynxtools-xrd)
 ![](https://img.shields.io/pypi/v/pynxtools-xrd)
 ![](https://coveralls.io/repos/github/FAIRmat-NFDI/pynxtools_xrd/badge.svg?branch=master)
+[![DOI](https://zenodo.org/badge/759916501.svg)](https://doi.org/10.5281/zenodo.16606402)
 
 # XRD Reader
 With the XRD reader, data from X-ray diffraction experiment can be read and written into a NeXus file (h5 type file with extension .nxs) according to NXxrd_pan application definition in [NeXus](https://github.com/FAIRmat-NFDI/nexus_definitions). There are a few different methods of measuring XRD: 1. θ:2θ instruments (e.g. Rigaku H3R), and 2. θ:θ instrument (e.g. PANalytical X’Pert Pro). The goal with this reader is to support both of these methods.
