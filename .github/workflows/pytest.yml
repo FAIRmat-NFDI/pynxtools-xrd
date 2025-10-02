@@ -15,23 +15,26 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python_version: ["3.9", "3.10", "3.11", "3.12"]
+        python_version: ["3.10", "3.11", "3.12"]
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: recursive
-      - name: Set up Python ${{ matrix.python_version }}
-        uses: actions/setup-python@v5
+      - name: Install uv and set the python version to ${{ matrix.python-version }}
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: ${{ matrix.python_version }}
-      - name: Install dependencies
+          python-version: ${{ matrix.python-version }}
+      - name: Install package and dependencies
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
       - name: Install package
         run: |
           uv pip install ".[dev]"
+      - name: Install pynxtools master branch
+        run: |
+          uv pip install pynxtools@git+https://github.com/FAIRmat-NFDI/pynxtools
       - name: Test with pytest
         run: |
           pytest tests
