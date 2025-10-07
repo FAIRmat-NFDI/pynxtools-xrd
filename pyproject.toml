@@ -76,6 +76,7 @@ select = [
     "E", # pycodestyle
     "W", # pycodestyle
     "PL", # pylint
+    "NPY201", # upgrade to numpy >2
 ]
 ignore = [
     "E501", # Line too long ({width} > {limit} characters)
