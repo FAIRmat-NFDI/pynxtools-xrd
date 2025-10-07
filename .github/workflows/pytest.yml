@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [main]
 
-env:
-  UV_SYSTEM_PYTHON: true
-
 jobs:
   pytest:
     runs-on: ubuntu-latest
@@ -19,16 +16,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          submodules: recursive
       - name: Install uv and set the python version to ${{ matrix.python-version }}
         uses: astral-sh/setup-uv@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install package and dependencies
-        run: |
-          curl -LsSf https://astral.sh/uv/install.sh | sh
       - name: Install package
         run: |
           uv pip install ".[dev]"
