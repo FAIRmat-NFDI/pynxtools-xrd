@@ -1,1 +1,17 @@
 # Custom Dictionary Words
+
+ARPES
+Brockhauser
+Lukas
+Markus
+Mozumder
+Pielsticker
+Sandor
+Shabih
+Sherjeel
+XRDML
+dataconverter
+orcid
+pynxtools
+xrdml
+zenodo
