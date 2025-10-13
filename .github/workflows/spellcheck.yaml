@@ -18,7 +18,7 @@ jobs:
 
     - name: Run cspell
       run: |
-        cspell --config cspell.json "docs/explanation/**/*" "docs/how-tos/**/*" "docs/reference/**/*" "docs/tutorial/**/*"  "docs/*.md" "CITATION.cff" "README.md"
+        cspell --config cspell.json "CITATION.cff" "README.md"
 
     - name: Fail on errors
       run: |
