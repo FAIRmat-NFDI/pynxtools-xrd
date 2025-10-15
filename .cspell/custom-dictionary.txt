@@ -1,12 +1,14 @@
 # Custom Dictionary Words
-
 ARPES
 Brockhauser
+Forschungsgemeinschaft
 Kühbach
 Lukas
 Markus
 Mozumder
+Nalytical
 Pielsticker
+Rigaku
 Sandor
 Shabih
 Sherjeel
