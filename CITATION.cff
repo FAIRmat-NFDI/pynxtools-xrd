@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: 'pynxtools-xrd: A pynxtools reader plugin for X-ray diffraction data'
-version: 0.0.6
+version: 0.0.7
 message:
   If you use this software, please cite it using the
   metadata from this file.
