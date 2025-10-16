@@ -45,8 +45,6 @@ docs = [
     "mkdocs-material",
     "mkdocs-material-extensions",
     "mkdocs-macros-plugin",
-    "pymdown-extensions",
-    "mkdocs-click"
 ]
 
 [project.urls]
