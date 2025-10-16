@@ -9,9 +9,9 @@
 [![DOI](https://zenodo.org/badge/759916501.svg)](https://doi.org/10.5281/zenodo.16606402)
 
 # XRD Reader
-With the XRD reader, data from X-ray diffraction experiment can be read and written into a NeXus file (h5 type file with extension .nxs) according to NXxrd_pan application definition in [NeXus](https://github.com/FAIRmat-NFDI/nexus_definitions). There are a few different methods of measuring XRD: 1. θ:2θ instruments (e.g. Rigaku H3R), and 2. θ:θ instrument (e.g. PANalytical X’Pert Pro). The goal with this reader is to support both of these methods.
+With the XRD reader, data from X-ray diffraction experiment can be read and written into a NeXus file (h5 type file with extension .nxs) according to NXxrd_pan application definition in [NeXus](https://github.com/FAIRmat-NFDI/nexus_definitions). There are a few different methods of measuring XRD: 1. θ:2θ instruments (e.g. Rigaku H3R), and 2. θ:θ instrument (e.g. PANalytical X'Pert PRO). The goal with this reader is to support both of these methods.
 
-**NOTE: This reader is still under development. As of now, the reader can only handle files with the extension `.xrdml` , obtained with PANalytical X’Pert Pro version 1.5 (method 2 described above). Currently we are wtoking to include more file types and file versions.**
+**NOTE: This reader is still under development. As of now, the reader can only handle files with the extension `.xrdml` , obtained with PANalytical X'Pert PRO version 1.5 (method 2 described above). There is an interest to support more file types and file versions in the future.**
 
 # Installation
 
@@ -29,9 +29,9 @@ pip install pynxtools[xrd]
 for the latest development version.
 
 ## Parsers
-Though, in computer science, parser is a process that reads code into smaller parts (called tocken) with relations among tockens in a tree diagram. The process helps compiler to understand the tocken relationship of the source code.
+Though, in computer science, parsing is a process that reads code into smaller parts (called token) with relations among tokens in a tree diagram. The process helps compiler to understand the token relationship of the source code.
 
-The XRD reader calls a program or class (called parser) that reads the experimenal input file and re-organises the different physical/experiment concepts or properties in a certain structure which is defined by developer.
+The XRD reader calls a program or class (called parser) that reads the experimental input file and reorganizes the different physical/experiment concepts or properties in a certain structure which is defined by developer.
 
 ### class pynxtools.dataconverter.readers.xrd.xrd_parser.XRDMLParser
 
@@ -55,7 +55,7 @@ $<eln-file location> \
 --output <output-file location>.nxs
 ```
 
-An example file can be found here in GitLab in [nomad-remote-tools-hub](https://gitlab.mpcdf.mpg.de/nomad-lab/nomad-remote-tools-hub/-/tree/develop/docker/xrd) feel free to vist and try out the reader.
+An example file can be found here in GitLab in [nomad-remote-tools-hub](https://gitlab.mpcdf.mpg.de/nomad-lab/nomad-remote-tools-hub/-/tree/develop/docker/xrd) feel free to visit and try out the reader.
 
 # Contributing
 
@@ -74,7 +74,7 @@ python -m pip install -e ".[dev]"
 ```
 
 There is also a [pre-commit hook](https://pre-commit.com/#intro) available
-which formats the code and checks the linting before actually commiting.
+which formats the code and checks the linting before actually committing.
 It can be installed with
 ```shell
 pre-commit install
