@@ -2,7 +2,7 @@
 
 NOMAD and `pynxtools-xrd` are open source projects that warmly welcome community projects, contributions, suggestions, bug fixes, and constructive feedback. `pynxtools-xrd` is build mainly within FAIRmat Area B - Experiment.
 
-You can reach us by different channels. You can send an email directly to the main contributors list:
+There are different channels through which you can reach us. You can send an email directly to the main contributors list:
 
 | Name | e-mail     | Github profiles |
 |------|------------|-----------------|

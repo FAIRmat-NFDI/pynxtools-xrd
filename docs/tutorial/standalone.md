@@ -2,13 +2,11 @@
 
 ## Who is this tutorial for?
 
-This document is for people who want to standardize their research data by converting these
-into a NeXus standardized format.
+This document is for X-ray diffraction scientists who want to standardize their research data by converting these into a NeXus standardized format.
 
 ## What should you know before this tutorial?
 
-- You should have a basic understanding of [FAIRmat NeXus](https://github.com/FAIRmat/nexus_definitions) and [pynxtools](https://github.com/FAIRmat/pynxtools)
-- You should have a basic understanding of using Python and Jupyter notebooks via [JupyterLab](https://jupyter.org)
+- You should have a basic understanding of [NeXus and FAIRmat's contribution to NeXus](https://github.com/FAIRmat-NFDI/nexus_definitions) and [`pynxtools`](https://github.com/FAIRmat/pynxtools)
 
 ## What you will know at the end of this tutorial?
 
@@ -18,7 +16,7 @@ You will have a basic understanding how to use pynxtools-xrd for converting XRD 
 
 ### Installation
 
-See [here](installation.md) for how to install pynxtools together with the XRD reader plugin.
+See [the installation tutorial](installation.md) for how to install pynxtools together with the XRD reader plugin.
 
 ### Running the reader from the command line
 

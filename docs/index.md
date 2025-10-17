@@ -4,13 +4,13 @@ hide: toc
 
 # Documentation for pynxtools-xrd
 
-`pynxtools-xrd` is a free and open-source data software for harmonizing X-ray powder diffraction data and metadata for research data management using [NeXus](https://www.nexusformat.org/), implemented with the goal to make scientific research data FAIR (findable, accessible, interoperable, and reusable).
+`pynxtools-xrd` is a free and open-source data software for harmonizing X-ray diffraction data and metadata for research data management using [NeXus](https://www.nexusformat.org/), implemented with the goal to make scientific research data FAIR (findable, accessible, interoperable, and reusable).
 
 `pynxtools-xrd`, which is a plugin for [pynxtools](https://github.com/FAIRmat-NFDI/pynxtools), provides a tool for reading data from `.xrdml` files that were obtained with PANalytical X'Pert PRO version 1.5 (instruments).
 The tool standardizes these data such that it is compliant with the NeXus application definitions [`NXxrd_pan`](https://fairmat-nfdi.github.io/nexus_definitions/classes/contributed_definitions/NXxrd_pan.html).
 `pynxtools-xrd` is developed both as a standalone reader and as a tool within [NOMAD](https://nomad-lab.eu/), which is the open-source data management platform for materials science we are developing with [FAIRmat](https://www.fairmat-nfdi.eu/fairmat/).
 
-`pynxtools-ellips` is useful for scientists from the X-ray powder diffraction community that wish to explore standardization of their data using NOMAD.
+`pynxtools-xrd` is useful for scientists from the X-ray powder diffraction community that wish to explore standardization of their data using NOMAD.
 
 <div markdown="block" class="home-grid">
 <div markdown="block"> 
