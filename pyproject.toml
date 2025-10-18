@@ -21,7 +21,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "pynxtools>=0.10.9",
+    "pynxtools>=0.12.0",
     "xmltodict",
     "fairmat-readers-xrd",
 ]
@@ -45,8 +45,6 @@ docs = [
     "mkdocs-material",
     "mkdocs-material-extensions",
     "mkdocs-macros-plugin",
-    "pymdown-extensions",
-    "mkdocs-click"
 ]
 
 [project.urls]

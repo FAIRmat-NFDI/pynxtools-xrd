@@ -8,14 +8,11 @@
 ![](https://coveralls.io/repos/github/FAIRmat-NFDI/pynxtools_xrd/badge.svg?branch=master)
 [![DOI](https://zenodo.org/badge/759916501.svg)](https://doi.org/10.5281/zenodo.16606402)
 
-# XRD Reader
-With the XRD reader, data from X-ray diffraction experiment can be read and written into a NeXus file (h5 type file with extension .nxs) according to NXxrd_pan application definition in [NeXus](https://github.com/FAIRmat-NFDI/nexus_definitions). There are a few different methods of measuring XRD: 1. θ:2θ instruments (e.g. Rigaku H3R), and 2. θ:θ instrument (e.g. PANalytical X'Pert PRO). The goal with this reader is to support both of these methods.
+# A reader for XRD data
 
-**NOTE: This reader is still under development. As of now, the reader can only handle files with the extension `.xrdml` , obtained with PANalytical X'Pert PRO version 1.5 (method 2 described above). There is an interest to support more file types and file versions in the future.**
+## Installation
 
-# Installation
-
-It is recommended to use python 3.11 with a dedicated virtual environment for this package.
+It is recommended to use python 3.12 with a dedicated virtual environment for this package.
 Learn how to manage [python versions](https://github.com/pyenv/pyenv) and
 [virtual environments](https://realpython.com/python-virtual-environments-a-primer/).
 
@@ -28,58 +25,17 @@ pip install pynxtools[xrd]
 
 for the latest development version.
 
-## Parsers
-Though, in computer science, parsing is a process that reads code into smaller parts (called token) with relations among tokens in a tree diagram. The process helps compiler to understand the token relationship of the source code.
+## Purpose
+This reader plugin for [`pynxtools`](https://github.com/FAIRmat-NFDI/pynxtools) is used to read X-ray diffraction experiment data and metadata and convert these into a NeXus file (HDF5 file with extension .nxs)
+according to the [NeXus](https://github.com/FAIRmat-NFDI/nexus_definitions) application definition [NXxrd_pan](https://github.com/FAIRmat-NFDI/nexus_definitions/blob/fairmat/contributed_definitions/NXxrd_pan.nxdl.xml). 
+Specifically, the plugin maps data and metadata from `.xrdml` files that were obtained with PANalytical X'Pert PRO version 1.5 (instruments).
 
-The XRD reader calls a program or class (called parser) that reads the experimental input file and reorganizes the different physical/experiment concepts or properties in a certain structure which is defined by developer.
+## Status quo
+This reader is considered in development.
 
-### class pynxtools.dataconverter.readers.xrd.xrd_parser.XRDMLParser
+## Contact person in FAIRmat for this reader
+Rubel Mozumder
+Markus Kühbach
 
-    **inputs:**
-        file_path: Full path of the input file.
-
-    **Important method:**
-        get_slash_separated_xrd_dict() -> dict
-
-        This method can be used to check if all the data from the input file have been read or not, it returns the slash separated dict as described.
-
-### How To
-The reader can be run from Jupyter-notebook or Jupyter-lab with the following command:
-
-```sh
- ! dataconverter \
---reader xrd \
---nxdl NXxrd_pan \
-$<xrd-file location> \
-$<eln-file location> \
---output <output-file location>.nxs
-```
-
-An example file can be found here in GitLab in [nomad-remote-tools-hub](https://gitlab.mpcdf.mpg.de/nomad-lab/nomad-remote-tools-hub/-/tree/develop/docker/xrd) feel free to visit and try out the reader.
-
-# Contributing
-
-## Development install
-
-Install the package with its dependencies:
-
-```shell
-git clone https://github.com/FAIRmat-NFDI/pynxtools-xrd.git \\
-    --branch main \\
-    --recursive pynxtools_xrd
-cd pynxtools_xrd
-python -m pip install --upgrade pip
-python -m pip install -e .
-python -m pip install -e ".[dev]"
-```
-
-There is also a [pre-commit hook](https://pre-commit.com/#intro) available
-which formats the code and checks the linting before actually committing.
-It can be installed with
-```shell
-pre-commit install
-```
-from the root of this repository.
-
-## Contact person in FAIRmat
-In principle, you can reach out to any member of Area B of the FAIRmat consortium, but Rubel Mozumder could be more reasonable for the early response.
+## How to cite this work
+Mozumder, R., Shabih, S., Kühbach, M., Pielsticker, L. & Brockhauser, S. (2025). pynxtools-xrd: A pynxtools reader plugin for X-ray diffraction data. Zenodo. https://doi.org/10.5281/zenodo.16606403
