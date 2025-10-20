@@ -14,5 +14,5 @@ echo " Updating XRD-918-16_10 data file... ${root_dir}"
 xrdml=${root_dir}/tests/data/xrdml_918-16_10
 find ${xrdml} -type f ! \( -name '*.log -o -name *.nxs' \) | xargs  dataconverter --nxdl NXxrd_pan --reader xrd --output ${xrdml}/output.nxs
 read_nexus -f ${xrdml}/output.nxs > ${xrdml}/ref_nexus.log 2>&1
-rm ${xrdml}/XRD-918-16_10.nxs
+rm ${xrdml}/output.nxs
 
