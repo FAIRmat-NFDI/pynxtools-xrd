@@ -1,0 +1,2416 @@
+===== GROUP (// [NXroot::]): <HDF5 file "XRD-918-16_10.nxs" (mode r)>
+DEBUG: ===== GROUP (// [NXroot::]): <HDF5 file "XRD-918-16_10.nxs" (mode r)>
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXroot.nxdl.xml:):
+DEBUG: documentation (NXroot.nxdl.xml:):
+
+        The root of a NeXus file.
+
+        In the NeXus standard, only NXentry groups are allowed at the
+        root level of a file, although it is permitted to include
+        additional groups and fields that are not part of the NeXus
+        standard and will not be validated by NeXus tools. NeXus defines
+        a number of root-level attributes that can be used to annotate
+        the NeXus tree.
+
+        Note that NXroot is the only base class that does not inherit
+        from the NXobject class, since the latter permits the inclusion
+        of NeXus objects that are not allowed at the root level.
+    
+DEBUG: 
+        The root of a NeXus file.
+
+        In the NeXus standard, only NXentry groups are allowed at the
+        root level of a file, although it is permitted to include
+        additional groups and fields that are not part of the NeXus
+        standard and will not be validated by NeXus tools. NeXus defines
+        a number of root-level attributes that can be used to annotate
+        the NeXus tree.
+
+        Note that NXroot is the only base class that does not inherit
+        from the NXobject class, since the latter permits the inclusion
+        of NeXus objects that are not allowed at the root level.
+    
+===== ATTRS (//@HDF5_Version)
+DEBUG: ===== ATTRS (//@HDF5_Version)
+value: 1.14.6 
+DEBUG: value: 1.14.6 
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+NXroot.nxdl.xml:@HDF5_Version - [NX_CHAR]
+DEBUG: NXroot.nxdl.xml:@HDF5_Version - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXroot.nxdl.xml:/HDF5_Version):
+DEBUG: documentation (NXroot.nxdl.xml:/HDF5_Version):
+
+            Version of HDF5 library used in writing the file.
+
+            Note this attribute is spelled with uppercase "V",
+            different than other version attributes.
+        
+DEBUG: 
+            Version of HDF5 library used in writing the file.
+
+            Note this attribute is spelled with uppercase "V",
+            different than other version attributes.
+        
+===== ATTRS (//@NX_class)
+DEBUG: ===== ATTRS (//@NX_class)
+value: NXroot 
+DEBUG: value: NXroot 
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+@NX_class [NX_CHAR]
+DEBUG: @NX_class [NX_CHAR]
+
+DEBUG: 
+===== ATTRS (//@NeXus_release)
+DEBUG: ===== ATTRS (//@NeXus_release)
+value: v2024.02.post1.dev1996+g6cfc2d2e 
+DEBUG: value: v2024.02.post1.dev1996+g6cfc2d2e 
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+NXroot.nxdl.xml:@NeXus_release - [NX_CHAR]
+DEBUG: NXroot.nxdl.xml:@NeXus_release - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXroot.nxdl.xml:/NeXus_release):
+DEBUG: documentation (NXroot.nxdl.xml:/NeXus_release):
+
+            The version of NeXus definitions used in writing the file. This can either be a date-based
+            NeXus release (e.g., YYYY.MM), see https://github.com/nexusformat/definitions/releases or
+            a version tag that includes additional development information, such as a commit distance and
+            a Git hash. This is typically formatted as  `vYYYY.MM.post1.dev<commit-distance>-g<git-hash>`,
+            where `YYYY.MM` refers to the base version of the NeXus definitions. `post1.dev<commit-distance>` 
+            indicates that the definitions are based on a commit after the base version (post1), with
+            `<commit-distance>` being the number of commits since that version. `g<git-hash>` is the 
+            abbreviated Git hash that identifies the specific commit of the definitions being used.
+
+            If the version includes both a commit distance and a Git hash, the ``NeXus_repository`` 
+            attribute must be included, specifying the URL of the repository containing that version.
+        
+DEBUG: 
+            The version of NeXus definitions used in writing the file. This can either be a date-based
+            NeXus release (e.g., YYYY.MM), see https://github.com/nexusformat/definitions/releases or
+            a version tag that includes additional development information, such as a commit distance and
+            a Git hash. This is typically formatted as  `vYYYY.MM.post1.dev<commit-distance>-g<git-hash>`,
+            where `YYYY.MM` refers to the base version of the NeXus definitions. `post1.dev<commit-distance>` 
+            indicates that the definitions are based on a commit after the base version (post1), with
+            `<commit-distance>` being the number of commits since that version. `g<git-hash>` is the 
+            abbreviated Git hash that identifies the specific commit of the definitions being used.
+
+            If the version includes both a commit distance and a Git hash, the ``NeXus_repository`` 
+            attribute must be included, specifying the URL of the repository containing that version.
+        
+===== ATTRS (//@NeXus_repository)
+DEBUG: ===== ATTRS (//@NeXus_repository)
+value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e 
+DEBUG: value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e 
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+NXroot.nxdl.xml:@NeXus_repository - [NX_CHAR]
+DEBUG: NXroot.nxdl.xml:@NeXus_repository - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXroot.nxdl.xml:/NeXus_repository):
+DEBUG: documentation (NXroot.nxdl.xml:/NeXus_repository):
+
+            A repository containing the application definitions
+            used for creating this file.
+            If the ``NeXus_release`` attribute contains a commit distance and hash,
+            this should refer to this repository.
+        
+DEBUG: 
+            A repository containing the application definitions
+            used for creating this file.
+            If the ``NeXus_release`` attribute contains a commit distance and hash,
+            this should refer to this repository.
+        
+===== ATTRS (//@file_name)
+DEBUG: ===== ATTRS (//@file_name)
+value: XRD-918-16_10.nxs 
+DEBUG: value: XRD-918-16_10.nxs 
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+NXroot.nxdl.xml:@file_name - [NX_CHAR]
+DEBUG: NXroot.nxdl.xml:@file_name - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXroot.nxdl.xml:/file_name):
+DEBUG: documentation (NXroot.nxdl.xml:/file_name):
+File name of original NeXus file
+DEBUG: File name of original NeXus file
+===== ATTRS (//@file_time)
+DEBUG: ===== ATTRS (//@file_time)
+value: 2025-10-20 12:29:41.047883+02:00 
+DEBUG: value: 2025-10-20 12:29:41.047883+02:00 
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+NXroot.nxdl.xml:@file_time - [NX_DATE_TIME]
+DEBUG: NXroot.nxdl.xml:@file_time - [NX_DATE_TIME]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXroot.nxdl.xml:/file_time):
+DEBUG: documentation (NXroot.nxdl.xml:/file_time):
+Date and time file was originally created
+DEBUG: Date and time file was originally created
+===== ATTRS (//@file_update_time)
+DEBUG: ===== ATTRS (//@file_update_time)
+value: 2025-10-20 12:29:41.047883+02:00 
+DEBUG: value: 2025-10-20 12:29:41.047883+02:00 
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+NXroot.nxdl.xml:@file_update_time - [NX_DATE_TIME]
+DEBUG: NXroot.nxdl.xml:@file_update_time - [NX_DATE_TIME]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXroot.nxdl.xml:/file_update_time):
+DEBUG: documentation (NXroot.nxdl.xml:/file_update_time):
+Date and time of last file change at close
+DEBUG: Date and time of last file change at close
+===== ATTRS (//@h5py_version)
+DEBUG: ===== ATTRS (//@h5py_version)
+value: 3.14.0 
+DEBUG: value: 3.14.0 
+classpath: ['']
+DEBUG: classpath: ['']
+classes:
+NXroot.nxdl.xml:
+DEBUG: classes:
+NXroot.nxdl.xml:
+NXroot.nxdl.xml:@h5py_version - [NX_CHAR]
+DEBUG: NXroot.nxdl.xml:@h5py_version - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXroot.nxdl.xml:/h5py_version):
+DEBUG: documentation (NXroot.nxdl.xml:/h5py_version):
+Version of h5py Python package used in writing the file
+DEBUG: Version of h5py Python package used in writing the file
+===== GROUP (//entry [NXxrd_pan::/NXentry]): <HDF5 group "/entry" (7 members)>
+DEBUG: ===== GROUP (//entry [NXxrd_pan::/NXentry]): <HDF5 group "/entry" (7 members)>
+classpath: ['NXentry']
+DEBUG: classpath: ['NXentry']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY
+NXxrd.nxdl.xml:/ENTRY
+NXmonopd.nxdl.xml:/ENTRY
+NXentry.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY
+NXxrd.nxdl.xml:/ENTRY
+NXmonopd.nxdl.xml:/ENTRY
+NXentry.nxdl.xml:
+NXobject.nxdl.xml:
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY):
+
+DEBUG: 
+documentation (NXxrd.nxdl.xml:/ENTRY):
+DEBUG: documentation (NXxrd.nxdl.xml:/ENTRY):
+
+DEBUG: 
+documentation (NXmonopd.nxdl.xml:/ENTRY):
+DEBUG: documentation (NXmonopd.nxdl.xml:/ENTRY):
+
+DEBUG: 
+documentation (NXentry.nxdl.xml:):
+DEBUG: documentation (NXentry.nxdl.xml:):
+
+		(**required**) :ref:`NXentry` describes the measurement.
+
+		The top-level NeXus group which contains all the data and associated
+		information that comprise a single measurement.
+		It is mandatory that there is at least one
+		group of this type in the NeXus file.	
+DEBUG: 
+		(**required**) :ref:`NXentry` describes the measurement.
+
+		The top-level NeXus group which contains all the data and associated
+		information that comprise a single measurement.
+		It is mandatory that there is at least one
+		group of this type in the NeXus file.	
+documentation (NXobject.nxdl.xml:):
+DEBUG: documentation (NXobject.nxdl.xml:):
+
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+DEBUG: 
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+===== ATTRS (//entry@NX_class)
+DEBUG: ===== ATTRS (//entry@NX_class)
+value: NXentry 
+DEBUG: value: NXentry 
+classpath: ['NXentry']
+DEBUG: classpath: ['NXentry']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY
+NXxrd.nxdl.xml:/ENTRY
+NXmonopd.nxdl.xml:/ENTRY
+NXentry.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY
+NXxrd.nxdl.xml:/ENTRY
+NXmonopd.nxdl.xml:/ENTRY
+NXentry.nxdl.xml:
+NXobject.nxdl.xml:
+@NX_class [NX_CHAR]
+DEBUG: @NX_class [NX_CHAR]
+
+DEBUG: 
+===== FIELD (//entry/definition): <HDF5 dataset "definition": shape (), type "|O">
+DEBUG: ===== FIELD (//entry/definition): <HDF5 dataset "definition": shape (), type "|O">
+value: NXxrd_pan 
+DEBUG: value: NXxrd_pan 
+classpath: ['NXentry', 'NX_CHAR']
+DEBUG: classpath: ['NXentry', 'NX_CHAR']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/definition
+NXxrd.nxdl.xml:/ENTRY/definition
+NXmonopd.nxdl.xml:/ENTRY/definition
+NXentry.nxdl.xml:/definition
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/definition
+NXxrd.nxdl.xml:/ENTRY/definition
+NXmonopd.nxdl.xml:/ENTRY/definition
+NXentry.nxdl.xml:/definition
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+enumeration (NXxrd_pan.nxdl.xml:/ENTRY/definition):
+DEBUG: enumeration (NXxrd_pan.nxdl.xml:/ENTRY/definition):
+-> NXxrd_pan
+DEBUG: -> NXxrd_pan
+enumeration (NXxrd.nxdl.xml:/ENTRY/definition):
+DEBUG: enumeration (NXxrd.nxdl.xml:/ENTRY/definition):
+-> NXxrd
+DEBUG: -> NXxrd
+enumeration (NXmonopd.nxdl.xml:/ENTRY/definition):
+DEBUG: enumeration (NXmonopd.nxdl.xml:/ENTRY/definition):
+-> NXmonopd
+DEBUG: -> NXmonopd
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/definition):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/definition):
+
+                Official NeXus NXDL schema to which this file conforms.
+            
+DEBUG: 
+                Official NeXus NXDL schema to which this file conforms.
+            
+documentation (NXxrd.nxdl.xml:/ENTRY/definition):
+DEBUG: documentation (NXxrd.nxdl.xml:/ENTRY/definition):
+
+                Official NeXus NXDL schema to which this file conforms
+            
+DEBUG: 
+                Official NeXus NXDL schema to which this file conforms
+            
+documentation (NXmonopd.nxdl.xml:/ENTRY/definition):
+DEBUG: documentation (NXmonopd.nxdl.xml:/ENTRY/definition):
+ Official NeXus NXDL schema to which this file conforms 
+DEBUG:  Official NeXus NXDL schema to which this file conforms 
+documentation (NXentry.nxdl.xml:/definition):
+DEBUG: documentation (NXentry.nxdl.xml:/definition):
+
+			(alternate use: see same field in :ref:`NXsubentry` for preferred)
+			
+			Official NeXus NXDL schema to which this entry conforms which must be
+			the name of the NXDL file (case sensitive without the file extension)
+			that the NXDL schema is defined in. 
+			
+			For example the ``definition`` field for a file that conformed to the 
+			*NXarpes.nxdl.xml* definition must contain the string **NXarpes**.
+			
+			This field is provided so that :ref:`NXentry` can be the overlay position
+			in a NeXus data file for an application definition and its
+			set of groups, fields, and attributes.
+
+			*It is advised* to use :ref:`NXsubentry`, instead, as the overlay position.
+		
+DEBUG: 
+			(alternate use: see same field in :ref:`NXsubentry` for preferred)
+			
+			Official NeXus NXDL schema to which this entry conforms which must be
+			the name of the NXDL file (case sensitive without the file extension)
+			that the NXDL schema is defined in. 
+			
+			For example the ``definition`` field for a file that conformed to the 
+			*NXarpes.nxdl.xml* definition must contain the string **NXarpes**.
+			
+			This field is provided so that :ref:`NXentry` can be the overlay position
+			in a NeXus data file for an application definition and its
+			set of groups, fields, and attributes.
+
+			*It is advised* to use :ref:`NXsubentry`, instead, as the overlay position.
+		
+===== ATTRS (//entry/definition@URL)
+DEBUG: ===== ATTRS (//entry/definition@URL)
+value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e 
+DEBUG: value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e 
+classpath: ['NXentry', 'NX_CHAR']
+DEBUG: classpath: ['NXentry', 'NX_CHAR']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/definition
+NXxrd.nxdl.xml:/ENTRY/definition
+NXmonopd.nxdl.xml:/ENTRY/definition
+NXentry.nxdl.xml:/definition
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/definition
+NXxrd.nxdl.xml:/ENTRY/definition
+NXmonopd.nxdl.xml:/ENTRY/definition
+NXentry.nxdl.xml:/definition
+NXentry.nxdl.xml:/definition@URL - [NX_CHAR]
+DEBUG: NXentry.nxdl.xml:/definition@URL - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXentry.nxdl.xml:/definition/URL):
+DEBUG: documentation (NXentry.nxdl.xml:/definition/URL):
+URL of NXDL file
+DEBUG: URL of NXDL file
+===== ATTRS (//entry/definition@version)
+DEBUG: ===== ATTRS (//entry/definition@version)
+value: v2024.02.post1.dev1996+g6cfc2d2e 
+DEBUG: value: v2024.02.post1.dev1996+g6cfc2d2e 
+classpath: ['NXentry', 'NX_CHAR']
+DEBUG: classpath: ['NXentry', 'NX_CHAR']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/definition
+NXxrd.nxdl.xml:/ENTRY/definition
+NXmonopd.nxdl.xml:/ENTRY/definition
+NXentry.nxdl.xml:/definition
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/definition
+NXxrd.nxdl.xml:/ENTRY/definition
+NXmonopd.nxdl.xml:/ENTRY/definition
+NXentry.nxdl.xml:/definition
+NXentry.nxdl.xml:/definition@version - [NX_CHAR]
+DEBUG: NXentry.nxdl.xml:/definition@version - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXentry.nxdl.xml:/definition/version):
+DEBUG: documentation (NXentry.nxdl.xml:/definition/version):
+NXDL version number
+DEBUG: NXDL version number
+===== GROUP (//entry/experiment_config [NXxrd_pan::/NXentry/NXobject]): <HDF5 group "/entry/experiment_config" (1 members)>
+DEBUG: ===== GROUP (//entry/experiment_config [NXxrd_pan::/NXentry/NXobject]): <HDF5 group "/entry/experiment_config" (1 members)>
+classpath: ['NXentry', 'NXobject']
+DEBUG: classpath: ['NXentry', 'NXobject']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config
+NXobject.nxdl.xml:
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_config):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_config):
+
+                Collect user inputs e.g. name or path of the input file.
+            
+DEBUG: 
+                Collect user inputs e.g. name or path of the input file.
+            
+documentation (NXobject.nxdl.xml:):
+DEBUG: documentation (NXobject.nxdl.xml:):
+
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+DEBUG: 
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+===== ATTRS (//entry/experiment_config@NX_class)
+DEBUG: ===== ATTRS (//entry/experiment_config@NX_class)
+value: NXobject 
+DEBUG: value: NXobject 
+classpath: ['NXentry', 'NXobject']
+DEBUG: classpath: ['NXentry', 'NXobject']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config
+NXobject.nxdl.xml:
+@NX_class [NX_CHAR]
+DEBUG: @NX_class [NX_CHAR]
+
+DEBUG: 
+===== FIELD (//entry/experiment_config/count_time): <HDF5 dataset "count_time": shape (1,), type "<f8">
+DEBUG: ===== FIELD (//entry/experiment_config/count_time): <HDF5 dataset "count_time": shape (1,), type "<f8">
+value: [39.27] 
+DEBUG: value: [39.27] 
+classpath: ['NXentry', 'NXobject', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXobject', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config/count_time
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config/count_time
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_config/count_time):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_config/count_time):
+
+                    Total time of count.
+                
+DEBUG: 
+                    Total time of count.
+                
+===== ATTRS (//entry/experiment_config/count_time@units)
+DEBUG: ===== ATTRS (//entry/experiment_config/count_time@units)
+value: s 
+DEBUG: value: s 
+classpath: ['NXentry', 'NXobject', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXobject', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config/count_time
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config/count_time
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_config/count_time@units [NX_TIME]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/experiment_config/count_time@units [NX_TIME]
+===== GROUP (//entry/experiment_result [NXxrd_pan::/NXentry/NXdata]): <HDF5 group "/entry/experiment_result" (4 members)>
+DEBUG: ===== GROUP (//entry/experiment_result [NXxrd_pan::/NXentry/NXdata]): <HDF5 group "/entry/experiment_result" (4 members)>
+classpath: ['NXentry', 'NXdata']
+DEBUG: classpath: ['NXentry', 'NXdata']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_result):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_result):
+
+                All experiment results data such as scattering angle (2theta),
+                intensity, incident angle, scattering vector, etc will be stored here.
+            
+DEBUG: 
+                All experiment results data such as scattering angle (2theta),
+                intensity, incident angle, scattering vector, etc will be stored here.
+            
+documentation (NXxrd.nxdl.xml:/ENTRY/DATA):
+DEBUG: documentation (NXxrd.nxdl.xml:/ENTRY/DATA):
+
+DEBUG: 
+documentation (NXmonopd.nxdl.xml:/ENTRY/DATA):
+DEBUG: documentation (NXmonopd.nxdl.xml:/ENTRY/DATA):
+
+DEBUG: 
+documentation (NXentry.nxdl.xml:/DATA):
+DEBUG: documentation (NXentry.nxdl.xml:/DATA):
+
+			The data group
+
+			.. note:: Before the NIAC2016 meeting [#]_, at least one
+			   :ref:`NXdata` group was required in each :ref:`NXentry` group.
+			   At the NIAC2016 meeting, it was decided to make :ref:`NXdata`
+			   an optional group in :ref:`NXentry` groups for data files that
+			   do not use an application definition.
+			   It is recommended strongly that all NeXus data files provide
+			   a NXdata group.
+			   It is permissible to omit the NXdata group only when
+			   defining the default plot is not practical or possible
+			   from the available data.
+
+			   For example, neutron event data may not have anything that
+			   makes a useful plot without extensive processing.
+
+			   Certain application definitions override this decision and
+			   require an :ref:`NXdata` group
+			   in the :ref:`NXentry` group.  The ``minOccurs=0`` attribute
+			   in the application definition will indicate the
+			   :ref:`NXdata` group
+			   is optional, otherwise, it is required.
+
+			   .. [#] NIAC2016:
+			      https://www.nexusformat.org/NIAC2016.html,
+			      https://github.com/nexusformat/NIAC/issues/16
+
+		
+DEBUG: 
+			The data group
+
+			.. note:: Before the NIAC2016 meeting [#]_, at least one
+			   :ref:`NXdata` group was required in each :ref:`NXentry` group.
+			   At the NIAC2016 meeting, it was decided to make :ref:`NXdata`
+			   an optional group in :ref:`NXentry` groups for data files that
+			   do not use an application definition.
+			   It is recommended strongly that all NeXus data files provide
+			   a NXdata group.
+			   It is permissible to omit the NXdata group only when
+			   defining the default plot is not practical or possible
+			   from the available data.
+
+			   For example, neutron event data may not have anything that
+			   makes a useful plot without extensive processing.
+
+			   Certain application definitions override this decision and
+			   require an :ref:`NXdata` group
+			   in the :ref:`NXentry` group.  The ``minOccurs=0`` attribute
+			   in the application definition will indicate the
+			   :ref:`NXdata` group
+			   is optional, otherwise, it is required.
+
+			   .. [#] NIAC2016:
+			      https://www.nexusformat.org/NIAC2016.html,
+			      https://github.com/nexusformat/NIAC/issues/16
+
+		
+documentation (NXobject.nxdl.xml:/DATA):
+DEBUG: documentation (NXobject.nxdl.xml:/DATA):
+
+DEBUG: 
+documentation (NXdata.nxdl.xml:):
+DEBUG: documentation (NXdata.nxdl.xml:):
+
+		The :ref:`NXdata` class is designed to encapsulate all the information required for a set of data to be plotted.
+		NXdata groups contain plottable data (also referred to as *signals* or *dependent variables*) and their
+		associated axis coordinates (also referred to as *axes* or *independent variables*).
+
+		The actual names of the :ref:`DATA </NXdata/DATA-field>` and :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+		can be chosen :ref:`freely <validItemName>`, as indicated by the upper case (this is a common convention in all NeXus classes).
+		
+		.. note:: ``NXdata`` provides data and coordinates to be plotted but
+			does not describe how the data is to be plotted or even the dimensionality of the plot.
+			https://www.nexusformat.org/NIAC2018Minutes.html#nxdata-plottype--attribute
+
+		.. include:: data/index.rst
+		   :start-line: 1
+
+		.. admonition:: Example of a simple curve plot
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data"
+				  @axes = ["x"]
+				  data: float[100]
+				  x: float[100]
+
+		More complex cases are supported
+
+		* histogram data: ``x`` has one more value than ``data``.
+		* alternative axes: instead of a single ``x`` axis you can have several axes, one of which being the default.
+		* signals with more than one dimension: ``data`` could be 2D with axes ``x`` and ``y`` along each dimension.
+		* axes with more than one dimension: ``data`` could be 2D with axes ``x`` and ``y`` also being 2D, providing a
+		  unique ``(x, y)`` coordinate for each ``data`` point.
+
+		**Signals:**
+
+		.. index:: plotting
+
+		.. admonition:: Defined by
+
+			* :ref:`DATA </NXdata/DATA-field>` fields
+			* the :ref:`signal </NXdata@signal-attribute>` attribute
+			* the :ref:`auxiliary_signals</NXdata@auxiliary_signals-attribute>` attribute
+
+		The :ref:`DATA </NXdata/DATA-field>` fields contain the signal values to be plotted. The name of the field
+		to be used as the *default plot signal* is provided by the :ref:`signal </NXdata@signal-attribute>` attribute.
+		The names of the fields to be used as *secondary plot signals* are provided by the
+		:ref:`auxiliary_signals</NXdata@auxiliary_signals-attribute>` attribute.
+
+		.. admonition:: An example with three signals, one of which being the default
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data1"
+				  @auxiliary_signals = ["data2", "data3"]
+				  data1: float[10,20,30]  # the default signal
+				  data2: float[10,20,30]
+				  data3: float[10,20,30]
+
+		**Axes:**
+
+		.. index:: axes (attribute)
+		.. index:: coordinates
+
+		.. admonition:: Defined by
+
+			* :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+			* the :ref:`axes </NXdata@axes-attribute>` attribute
+			* :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` attributes
+
+		The fields and attributes are defined as follows
+
+		1. The :ref:`AXISNAME </NXdata/AXISNAME-field>` fields contain the axis coordinates associated with the signal values.
+
+		2. The :ref:`axes </NXdata@axes-attribute>` attribute provides the names of the :ref:`AXISNAME </NXdata/AXISNAME-field>`
+		   fields to be used as the `default axis` for each dimension of the :ref:`DATA </NXdata/DATA-field>` fields.
+
+		3. The :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` attributes describe the :ref:`DATA </NXdata/DATA-field>`
+		   dimensions spanned by the corresponding :ref:`AXISNAME </NXdata/AXISNAME-field>` fields.
+
+		The fields and attributes have the following constraints
+
+		1. The length of the :ref:`axes </NXdata@axes-attribute>` attribute must be equal to the rank of the :ref:`DATA </NXdata/DATA-field>`
+		   fields. When a particular dimension has no default axis, the string “.” is used in that position.
+
+		2. The number of values in :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` must be equal to the rank of the corresponding
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field.
+
+		3. When :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` is missing for a given
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field, the positions of the :ref:`AXISNAME </NXdata/AXISNAME-field>`
+		   field name in the :ref:`axes </NXdata@axes-attribute>` attribute are used.
+
+		4. When :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` is the same as the indices of "AXISNAME" in the
+		   :ref:`axes </NXdata@axes-attribute>` attribute, there is no need to provide
+		   :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>`.
+
+		5. The indices of "AXISNAME" in the :ref:`axes </NXdata@axes-attribute>` attribute must be a subset of
+		   :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>`.
+
+		6. The shape of an :ref:`AXISNAME </NXdata/AXISNAME-field>` field must correspond to the shape of the
+		   :ref:`DATA </NXdata/DATA-field>` dimensions it spans. This means that for each dimension ``i`` in ``[0, AXISNAME.ndim)``
+		   spanned by axis field :ref:`AXISNAME </NXdata/AXISNAME-field>`, the number of axis values ``AXISNAME.shape[i]``
+		   along dimension ``i`` must be equal to the number of data points ``DATA.shape[AXISNAME_indices[i]]`` along dimension ``i``
+		   or one more than the number of data points ``DATA.shape[AXISNAME_indices[i]]+1`` in case the
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field contains histogram bin edges along dimension ``i``.
+
+		Highlight consequences of these constraints
+
+		1. An :ref:`AXISNAME </NXdata/AXISNAME-field>` field can have more than one dimension and can therefore span
+		   more than one :ref:`DATA </NXdata/DATA-field>` dimension. Conversely, one :ref:`DATA </NXdata/DATA-field>` dimension
+		   can be spanned by more than one :ref:`AXISNAME </NXdata/AXISNAME-field>` field. The default axis name (if any)
+		   of each dimension can be found in the :ref:`axes </NXdata@axes-attribute>` attribute.
+
+		2. A list of all available axes is not provided directly. All strings in the :ref:`axes </NXdata@axes-attribute>` attribute
+		   (excluding the “.” string) are axis field names. In addition the prefix of an attribute ending with the string "_indices" is also
+		   an axis field name.
+
+		.. admonition:: The following example covers all axes features supported (see :ref:`sphx_glr_classes_base_classes_data_plot_fscan2d.py`)
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data"
+				  @axes = ["x_set", "y_set", "."]  # default axes for all three dimensions
+				  @x_encoder_indices = [0, 1]
+				  @y_encoder_indices = 1           # or [1]
+				  data: float[10,7,1024]
+				  x_encoder: float[11,7]           # coordinates along the first and second dimensions
+				  y_encoder: float[7]              # coordinates along the second dimension
+				  x_set: float[10]                 # default coordinates along the first dimension
+				  y_set: float[7]                  # default coordinates along the second dimension
+
+		**Uncertainties:**
+
+		.. admonition:: Defined by
+
+			* :ref:`FIELDNAME_errors </NXdata/FIELDNAME_errors-field>` fields
+
+		Standard deviations on data values as well as coordinates can be provided by
+		:ref:`FIELDNAME_errors </NXdata/FIELDNAME_errors-field>` fields where ``FIELDNAME`` is the name of a
+		:ref:`DATA </NXdata/DATA-field>` field or an :ref:`AXISNAME </NXdata/AXISNAME-field>` field.
+
+		.. admonition:: An example of uncertainties on the signal, auxiliary signals and axis coordinates
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data1"
+				  @auxiliary_signals = ["data2", "data3"]
+				  @axes = ["x", ".", "z"]
+				  data1: float[10,20,30]
+				  data2: float[10,20,30]
+				  data3: float[10,20,30]
+				  x: float[10]
+				  z: float[30]
+				  data1_errors: float[10,20,30]
+				  data2_errors: float[10,20,30]
+				  data3_errors: float[10,20,30]
+				  x_errors: float[10]
+				  z_errors: float[30]
+
+	
+DEBUG: 
+		The :ref:`NXdata` class is designed to encapsulate all the information required for a set of data to be plotted.
+		NXdata groups contain plottable data (also referred to as *signals* or *dependent variables*) and their
+		associated axis coordinates (also referred to as *axes* or *independent variables*).
+
+		The actual names of the :ref:`DATA </NXdata/DATA-field>` and :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+		can be chosen :ref:`freely <validItemName>`, as indicated by the upper case (this is a common convention in all NeXus classes).
+		
+		.. note:: ``NXdata`` provides data and coordinates to be plotted but
+			does not describe how the data is to be plotted or even the dimensionality of the plot.
+			https://www.nexusformat.org/NIAC2018Minutes.html#nxdata-plottype--attribute
+
+		.. include:: data/index.rst
+		   :start-line: 1
+
+		.. admonition:: Example of a simple curve plot
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data"
+				  @axes = ["x"]
+				  data: float[100]
+				  x: float[100]
+
+		More complex cases are supported
+
+		* histogram data: ``x`` has one more value than ``data``.
+		* alternative axes: instead of a single ``x`` axis you can have several axes, one of which being the default.
+		* signals with more than one dimension: ``data`` could be 2D with axes ``x`` and ``y`` along each dimension.
+		* axes with more than one dimension: ``data`` could be 2D with axes ``x`` and ``y`` also being 2D, providing a
+		  unique ``(x, y)`` coordinate for each ``data`` point.
+
+		**Signals:**
+
+		.. index:: plotting
+
+		.. admonition:: Defined by
+
+			* :ref:`DATA </NXdata/DATA-field>` fields
+			* the :ref:`signal </NXdata@signal-attribute>` attribute
+			* the :ref:`auxiliary_signals</NXdata@auxiliary_signals-attribute>` attribute
+
+		The :ref:`DATA </NXdata/DATA-field>` fields contain the signal values to be plotted. The name of the field
+		to be used as the *default plot signal* is provided by the :ref:`signal </NXdata@signal-attribute>` attribute.
+		The names of the fields to be used as *secondary plot signals* are provided by the
+		:ref:`auxiliary_signals</NXdata@auxiliary_signals-attribute>` attribute.
+
+		.. admonition:: An example with three signals, one of which being the default
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data1"
+				  @auxiliary_signals = ["data2", "data3"]
+				  data1: float[10,20,30]  # the default signal
+				  data2: float[10,20,30]
+				  data3: float[10,20,30]
+
+		**Axes:**
+
+		.. index:: axes (attribute)
+		.. index:: coordinates
+
+		.. admonition:: Defined by
+
+			* :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+			* the :ref:`axes </NXdata@axes-attribute>` attribute
+			* :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` attributes
+
+		The fields and attributes are defined as follows
+
+		1. The :ref:`AXISNAME </NXdata/AXISNAME-field>` fields contain the axis coordinates associated with the signal values.
+
+		2. The :ref:`axes </NXdata@axes-attribute>` attribute provides the names of the :ref:`AXISNAME </NXdata/AXISNAME-field>`
+		   fields to be used as the `default axis` for each dimension of the :ref:`DATA </NXdata/DATA-field>` fields.
+
+		3. The :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` attributes describe the :ref:`DATA </NXdata/DATA-field>`
+		   dimensions spanned by the corresponding :ref:`AXISNAME </NXdata/AXISNAME-field>` fields.
+
+		The fields and attributes have the following constraints
+
+		1. The length of the :ref:`axes </NXdata@axes-attribute>` attribute must be equal to the rank of the :ref:`DATA </NXdata/DATA-field>`
+		   fields. When a particular dimension has no default axis, the string “.” is used in that position.
+
+		2. The number of values in :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` must be equal to the rank of the corresponding
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field.
+
+		3. When :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` is missing for a given
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field, the positions of the :ref:`AXISNAME </NXdata/AXISNAME-field>`
+		   field name in the :ref:`axes </NXdata@axes-attribute>` attribute are used.
+
+		4. When :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` is the same as the indices of "AXISNAME" in the
+		   :ref:`axes </NXdata@axes-attribute>` attribute, there is no need to provide
+		   :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>`.
+
+		5. The indices of "AXISNAME" in the :ref:`axes </NXdata@axes-attribute>` attribute must be a subset of
+		   :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>`.
+
+		6. The shape of an :ref:`AXISNAME </NXdata/AXISNAME-field>` field must correspond to the shape of the
+		   :ref:`DATA </NXdata/DATA-field>` dimensions it spans. This means that for each dimension ``i`` in ``[0, AXISNAME.ndim)``
+		   spanned by axis field :ref:`AXISNAME </NXdata/AXISNAME-field>`, the number of axis values ``AXISNAME.shape[i]``
+		   along dimension ``i`` must be equal to the number of data points ``DATA.shape[AXISNAME_indices[i]]`` along dimension ``i``
+		   or one more than the number of data points ``DATA.shape[AXISNAME_indices[i]]+1`` in case the
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field contains histogram bin edges along dimension ``i``.
+
+		Highlight consequences of these constraints
+
+		1. An :ref:`AXISNAME </NXdata/AXISNAME-field>` field can have more than one dimension and can therefore span
+		   more than one :ref:`DATA </NXdata/DATA-field>` dimension. Conversely, one :ref:`DATA </NXdata/DATA-field>` dimension
+		   can be spanned by more than one :ref:`AXISNAME </NXdata/AXISNAME-field>` field. The default axis name (if any)
+		   of each dimension can be found in the :ref:`axes </NXdata@axes-attribute>` attribute.
+
+		2. A list of all available axes is not provided directly. All strings in the :ref:`axes </NXdata@axes-attribute>` attribute
+		   (excluding the “.” string) are axis field names. In addition the prefix of an attribute ending with the string "_indices" is also
+		   an axis field name.
+
+		.. admonition:: The following example covers all axes features supported (see :ref:`sphx_glr_classes_base_classes_data_plot_fscan2d.py`)
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data"
+				  @axes = ["x_set", "y_set", "."]  # default axes for all three dimensions
+				  @x_encoder_indices = [0, 1]
+				  @y_encoder_indices = 1           # or [1]
+				  data: float[10,7,1024]
+				  x_encoder: float[11,7]           # coordinates along the first and second dimensions
+				  y_encoder: float[7]              # coordinates along the second dimension
+				  x_set: float[10]                 # default coordinates along the first dimension
+				  y_set: float[7]                  # default coordinates along the second dimension
+
+		**Uncertainties:**
+
+		.. admonition:: Defined by
+
+			* :ref:`FIELDNAME_errors </NXdata/FIELDNAME_errors-field>` fields
+
+		Standard deviations on data values as well as coordinates can be provided by
+		:ref:`FIELDNAME_errors </NXdata/FIELDNAME_errors-field>` fields where ``FIELDNAME`` is the name of a
+		:ref:`DATA </NXdata/DATA-field>` field or an :ref:`AXISNAME </NXdata/AXISNAME-field>` field.
+
+		.. admonition:: An example of uncertainties on the signal, auxiliary signals and axis coordinates
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data1"
+				  @auxiliary_signals = ["data2", "data3"]
+				  @axes = ["x", ".", "z"]
+				  data1: float[10,20,30]
+				  data2: float[10,20,30]
+				  data3: float[10,20,30]
+				  x: float[10]
+				  z: float[30]
+				  data1_errors: float[10,20,30]
+				  data2_errors: float[10,20,30]
+				  data3_errors: float[10,20,30]
+				  x_errors: float[10]
+				  z_errors: float[30]
+
+	
+documentation (NXobject.nxdl.xml:):
+DEBUG: documentation (NXobject.nxdl.xml:):
+
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+DEBUG: 
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+===== ATTRS (//entry/experiment_result@NX_class)
+DEBUG: ===== ATTRS (//entry/experiment_result@NX_class)
+value: NXdata 
+DEBUG: value: NXdata 
+classpath: ['NXentry', 'NXdata']
+DEBUG: classpath: ['NXentry', 'NXdata']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+@NX_class [NX_CHAR]
+DEBUG: @NX_class [NX_CHAR]
+
+DEBUG: 
+===== ATTRS (//entry/experiment_result@axes)
+DEBUG: ===== ATTRS (//entry/experiment_result@axes)
+value: two_theta 
+DEBUG: value: two_theta 
+classpath: ['NXentry', 'NXdata']
+DEBUG: classpath: ['NXentry', 'NXdata']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+NXdata.nxdl.xml:@axes - [NX_CHAR]
+DEBUG: NXdata.nxdl.xml:@axes - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXdata.nxdl.xml:/axes):
+DEBUG: documentation (NXdata.nxdl.xml:/axes):
+
+			.. index:: plotting
+
+			The ``axes`` attribute is a list of strings which are the names of the :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+			to be used as the default axis along every :ref:`DATA </NXdata/DATA-field>` dimension. As a result the length must
+			be equal to the rank of the :ref:`DATA </NXdata/DATA-field>` fields. The string "." can be used for
+			dimensions without a default axis.
+
+			.. note::  When ``axes`` contains multiple strings, it must be saved as an actual array
+				of strings and not a single comma separated string.
+		
+DEBUG: 
+			.. index:: plotting
+
+			The ``axes`` attribute is a list of strings which are the names of the :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+			to be used as the default axis along every :ref:`DATA </NXdata/DATA-field>` dimension. As a result the length must
+			be equal to the rank of the :ref:`DATA </NXdata/DATA-field>` fields. The string "." can be used for
+			dimensions without a default axis.
+
+			.. note::  When ``axes`` contains multiple strings, it must be saved as an actual array
+				of strings and not a single comma separated string.
+		
+===== ATTRS (//entry/experiment_result@signal)
+DEBUG: ===== ATTRS (//entry/experiment_result@signal)
+value: intensity 
+DEBUG: value: intensity 
+classpath: ['NXentry', 'NXdata']
+DEBUG: classpath: ['NXentry', 'NXdata']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+NXdata.nxdl.xml:@signal - [NX_CHAR]
+DEBUG: NXdata.nxdl.xml:@signal - [NX_CHAR]
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXdata.nxdl.xml:/signal):
+DEBUG: documentation (NXdata.nxdl.xml:/signal):
+
+			.. index:: find the default plottable data
+			.. index:: plotting
+			.. index:: signal attribute value
+			
+			The value is the :ref:`name <validItemName>` of the signal that contains
+			the default plottable data. This field or link *must* exist and be a direct child
+			of this NXdata group.
+			
+			It is recommended (as of NIAC2014) to use this attribute
+			rather than adding a signal attribute to the field.
+			See https://www.nexusformat.org/2014_How_to_find_default_data.html
+			for a summary of the discussion.
+		
+DEBUG: 
+			.. index:: find the default plottable data
+			.. index:: plotting
+			.. index:: signal attribute value
+			
+			The value is the :ref:`name <validItemName>` of the signal that contains
+			the default plottable data. This field or link *must* exist and be a direct child
+			of this NXdata group.
+			
+			It is recommended (as of NIAC2014) to use this attribute
+			rather than adding a signal attribute to the field.
+			See https://www.nexusformat.org/2014_How_to_find_default_data.html
+			for a summary of the discussion.
+		
+===== FIELD (//entry/experiment_result/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
+DEBUG: ===== FIELD (//entry/experiment_result/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
+value: [1305. 1310. 1345. ...  170.  189.  171.] 
+DEBUG: value: [1305. 1310. 1345. ...  170.  189.  171.] 
+classpath: ['NXentry', 'NXdata', 'NX_NUMBER']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_NUMBER']
+classes:
+NXdata.nxdl.xml:/DATA
+DEBUG: classes:
+NXdata.nxdl.xml:/DATA
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+Dataset referenced as NXdata SIGNAL
+DEBUG: Dataset referenced as NXdata SIGNAL
+documentation (NXdata.nxdl.xml:/DATA):
+DEBUG: documentation (NXdata.nxdl.xml:/DATA):
+
+			.. index:: plotting
+
+			Data values to be used as the NeXus *plottable data*. As the upper case ``DATA``
+			indicates, the names of the ``DATA`` fields can be chosen :ref:`freely <validItemName>`. The :ref:`signal attribute </NXdata@signal-attribute>`
+			and :ref:`auxiliary_signals attribute</NXdata@auxiliary_signals-attribute>` can be used to find all datasets in the ``NXdata``
+			that contain data values.
+
+			The maximum rank is ``32`` for compatibility with backend file formats.
+		
+DEBUG: 
+			.. index:: plotting
+
+			Data values to be used as the NeXus *plottable data*. As the upper case ``DATA``
+			indicates, the names of the ``DATA`` fields can be chosen :ref:`freely <validItemName>`. The :ref:`signal attribute </NXdata@signal-attribute>`
+			and :ref:`auxiliary_signals attribute</NXdata@auxiliary_signals-attribute>` can be used to find all datasets in the ``NXdata``
+			that contain data values.
+
+			The maximum rank is ``32`` for compatibility with backend file formats.
+		
+===== FIELD (//entry/experiment_result/omega): <HDF5 dataset "omega": shape (5027,), type "<f8">
+DEBUG: ===== FIELD (//entry/experiment_result/omega): <HDF5 dataset "omega": shape (5027,), type "<f8">
+value: [ 2.00328257  2.00984771  2.01641285 ... 34.98655266 34.9931178 ...
+DEBUG: value: [ 2.00328257  2.00984771  2.01641285 ... 34.98655266 34.9931178 ...
+classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega):
+
+                    Incident angle of the diffractogram.
+                
+DEBUG: 
+                    Incident angle of the diffractogram.
+                
+===== ATTRS (//entry/experiment_result/omega@units)
+DEBUG: ===== ATTRS (//entry/experiment_result/omega@units)
+value: deg 
+DEBUG: value: deg 
+classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega@units [NX_ANGLE]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega@units [NX_ANGLE]
+===== FIELD (//entry/experiment_result/phi): <HDF5 dataset "phi": shape (1,), type "<f8">
+DEBUG: ===== FIELD (//entry/experiment_result/phi): <HDF5 dataset "phi": shape (1,), type "<f8">
+value: [260.6] 
+DEBUG: value: [260.6] 
+classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi):
+
+                    The phi range of the diffractogram.
+                
+DEBUG: 
+                    The phi range of the diffractogram.
+                
+===== ATTRS (//entry/experiment_result/phi@units)
+DEBUG: ===== ATTRS (//entry/experiment_result/phi@units)
+value: deg 
+DEBUG: value: deg 
+classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi@units [NX_ANGLE]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi@units [NX_ANGLE]
+===== FIELD (//entry/experiment_result/two_theta): <HDF5 dataset "two_theta": shape (5027,), type "<f8">
+DEBUG: ===== FIELD (//entry/experiment_result/two_theta): <HDF5 dataset "two_theta": shape (5027,), type "<f8">
+value: [ 4.00656514  4.01969542  4.03282571 ... 69.9731053  69.98623559 ...
+DEBUG: value: [ 4.00656514  4.01969542  4.03282571 ... 69.9731053  69.98623559 ...
+classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/two_theta
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/two_theta
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/two_theta):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/two_theta):
+
+                    Two-theta (scattering angle) of the diffractogram.
+                
+DEBUG: 
+                    Two-theta (scattering angle) of the diffractogram.
+                
+===== ATTRS (//entry/experiment_result/two_theta@units)
+DEBUG: ===== ATTRS (//entry/experiment_result/two_theta@units)
+value: deg 
+DEBUG: value: deg 
+classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/two_theta
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/two_theta
+NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/two_theta@units [NX_ANGLE]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/two_theta@units [NX_ANGLE]
+===== GROUP (//entry/instrument [NXxrd_pan::/NXentry/NXinstrument]): <HDF5 group "/entry/instrument" (2 members)>
+DEBUG: ===== GROUP (//entry/instrument [NXxrd_pan::/NXentry/NXinstrument]): <HDF5 group "/entry/instrument" (2 members)>
+classpath: ['NXentry', 'NXinstrument']
+DEBUG: classpath: ['NXentry', 'NXinstrument']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT
+NXxrd.nxdl.xml:/ENTRY/INSTRUMENT
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT
+NXentry.nxdl.xml:/INSTRUMENT
+NXinstrument.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT
+NXxrd.nxdl.xml:/ENTRY/INSTRUMENT
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT
+NXentry.nxdl.xml:/INSTRUMENT
+NXinstrument.nxdl.xml:
+NXobject.nxdl.xml:
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT):
+
+DEBUG: 
+documentation (NXxrd.nxdl.xml:/ENTRY/INSTRUMENT):
+DEBUG: documentation (NXxrd.nxdl.xml:/ENTRY/INSTRUMENT):
+
+DEBUG: 
+documentation (NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT):
+DEBUG: documentation (NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT):
+
+DEBUG: 
+documentation (NXentry.nxdl.xml:/INSTRUMENT):
+DEBUG: documentation (NXentry.nxdl.xml:/INSTRUMENT):
+
+DEBUG: 
+documentation (NXinstrument.nxdl.xml:):
+DEBUG: documentation (NXinstrument.nxdl.xml:):
+
+		Collection of the components of the instrument or beamline.
+		
+		Template of instrument descriptions comprising various beamline components. 
+		Each component will also be a NeXus group defined by its distance from the 
+		sample. Negative distances represent beamline components that are before the 
+		sample while positive distances represent components that are after the sample. 
+		This device allows the unique identification of beamline components in a way 
+		that is valid for both reactor and pulsed instrumentation.
+	
+DEBUG: 
+		Collection of the components of the instrument or beamline.
+		
+		Template of instrument descriptions comprising various beamline components. 
+		Each component will also be a NeXus group defined by its distance from the 
+		sample. Negative distances represent beamline components that are before the 
+		sample while positive distances represent components that are after the sample. 
+		This device allows the unique identification of beamline components in a way 
+		that is valid for both reactor and pulsed instrumentation.
+	
+documentation (NXobject.nxdl.xml:):
+DEBUG: documentation (NXobject.nxdl.xml:):
+
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+DEBUG: 
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+===== ATTRS (//entry/instrument@NX_class)
+DEBUG: ===== ATTRS (//entry/instrument@NX_class)
+value: NXinstrument 
+DEBUG: value: NXinstrument 
+classpath: ['NXentry', 'NXinstrument']
+DEBUG: classpath: ['NXentry', 'NXinstrument']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT
+NXxrd.nxdl.xml:/ENTRY/INSTRUMENT
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT
+NXentry.nxdl.xml:/INSTRUMENT
+NXinstrument.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT
+NXxrd.nxdl.xml:/ENTRY/INSTRUMENT
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT
+NXentry.nxdl.xml:/INSTRUMENT
+NXinstrument.nxdl.xml:
+NXobject.nxdl.xml:
+@NX_class [NX_CHAR]
+DEBUG: @NX_class [NX_CHAR]
+
+DEBUG: 
+===== GROUP (//entry/instrument/detector [NXxrd_pan::/NXentry/NXinstrument/NXdetector]): <HDF5 group "/entry/instrument/detector" (2 members)>
+DEBUG: ===== GROUP (//entry/instrument/detector [NXxrd_pan::/NXentry/NXinstrument/NXdetector]): <HDF5 group "/entry/instrument/detector" (2 members)>
+classpath: ['NXentry', 'NXinstrument', 'NXdetector']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXdetector']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXxrd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXinstrument.nxdl.xml:/DETECTOR
+NXdetector.nxdl.xml:
+NXcomponent.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXxrd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXinstrument.nxdl.xml:/DETECTOR
+NXdetector.nxdl.xml:
+NXcomponent.nxdl.xml:
+NXobject.nxdl.xml:
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR):
+
+DEBUG: 
+documentation (NXxrd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR):
+DEBUG: documentation (NXxrd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR):
+
+DEBUG: 
+documentation (NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR):
+DEBUG: documentation (NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR):
+
+DEBUG: 
+documentation (NXinstrument.nxdl.xml:/DETECTOR):
+DEBUG: documentation (NXinstrument.nxdl.xml:/DETECTOR):
+
+DEBUG: 
+documentation (NXdetector.nxdl.xml:):
+DEBUG: documentation (NXdetector.nxdl.xml:):
+
+    A detector, detector bank, or multidetector.
+  
+DEBUG: 
+    A detector, detector bank, or multidetector.
+  
+documentation (NXcomponent.nxdl.xml:):
+DEBUG: documentation (NXcomponent.nxdl.xml:):
+
+         Base class for components of an instrument - real ones or simulated ones.
+    
+DEBUG: 
+         Base class for components of an instrument - real ones or simulated ones.
+    
+documentation (NXobject.nxdl.xml:):
+DEBUG: documentation (NXobject.nxdl.xml:):
+
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+DEBUG: 
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+===== ATTRS (//entry/instrument/detector@NX_class)
+DEBUG: ===== ATTRS (//entry/instrument/detector@NX_class)
+value: NXdetector 
+DEBUG: value: NXdetector 
+classpath: ['NXentry', 'NXinstrument', 'NXdetector']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXdetector']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXxrd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXinstrument.nxdl.xml:/DETECTOR
+NXdetector.nxdl.xml:
+NXcomponent.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXxrd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR
+NXinstrument.nxdl.xml:/DETECTOR
+NXdetector.nxdl.xml:
+NXcomponent.nxdl.xml:
+NXobject.nxdl.xml:
+@NX_class [NX_CHAR]
+DEBUG: @NX_class [NX_CHAR]
+
+DEBUG: 
+===== FIELD (//entry/instrument/detector/scan_axis): <HDF5 dataset "scan_axis": shape (), type "|O">
+DEBUG: ===== FIELD (//entry/instrument/detector/scan_axis): <HDF5 dataset "scan_axis": shape (), type "|O">
+value: Gonio 
+DEBUG: value: Gonio 
+classpath: ['NXentry', 'NXinstrument', 'NXdetector', 'NX_CHAR']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXdetector', 'NX_CHAR']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR/scan_axis
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR/scan_axis
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR/scan_axis):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR/scan_axis):
+
+                        Axis scanned.
+                    
+DEBUG: 
+                        Axis scanned.
+                    
+===== FIELD (//entry/instrument/detector/scan_mode): <HDF5 dataset "scan_mode": shape (), type "|O">
+DEBUG: ===== FIELD (//entry/instrument/detector/scan_mode): <HDF5 dataset "scan_mode": shape (), type "|O">
+value: line 
+DEBUG: value: line 
+classpath: ['NXentry', 'NXinstrument', 'NXdetector', 'NX_CHAR']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXdetector', 'NX_CHAR']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR/scan_mode
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR/scan_mode
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR/scan_mode):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/DETECTOR/scan_mode):
+
+                        Mode of scan.
+                    
+DEBUG: 
+                        Mode of scan.
+                    
+===== GROUP (//entry/instrument/source [NXxrd_pan::/NXentry/NXinstrument/NXsource]): <HDF5 group "/entry/instrument/source" (7 members)>
+DEBUG: ===== GROUP (//entry/instrument/source [NXxrd_pan::/NXentry/NXinstrument/NXsource]): <HDF5 group "/entry/instrument/source" (7 members)>
+classpath: ['NXentry', 'NXinstrument', 'NXsource']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE
+NXinstrument.nxdl.xml:/SOURCE
+NXsource.nxdl.xml:
+NXcomponent.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE
+NXinstrument.nxdl.xml:/SOURCE
+NXsource.nxdl.xml:
+NXcomponent.nxdl.xml:
+NXobject.nxdl.xml:
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE):
+
+DEBUG: 
+documentation (NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE):
+DEBUG: documentation (NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE):
+
+DEBUG: 
+documentation (NXinstrument.nxdl.xml:/SOURCE):
+DEBUG: documentation (NXinstrument.nxdl.xml:/SOURCE):
+
+DEBUG: 
+documentation (NXsource.nxdl.xml:):
+DEBUG: documentation (NXsource.nxdl.xml:):
+
+		Radiation source emitting a beam.
+
+		Examples include particle sources (electrons, neutrons, protons) or sources for electromagnetic radiation (photons).
+		This base class can also be used to describe neutron or x-ray storage ring/facilities.
+   
+DEBUG: 
+		Radiation source emitting a beam.
+
+		Examples include particle sources (electrons, neutrons, protons) or sources for electromagnetic radiation (photons).
+		This base class can also be used to describe neutron or x-ray storage ring/facilities.
+   
+documentation (NXcomponent.nxdl.xml:):
+DEBUG: documentation (NXcomponent.nxdl.xml:):
+
+         Base class for components of an instrument - real ones or simulated ones.
+    
+DEBUG: 
+         Base class for components of an instrument - real ones or simulated ones.
+    
+documentation (NXobject.nxdl.xml:):
+DEBUG: documentation (NXobject.nxdl.xml:):
+
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+DEBUG: 
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+===== ATTRS (//entry/instrument/source@NX_class)
+DEBUG: ===== ATTRS (//entry/instrument/source@NX_class)
+value: NXsource 
+DEBUG: value: NXsource 
+classpath: ['NXentry', 'NXinstrument', 'NXsource']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE
+NXinstrument.nxdl.xml:/SOURCE
+NXsource.nxdl.xml:
+NXcomponent.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE
+NXmonopd.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE
+NXinstrument.nxdl.xml:/SOURCE
+NXsource.nxdl.xml:
+NXcomponent.nxdl.xml:
+NXobject.nxdl.xml:
+@NX_class [NX_CHAR]
+DEBUG: @NX_class [NX_CHAR]
+
+DEBUG: 
+===== FIELD (//entry/instrument/source/k_alpha_one): <HDF5 dataset "k_alpha_one": shape (), type "<f8">
+DEBUG: ===== FIELD (//entry/instrument/source/k_alpha_one): <HDF5 dataset "k_alpha_one": shape (), type "<f8">
+value: 1.540598 
+DEBUG: value: 1.540598 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one):
+
+                        Wavelength of the K\u03b1 1 line.
+                    
+DEBUG: 
+                        Wavelength of the K\u03b1 1 line.
+                    
+===== ATTRS (//entry/instrument/source/k_alpha_one@units)
+DEBUG: ===== ATTRS (//entry/instrument/source/k_alpha_one@units)
+value: Å 
+DEBUG: value: Å 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one@units [NX_WAVELENGTH]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one@units [NX_WAVELENGTH]
+===== ATTRS (//entry/instrument/source/k_alpha_one@units_custom)
+DEBUG: ===== ATTRS (//entry/instrument/source/k_alpha_one@units_custom)
+value: True 
+DEBUG: value: True 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one
+@units_custom - IS NOT IN SCHEMA
+DEBUG: @units_custom - IS NOT IN SCHEMA
+
+DEBUG: 
+===== FIELD (//entry/instrument/source/k_alpha_two): <HDF5 dataset "k_alpha_two": shape (), type "<f8">
+DEBUG: ===== FIELD (//entry/instrument/source/k_alpha_two): <HDF5 dataset "k_alpha_two": shape (), type "<f8">
+value: 1.544426 
+DEBUG: value: 1.544426 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two):
+
+                        Wavelength of the K\u03b1 2 line.
+                    
+DEBUG: 
+                        Wavelength of the K\u03b1 2 line.
+                    
+===== ATTRS (//entry/instrument/source/k_alpha_two@units)
+DEBUG: ===== ATTRS (//entry/instrument/source/k_alpha_two@units)
+value: Å 
+DEBUG: value: Å 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two@units [NX_WAVELENGTH]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two@units [NX_WAVELENGTH]
+===== ATTRS (//entry/instrument/source/k_alpha_two@units_custom)
+DEBUG: ===== ATTRS (//entry/instrument/source/k_alpha_two@units_custom)
+value: True 
+DEBUG: value: True 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two
+@units_custom - IS NOT IN SCHEMA
+DEBUG: @units_custom - IS NOT IN SCHEMA
+
+DEBUG: 
+===== FIELD (//entry/instrument/source/kbeta): <HDF5 dataset "kbeta": shape (), type "<f8">
+DEBUG: ===== FIELD (//entry/instrument/source/kbeta): <HDF5 dataset "kbeta": shape (), type "<f8">
+value: 1.39225 
+DEBUG: value: 1.39225 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/kbeta
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/kbeta
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/kbeta):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/kbeta):
+
+                        Wavelength of the K\u00df line.
+                    
+DEBUG: 
+                        Wavelength of the K\u00df line.
+                    
+===== FIELD (//entry/instrument/source/ratio_k_alphatwo_k_alphaone): <HDF5 dataset "ratio_k_alphatwo_k_alphaone": shape (), type "<f8">
+DEBUG: ===== FIELD (//entry/instrument/source/ratio_k_alphatwo_k_alphaone): <HDF5 dataset "ratio_k_alphatwo_k_alphaone": shape (), type "<f8">
+value: 0.5 
+DEBUG: value: 0.5 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone):
+
+                        K\u03b1 2/K\u03b1 1 intensity ratio.
+                    
+DEBUG: 
+                        K\u03b1 2/K\u03b1 1 intensity ratio.
+                    
+===== ATTRS (//entry/instrument/source/ratio_k_alphatwo_k_alphaone@units)
+DEBUG: ===== ATTRS (//entry/instrument/source/ratio_k_alphatwo_k_alphaone@units)
+value:  
+DEBUG: value:  
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone@units [NX_DIMENSIONLESS]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone@units [NX_DIMENSIONLESS]
+===== FIELD (//entry/instrument/source/xray_tube_current): <HDF5 dataset "xray_tube_current": shape (), type "<f8">
+DEBUG: ===== FIELD (//entry/instrument/source/xray_tube_current): <HDF5 dataset "xray_tube_current": shape (), type "<f8">
+value: 40.0 
+DEBUG: value: 40.0 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current):
+
+                        Current of the X-ray tube.
+                    
+DEBUG: 
+                        Current of the X-ray tube.
+                    
+===== ATTRS (//entry/instrument/source/xray_tube_current@units)
+DEBUG: ===== ATTRS (//entry/instrument/source/xray_tube_current@units)
+value: mA 
+DEBUG: value: mA 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current@units [NX_CURRENT]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current@units [NX_CURRENT]
+===== FIELD (//entry/instrument/source/xray_tube_material): <HDF5 dataset "xray_tube_material": shape (), type "|O">
+DEBUG: ===== FIELD (//entry/instrument/source/xray_tube_material): <HDF5 dataset "xray_tube_material": shape (), type "|O">
+value: Cu 
+DEBUG: value: Cu 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_CHAR']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_CHAR']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_material
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_material
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+enumeration (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_material):
+DEBUG: enumeration (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_material):
+-> Cu
+DEBUG: -> Cu
+-> Cr
+DEBUG: -> Cr
+-> Mo
+DEBUG: -> Mo
+-> Fe
+DEBUG: -> Fe
+-> Ag
+DEBUG: -> Ag
+-> In
+DEBUG: -> In
+-> Ga
+DEBUG: -> Ga
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_material):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_material):
+
+                        Type of the X-ray tube.
+                    
+DEBUG: 
+                        Type of the X-ray tube.
+                    
+===== FIELD (//entry/instrument/source/xray_tube_voltage): <HDF5 dataset "xray_tube_voltage": shape (), type "<f8">
+DEBUG: ===== FIELD (//entry/instrument/source/xray_tube_voltage): <HDF5 dataset "xray_tube_voltage": shape (), type "<f8">
+value: 45.0 
+DEBUG: value: 45.0 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage):
+
+                        Voltage of the X-ray tube.
+                    
+DEBUG: 
+                        Voltage of the X-ray tube.
+                    
+===== ATTRS (//entry/instrument/source/xray_tube_voltage@units)
+DEBUG: ===== ATTRS (//entry/instrument/source/xray_tube_voltage@units)
+value: kV 
+DEBUG: value: kV 
+classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage
+NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage@units [NX_VOLTAGE]
+DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage@units [NX_VOLTAGE]
+===== FIELD (//entry/measurement_type): <HDF5 dataset "measurement_type": shape (), type "|O">
+DEBUG: ===== FIELD (//entry/measurement_type): <HDF5 dataset "measurement_type": shape (), type "|O">
+value: Scan 
+DEBUG: value: Scan 
+classpath: ['NXentry', 'NX_CHAR']
+DEBUG: classpath: ['NXentry', 'NX_CHAR']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/measurement_type
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/measurement_type
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/measurement_type):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/measurement_type):
+
+                Type of measurement.
+            
+DEBUG: 
+                Type of measurement.
+            
+===== FIELD (//entry/method): <HDF5 dataset "method": shape (), type "|O">
+DEBUG: ===== FIELD (//entry/method): <HDF5 dataset "method": shape (), type "|O">
+value: X-Ray Diffraction (XRD) 
+DEBUG: value: X-Ray Diffraction (XRD) 
+classpath: ['NXentry', 'NX_CHAR']
+DEBUG: classpath: ['NXentry', 'NX_CHAR']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/method
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/method
+<<REQUIRED>>
+DEBUG: <<REQUIRED>>
+enumeration (NXxrd_pan.nxdl.xml:/ENTRY/method):
+DEBUG: enumeration (NXxrd_pan.nxdl.xml:/ENTRY/method):
+-> X-Ray Diffraction (XRD)
+DEBUG: -> X-Ray Diffraction (XRD)
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/method):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/method):
+
+                Method used to collect the data
+                default='X-Ray Diffraction (XRD)'
+            
+DEBUG: 
+                Method used to collect the data
+                default='X-Ray Diffraction (XRD)'
+            
+===== GROUP (//entry/q_data [NXxrd_pan::/NXentry/NXdata]): <HDF5 group "/entry/q_data" (1 members)>
+DEBUG: ===== GROUP (//entry/q_data [NXxrd_pan::/NXentry/NXdata]): <HDF5 group "/entry/q_data" (1 members)>
+classpath: ['NXentry', 'NXdata']
+DEBUG: classpath: ['NXentry', 'NXdata']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/q_data
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/q_data
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/q_data):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/q_data):
+
+                The desired view for scattering vectors.
+            
+DEBUG: 
+                The desired view for scattering vectors.
+            
+documentation (NXxrd.nxdl.xml:/ENTRY/DATA):
+DEBUG: documentation (NXxrd.nxdl.xml:/ENTRY/DATA):
+
+DEBUG: 
+documentation (NXmonopd.nxdl.xml:/ENTRY/DATA):
+DEBUG: documentation (NXmonopd.nxdl.xml:/ENTRY/DATA):
+
+DEBUG: 
+documentation (NXentry.nxdl.xml:/DATA):
+DEBUG: documentation (NXentry.nxdl.xml:/DATA):
+
+			The data group
+
+			.. note:: Before the NIAC2016 meeting [#]_, at least one
+			   :ref:`NXdata` group was required in each :ref:`NXentry` group.
+			   At the NIAC2016 meeting, it was decided to make :ref:`NXdata`
+			   an optional group in :ref:`NXentry` groups for data files that
+			   do not use an application definition.
+			   It is recommended strongly that all NeXus data files provide
+			   a NXdata group.
+			   It is permissible to omit the NXdata group only when
+			   defining the default plot is not practical or possible
+			   from the available data.
+
+			   For example, neutron event data may not have anything that
+			   makes a useful plot without extensive processing.
+
+			   Certain application definitions override this decision and
+			   require an :ref:`NXdata` group
+			   in the :ref:`NXentry` group.  The ``minOccurs=0`` attribute
+			   in the application definition will indicate the
+			   :ref:`NXdata` group
+			   is optional, otherwise, it is required.
+
+			   .. [#] NIAC2016:
+			      https://www.nexusformat.org/NIAC2016.html,
+			      https://github.com/nexusformat/NIAC/issues/16
+
+		
+DEBUG: 
+			The data group
+
+			.. note:: Before the NIAC2016 meeting [#]_, at least one
+			   :ref:`NXdata` group was required in each :ref:`NXentry` group.
+			   At the NIAC2016 meeting, it was decided to make :ref:`NXdata`
+			   an optional group in :ref:`NXentry` groups for data files that
+			   do not use an application definition.
+			   It is recommended strongly that all NeXus data files provide
+			   a NXdata group.
+			   It is permissible to omit the NXdata group only when
+			   defining the default plot is not practical or possible
+			   from the available data.
+
+			   For example, neutron event data may not have anything that
+			   makes a useful plot without extensive processing.
+
+			   Certain application definitions override this decision and
+			   require an :ref:`NXdata` group
+			   in the :ref:`NXentry` group.  The ``minOccurs=0`` attribute
+			   in the application definition will indicate the
+			   :ref:`NXdata` group
+			   is optional, otherwise, it is required.
+
+			   .. [#] NIAC2016:
+			      https://www.nexusformat.org/NIAC2016.html,
+			      https://github.com/nexusformat/NIAC/issues/16
+
+		
+documentation (NXobject.nxdl.xml:/DATA):
+DEBUG: documentation (NXobject.nxdl.xml:/DATA):
+
+DEBUG: 
+documentation (NXdata.nxdl.xml:):
+DEBUG: documentation (NXdata.nxdl.xml:):
+
+		The :ref:`NXdata` class is designed to encapsulate all the information required for a set of data to be plotted.
+		NXdata groups contain plottable data (also referred to as *signals* or *dependent variables*) and their
+		associated axis coordinates (also referred to as *axes* or *independent variables*).
+
+		The actual names of the :ref:`DATA </NXdata/DATA-field>` and :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+		can be chosen :ref:`freely <validItemName>`, as indicated by the upper case (this is a common convention in all NeXus classes).
+		
+		.. note:: ``NXdata`` provides data and coordinates to be plotted but
+			does not describe how the data is to be plotted or even the dimensionality of the plot.
+			https://www.nexusformat.org/NIAC2018Minutes.html#nxdata-plottype--attribute
+
+		.. include:: data/index.rst
+		   :start-line: 1
+
+		.. admonition:: Example of a simple curve plot
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data"
+				  @axes = ["x"]
+				  data: float[100]
+				  x: float[100]
+
+		More complex cases are supported
+
+		* histogram data: ``x`` has one more value than ``data``.
+		* alternative axes: instead of a single ``x`` axis you can have several axes, one of which being the default.
+		* signals with more than one dimension: ``data`` could be 2D with axes ``x`` and ``y`` along each dimension.
+		* axes with more than one dimension: ``data`` could be 2D with axes ``x`` and ``y`` also being 2D, providing a
+		  unique ``(x, y)`` coordinate for each ``data`` point.
+
+		**Signals:**
+
+		.. index:: plotting
+
+		.. admonition:: Defined by
+
+			* :ref:`DATA </NXdata/DATA-field>` fields
+			* the :ref:`signal </NXdata@signal-attribute>` attribute
+			* the :ref:`auxiliary_signals</NXdata@auxiliary_signals-attribute>` attribute
+
+		The :ref:`DATA </NXdata/DATA-field>` fields contain the signal values to be plotted. The name of the field
+		to be used as the *default plot signal* is provided by the :ref:`signal </NXdata@signal-attribute>` attribute.
+		The names of the fields to be used as *secondary plot signals* are provided by the
+		:ref:`auxiliary_signals</NXdata@auxiliary_signals-attribute>` attribute.
+
+		.. admonition:: An example with three signals, one of which being the default
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data1"
+				  @auxiliary_signals = ["data2", "data3"]
+				  data1: float[10,20,30]  # the default signal
+				  data2: float[10,20,30]
+				  data3: float[10,20,30]
+
+		**Axes:**
+
+		.. index:: axes (attribute)
+		.. index:: coordinates
+
+		.. admonition:: Defined by
+
+			* :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+			* the :ref:`axes </NXdata@axes-attribute>` attribute
+			* :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` attributes
+
+		The fields and attributes are defined as follows
+
+		1. The :ref:`AXISNAME </NXdata/AXISNAME-field>` fields contain the axis coordinates associated with the signal values.
+
+		2. The :ref:`axes </NXdata@axes-attribute>` attribute provides the names of the :ref:`AXISNAME </NXdata/AXISNAME-field>`
+		   fields to be used as the `default axis` for each dimension of the :ref:`DATA </NXdata/DATA-field>` fields.
+
+		3. The :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` attributes describe the :ref:`DATA </NXdata/DATA-field>`
+		   dimensions spanned by the corresponding :ref:`AXISNAME </NXdata/AXISNAME-field>` fields.
+
+		The fields and attributes have the following constraints
+
+		1. The length of the :ref:`axes </NXdata@axes-attribute>` attribute must be equal to the rank of the :ref:`DATA </NXdata/DATA-field>`
+		   fields. When a particular dimension has no default axis, the string “.” is used in that position.
+
+		2. The number of values in :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` must be equal to the rank of the corresponding
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field.
+
+		3. When :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` is missing for a given
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field, the positions of the :ref:`AXISNAME </NXdata/AXISNAME-field>`
+		   field name in the :ref:`axes </NXdata@axes-attribute>` attribute are used.
+
+		4. When :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` is the same as the indices of "AXISNAME" in the
+		   :ref:`axes </NXdata@axes-attribute>` attribute, there is no need to provide
+		   :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>`.
+
+		5. The indices of "AXISNAME" in the :ref:`axes </NXdata@axes-attribute>` attribute must be a subset of
+		   :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>`.
+
+		6. The shape of an :ref:`AXISNAME </NXdata/AXISNAME-field>` field must correspond to the shape of the
+		   :ref:`DATA </NXdata/DATA-field>` dimensions it spans. This means that for each dimension ``i`` in ``[0, AXISNAME.ndim)``
+		   spanned by axis field :ref:`AXISNAME </NXdata/AXISNAME-field>`, the number of axis values ``AXISNAME.shape[i]``
+		   along dimension ``i`` must be equal to the number of data points ``DATA.shape[AXISNAME_indices[i]]`` along dimension ``i``
+		   or one more than the number of data points ``DATA.shape[AXISNAME_indices[i]]+1`` in case the
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field contains histogram bin edges along dimension ``i``.
+
+		Highlight consequences of these constraints
+
+		1. An :ref:`AXISNAME </NXdata/AXISNAME-field>` field can have more than one dimension and can therefore span
+		   more than one :ref:`DATA </NXdata/DATA-field>` dimension. Conversely, one :ref:`DATA </NXdata/DATA-field>` dimension
+		   can be spanned by more than one :ref:`AXISNAME </NXdata/AXISNAME-field>` field. The default axis name (if any)
+		   of each dimension can be found in the :ref:`axes </NXdata@axes-attribute>` attribute.
+
+		2. A list of all available axes is not provided directly. All strings in the :ref:`axes </NXdata@axes-attribute>` attribute
+		   (excluding the “.” string) are axis field names. In addition the prefix of an attribute ending with the string "_indices" is also
+		   an axis field name.
+
+		.. admonition:: The following example covers all axes features supported (see :ref:`sphx_glr_classes_base_classes_data_plot_fscan2d.py`)
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data"
+				  @axes = ["x_set", "y_set", "."]  # default axes for all three dimensions
+				  @x_encoder_indices = [0, 1]
+				  @y_encoder_indices = 1           # or [1]
+				  data: float[10,7,1024]
+				  x_encoder: float[11,7]           # coordinates along the first and second dimensions
+				  y_encoder: float[7]              # coordinates along the second dimension
+				  x_set: float[10]                 # default coordinates along the first dimension
+				  y_set: float[7]                  # default coordinates along the second dimension
+
+		**Uncertainties:**
+
+		.. admonition:: Defined by
+
+			* :ref:`FIELDNAME_errors </NXdata/FIELDNAME_errors-field>` fields
+
+		Standard deviations on data values as well as coordinates can be provided by
+		:ref:`FIELDNAME_errors </NXdata/FIELDNAME_errors-field>` fields where ``FIELDNAME`` is the name of a
+		:ref:`DATA </NXdata/DATA-field>` field or an :ref:`AXISNAME </NXdata/AXISNAME-field>` field.
+
+		.. admonition:: An example of uncertainties on the signal, auxiliary signals and axis coordinates
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data1"
+				  @auxiliary_signals = ["data2", "data3"]
+				  @axes = ["x", ".", "z"]
+				  data1: float[10,20,30]
+				  data2: float[10,20,30]
+				  data3: float[10,20,30]
+				  x: float[10]
+				  z: float[30]
+				  data1_errors: float[10,20,30]
+				  data2_errors: float[10,20,30]
+				  data3_errors: float[10,20,30]
+				  x_errors: float[10]
+				  z_errors: float[30]
+
+	
+DEBUG: 
+		The :ref:`NXdata` class is designed to encapsulate all the information required for a set of data to be plotted.
+		NXdata groups contain plottable data (also referred to as *signals* or *dependent variables*) and their
+		associated axis coordinates (also referred to as *axes* or *independent variables*).
+
+		The actual names of the :ref:`DATA </NXdata/DATA-field>` and :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+		can be chosen :ref:`freely <validItemName>`, as indicated by the upper case (this is a common convention in all NeXus classes).
+		
+		.. note:: ``NXdata`` provides data and coordinates to be plotted but
+			does not describe how the data is to be plotted or even the dimensionality of the plot.
+			https://www.nexusformat.org/NIAC2018Minutes.html#nxdata-plottype--attribute
+
+		.. include:: data/index.rst
+		   :start-line: 1
+
+		.. admonition:: Example of a simple curve plot
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data"
+				  @axes = ["x"]
+				  data: float[100]
+				  x: float[100]
+
+		More complex cases are supported
+
+		* histogram data: ``x`` has one more value than ``data``.
+		* alternative axes: instead of a single ``x`` axis you can have several axes, one of which being the default.
+		* signals with more than one dimension: ``data`` could be 2D with axes ``x`` and ``y`` along each dimension.
+		* axes with more than one dimension: ``data`` could be 2D with axes ``x`` and ``y`` also being 2D, providing a
+		  unique ``(x, y)`` coordinate for each ``data`` point.
+
+		**Signals:**
+
+		.. index:: plotting
+
+		.. admonition:: Defined by
+
+			* :ref:`DATA </NXdata/DATA-field>` fields
+			* the :ref:`signal </NXdata@signal-attribute>` attribute
+			* the :ref:`auxiliary_signals</NXdata@auxiliary_signals-attribute>` attribute
+
+		The :ref:`DATA </NXdata/DATA-field>` fields contain the signal values to be plotted. The name of the field
+		to be used as the *default plot signal* is provided by the :ref:`signal </NXdata@signal-attribute>` attribute.
+		The names of the fields to be used as *secondary plot signals* are provided by the
+		:ref:`auxiliary_signals</NXdata@auxiliary_signals-attribute>` attribute.
+
+		.. admonition:: An example with three signals, one of which being the default
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data1"
+				  @auxiliary_signals = ["data2", "data3"]
+				  data1: float[10,20,30]  # the default signal
+				  data2: float[10,20,30]
+				  data3: float[10,20,30]
+
+		**Axes:**
+
+		.. index:: axes (attribute)
+		.. index:: coordinates
+
+		.. admonition:: Defined by
+
+			* :ref:`AXISNAME </NXdata/AXISNAME-field>` fields
+			* the :ref:`axes </NXdata@axes-attribute>` attribute
+			* :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` attributes
+
+		The fields and attributes are defined as follows
+
+		1. The :ref:`AXISNAME </NXdata/AXISNAME-field>` fields contain the axis coordinates associated with the signal values.
+
+		2. The :ref:`axes </NXdata@axes-attribute>` attribute provides the names of the :ref:`AXISNAME </NXdata/AXISNAME-field>`
+		   fields to be used as the `default axis` for each dimension of the :ref:`DATA </NXdata/DATA-field>` fields.
+
+		3. The :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` attributes describe the :ref:`DATA </NXdata/DATA-field>`
+		   dimensions spanned by the corresponding :ref:`AXISNAME </NXdata/AXISNAME-field>` fields.
+
+		The fields and attributes have the following constraints
+
+		1. The length of the :ref:`axes </NXdata@axes-attribute>` attribute must be equal to the rank of the :ref:`DATA </NXdata/DATA-field>`
+		   fields. When a particular dimension has no default axis, the string “.” is used in that position.
+
+		2. The number of values in :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` must be equal to the rank of the corresponding
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field.
+
+		3. When :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` is missing for a given
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field, the positions of the :ref:`AXISNAME </NXdata/AXISNAME-field>`
+		   field name in the :ref:`axes </NXdata@axes-attribute>` attribute are used.
+
+		4. When :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>` is the same as the indices of "AXISNAME" in the
+		   :ref:`axes </NXdata@axes-attribute>` attribute, there is no need to provide
+		   :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>`.
+
+		5. The indices of "AXISNAME" in the :ref:`axes </NXdata@axes-attribute>` attribute must be a subset of
+		   :ref:`AXISNAME_indices </NXdata@AXISNAME_indices-attribute>`.
+
+		6. The shape of an :ref:`AXISNAME </NXdata/AXISNAME-field>` field must correspond to the shape of the
+		   :ref:`DATA </NXdata/DATA-field>` dimensions it spans. This means that for each dimension ``i`` in ``[0, AXISNAME.ndim)``
+		   spanned by axis field :ref:`AXISNAME </NXdata/AXISNAME-field>`, the number of axis values ``AXISNAME.shape[i]``
+		   along dimension ``i`` must be equal to the number of data points ``DATA.shape[AXISNAME_indices[i]]`` along dimension ``i``
+		   or one more than the number of data points ``DATA.shape[AXISNAME_indices[i]]+1`` in case the
+		   :ref:`AXISNAME </NXdata/AXISNAME-field>` field contains histogram bin edges along dimension ``i``.
+
+		Highlight consequences of these constraints
+
+		1. An :ref:`AXISNAME </NXdata/AXISNAME-field>` field can have more than one dimension and can therefore span
+		   more than one :ref:`DATA </NXdata/DATA-field>` dimension. Conversely, one :ref:`DATA </NXdata/DATA-field>` dimension
+		   can be spanned by more than one :ref:`AXISNAME </NXdata/AXISNAME-field>` field. The default axis name (if any)
+		   of each dimension can be found in the :ref:`axes </NXdata@axes-attribute>` attribute.
+
+		2. A list of all available axes is not provided directly. All strings in the :ref:`axes </NXdata@axes-attribute>` attribute
+		   (excluding the “.” string) are axis field names. In addition the prefix of an attribute ending with the string "_indices" is also
+		   an axis field name.
+
+		.. admonition:: The following example covers all axes features supported (see :ref:`sphx_glr_classes_base_classes_data_plot_fscan2d.py`)
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data"
+				  @axes = ["x_set", "y_set", "."]  # default axes for all three dimensions
+				  @x_encoder_indices = [0, 1]
+				  @y_encoder_indices = 1           # or [1]
+				  data: float[10,7,1024]
+				  x_encoder: float[11,7]           # coordinates along the first and second dimensions
+				  y_encoder: float[7]              # coordinates along the second dimension
+				  x_set: float[10]                 # default coordinates along the first dimension
+				  y_set: float[7]                  # default coordinates along the second dimension
+
+		**Uncertainties:**
+
+		.. admonition:: Defined by
+
+			* :ref:`FIELDNAME_errors </NXdata/FIELDNAME_errors-field>` fields
+
+		Standard deviations on data values as well as coordinates can be provided by
+		:ref:`FIELDNAME_errors </NXdata/FIELDNAME_errors-field>` fields where ``FIELDNAME`` is the name of a
+		:ref:`DATA </NXdata/DATA-field>` field or an :ref:`AXISNAME </NXdata/AXISNAME-field>` field.
+
+		.. admonition:: An example of uncertainties on the signal, auxiliary signals and axis coordinates
+
+			.. code-block::
+
+				data:NXdata
+				  @signal = "data1"
+				  @auxiliary_signals = ["data2", "data3"]
+				  @axes = ["x", ".", "z"]
+				  data1: float[10,20,30]
+				  data2: float[10,20,30]
+				  data3: float[10,20,30]
+				  x: float[10]
+				  z: float[30]
+				  data1_errors: float[10,20,30]
+				  data2_errors: float[10,20,30]
+				  data3_errors: float[10,20,30]
+				  x_errors: float[10]
+				  z_errors: float[30]
+
+	
+documentation (NXobject.nxdl.xml:):
+DEBUG: documentation (NXobject.nxdl.xml:):
+
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+DEBUG: 
+        This is the base object of NeXus. The groups and fields contained 
+        within this file are allowed to be present in any derived base class.
+
+        If nameType="partial", the placeholders (e.g., FIELDNAME or GROUPNAME)
+        can be replaced by the name of any object (field or group, 
+        respectively) that exists within the same group.
+	
+===== ATTRS (//entry/q_data@NX_class)
+DEBUG: ===== ATTRS (//entry/q_data@NX_class)
+value: NXdata 
+DEBUG: value: NXdata 
+classpath: ['NXentry', 'NXdata']
+DEBUG: classpath: ['NXentry', 'NXdata']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/q_data
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/q_data
+NXxrd.nxdl.xml:/ENTRY/DATA
+NXmonopd.nxdl.xml:/ENTRY/DATA
+NXentry.nxdl.xml:/DATA
+NXobject.nxdl.xml:/DATA
+NXdata.nxdl.xml:
+NXobject.nxdl.xml:
+@NX_class [NX_CHAR]
+DEBUG: @NX_class [NX_CHAR]
+
+DEBUG: 
+===== FIELD (//entry/q_data/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
+DEBUG: ===== FIELD (//entry/q_data/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
+value: [1305. 1310. 1345. ...  170.  189.  171.] 
+DEBUG: value: [1305. 1310. 1345. ...  170.  189.  171.] 
+classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/q_data/intensity
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/q_data/intensity
+<<OPTIONAL>>
+DEBUG: <<OPTIONAL>>
+documentation (NXxrd_pan.nxdl.xml:/ENTRY/q_data/intensity):
+DEBUG: documentation (NXxrd_pan.nxdl.xml:/ENTRY/q_data/intensity):
+
+                    Number of scattered electrons per unit time at each scattering vector (q) value.
+                    The concept is the same as the 'intensity' of experiment_result
+                    and should be linked to /entry[ENTRY]/experiment_result/intensity.
+                
+DEBUG: 
+                    Number of scattered electrons per unit time at each scattering vector (q) value.
+                    The concept is the same as the 'intensity' of experiment_result
+                    and should be linked to /entry[ENTRY]/experiment_result/intensity.
+                
+===== ATTRS (//entry/q_data/intensity@target)
+DEBUG: ===== ATTRS (//entry/q_data/intensity@target)
+value: /entry/experiment_result/intensity 
+DEBUG: value: /entry/experiment_result/intensity 
+classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
+classes:
+NXxrd_pan.nxdl.xml:/ENTRY/q_data/intensity
+DEBUG: classes:
+NXxrd_pan.nxdl.xml:/ENTRY/q_data/intensity
+@target - IS NOT IN SCHEMA
+DEBUG: @target - IS NOT IN SCHEMA
+
+DEBUG: 
+========================
+DEBUG: ========================
+=== Default Plotable ===
+DEBUG: === Default Plotable ===
+========================
+DEBUG: ========================
+
+DEBUG: 
+NXentry has been identified: /entry
+DEBUG: NXentry has been identified: /entry
+
+DEBUG: 
+NXdata group has been identified: /entry/experiment_result
+DEBUG: NXdata group has been identified: /entry/experiment_result
+===== GROUP (//entry/experiment_result [NXxrd_pan::/NXentry/NXdata]): <HDF5 group "/entry/experiment_result" (4 members)>
+DEBUG: ===== GROUP (//entry/experiment_result [NXxrd_pan::/NXentry/NXdata]): <HDF5 group "/entry/experiment_result" (4 members)>
+===== ATTRS (//entry/experiment_result@NX_class)
+DEBUG: ===== ATTRS (//entry/experiment_result@NX_class)
+value: NXdata 
+DEBUG: value: NXdata 
+===== ATTRS (//entry/experiment_result@axes)
+DEBUG: ===== ATTRS (//entry/experiment_result@axes)
+value: two_theta 
+DEBUG: value: two_theta 
+===== ATTRS (//entry/experiment_result@signal)
+DEBUG: ===== ATTRS (//entry/experiment_result@signal)
+value: intensity 
+DEBUG: value: intensity 
+
+DEBUG: 
+Signal has been identified: /entry/experiment_result/intensity
+DEBUG: Signal has been identified: /entry/experiment_result/intensity
+===== FIELD (//entry/experiment_result/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
+DEBUG: ===== FIELD (//entry/experiment_result/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
+value: [1305. 1310. 1345. ...  170.  189.  171.] 
+DEBUG: value: [1305. 1310. 1345. ...  170.  189.  171.] 
+Dataset referenced as NXdata SIGNAL
+DEBUG: Dataset referenced as NXdata SIGNAL
+
+DEBUG: 
+For Axis #0, 1 axes have been identified: [<HDF5 dataset "two_theta": shape (5027,), type "<f8">]
+DEBUG: For Axis #0, 1 axes have been identified: [<HDF5 dataset "two_theta": shape (5027,), type "<f8">]
