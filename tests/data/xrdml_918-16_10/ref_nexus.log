@@ -1,5 +1,5 @@
-===== GROUP (// [NXroot::]): <HDF5 file "XRD-918-16_10.nxs" (mode r)>
-DEBUG: ===== GROUP (// [NXroot::]): <HDF5 file "XRD-918-16_10.nxs" (mode r)>
+===== GROUP (// [NXroot::]): <HDF5 file "output.nxs" (mode r)>
+DEBUG: ===== GROUP (// [NXroot::]): <HDF5 file "output.nxs" (mode r)>
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -152,8 +152,8 @@ DEBUG:
         
 ===== ATTRS (//@file_name)
 DEBUG: ===== ATTRS (//@file_name)
-value: XRD-918-16_10.nxs
-DEBUG: value: XRD-918-16_10.nxs
+value: output.nxs
+DEBUG: value: output.nxs
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -170,8 +170,8 @@ File name of original NeXus file
 DEBUG: File name of original NeXus file
 ===== ATTRS (//@file_time)
 DEBUG: ===== ATTRS (//@file_time)
-value: 2025-10-20 12:50:31.320141+02:00
-DEBUG: value: 2025-10-20 12:50:31.320141+02:00
+value: 2025-10-20 14:41:06.488512+02:00
+DEBUG: value: 2025-10-20 14:41:06.488512+02:00
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -188,8 +188,8 @@ Date and time file was originally created
 DEBUG: Date and time file was originally created
 ===== ATTRS (//@file_update_time)
 DEBUG: ===== ATTRS (//@file_update_time)
-value: 2025-10-20 12:50:31.320141+02:00
-DEBUG: value: 2025-10-20 12:50:31.320141+02:00
+value: 2025-10-20 14:41:06.488512+02:00
+DEBUG: value: 2025-10-20 14:41:06.488512+02:00
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
