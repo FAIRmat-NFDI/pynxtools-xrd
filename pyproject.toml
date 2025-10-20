@@ -21,7 +21,8 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "pynxtools>=0.12.0",
+    # "pynxtools>=0.12.0",
+    "pynxtools @ git+https://github.com/FAIRmat-NFDI/pynxtools.git@use-log-files-in-tests#egg=pynxtools",
     "xmltodict",
     "fairmat-readers-xrd",
 ]
