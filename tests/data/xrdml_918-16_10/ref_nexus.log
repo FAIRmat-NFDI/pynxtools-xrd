@@ -40,8 +40,8 @@ DEBUG:
     
 ===== ATTRS (//@HDF5_Version)
 DEBUG: ===== ATTRS (//@HDF5_Version)
-value: 1.14.6 
-DEBUG: value: 1.14.6 
+value: 1.14.6
+DEBUG: value: 1.14.6
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -68,8 +68,8 @@ DEBUG:
         
 ===== ATTRS (//@NX_class)
 DEBUG: ===== ATTRS (//@NX_class)
-value: NXroot 
-DEBUG: value: NXroot 
+value: NXroot
+DEBUG: value: NXroot
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -82,8 +82,8 @@ DEBUG: @NX_class [NX_CHAR]
 DEBUG: 
 ===== ATTRS (//@NeXus_release)
 DEBUG: ===== ATTRS (//@NeXus_release)
-value: v2024.02.post1.dev1996+g6cfc2d2e 
-DEBUG: value: v2024.02.post1.dev1996+g6cfc2d2e 
+value: v2024.02.post1.dev1996+g6cfc2d2e
+DEBUG: value: v2024.02.post1.dev1996+g6cfc2d2e
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -124,8 +124,8 @@ DEBUG:
         
 ===== ATTRS (//@NeXus_repository)
 DEBUG: ===== ATTRS (//@NeXus_repository)
-value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e 
-DEBUG: value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e 
+value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e
+DEBUG: value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -152,8 +152,8 @@ DEBUG:
         
 ===== ATTRS (//@file_name)
 DEBUG: ===== ATTRS (//@file_name)
-value: XRD-918-16_10.nxs 
-DEBUG: value: XRD-918-16_10.nxs 
+value: XRD-918-16_10.nxs
+DEBUG: value: XRD-918-16_10.nxs
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -170,8 +170,8 @@ File name of original NeXus file
 DEBUG: File name of original NeXus file
 ===== ATTRS (//@file_time)
 DEBUG: ===== ATTRS (//@file_time)
-value: 2025-10-20 12:29:41.047883+02:00 
-DEBUG: value: 2025-10-20 12:29:41.047883+02:00 
+value: 2025-10-20 12:50:31.320141+02:00
+DEBUG: value: 2025-10-20 12:50:31.320141+02:00
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -188,8 +188,8 @@ Date and time file was originally created
 DEBUG: Date and time file was originally created
 ===== ATTRS (//@file_update_time)
 DEBUG: ===== ATTRS (//@file_update_time)
-value: 2025-10-20 12:29:41.047883+02:00 
-DEBUG: value: 2025-10-20 12:29:41.047883+02:00 
+value: 2025-10-20 12:50:31.320141+02:00
+DEBUG: value: 2025-10-20 12:50:31.320141+02:00
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -206,8 +206,8 @@ Date and time of last file change at close
 DEBUG: Date and time of last file change at close
 ===== ATTRS (//@h5py_version)
 DEBUG: ===== ATTRS (//@h5py_version)
-value: 3.14.0 
-DEBUG: value: 3.14.0 
+value: 3.14.0
+DEBUG: value: 3.14.0
 classpath: ['']
 DEBUG: classpath: ['']
 classes:
@@ -288,8 +288,8 @@ DEBUG:
 	
 ===== ATTRS (//entry@NX_class)
 DEBUG: ===== ATTRS (//entry@NX_class)
-value: NXentry 
-DEBUG: value: NXentry 
+value: NXentry
+DEBUG: value: NXentry
 classpath: ['NXentry']
 DEBUG: classpath: ['NXentry']
 classes:
@@ -310,8 +310,8 @@ DEBUG: @NX_class [NX_CHAR]
 DEBUG: 
 ===== FIELD (//entry/definition): <HDF5 dataset "definition": shape (), type "|O">
 DEBUG: ===== FIELD (//entry/definition): <HDF5 dataset "definition": shape (), type "|O">
-value: NXxrd_pan 
-DEBUG: value: NXxrd_pan 
+value: NXxrd_pan
+DEBUG: value: NXxrd_pan
 classpath: ['NXentry', 'NX_CHAR']
 DEBUG: classpath: ['NXentry', 'NX_CHAR']
 classes:
@@ -394,8 +394,8 @@ DEBUG:
 		
 ===== ATTRS (//entry/definition@URL)
 DEBUG: ===== ATTRS (//entry/definition@URL)
-value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e 
-DEBUG: value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e 
+value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e
+DEBUG: value: https://github.com/FAIRmat-NFDI/nexus_definitions/blob/6cfc2d2e
 classpath: ['NXentry', 'NX_CHAR']
 DEBUG: classpath: ['NXentry', 'NX_CHAR']
 classes:
@@ -418,8 +418,8 @@ URL of NXDL file
 DEBUG: URL of NXDL file
 ===== ATTRS (//entry/definition@version)
 DEBUG: ===== ATTRS (//entry/definition@version)
-value: v2024.02.post1.dev1996+g6cfc2d2e 
-DEBUG: value: v2024.02.post1.dev1996+g6cfc2d2e 
+value: v2024.02.post1.dev1996+g6cfc2d2e
+DEBUG: value: v2024.02.post1.dev1996+g6cfc2d2e
 classpath: ['NXentry', 'NX_CHAR']
 DEBUG: classpath: ['NXentry', 'NX_CHAR']
 classes:
@@ -480,8 +480,8 @@ DEBUG:
 	
 ===== ATTRS (//entry/experiment_config@NX_class)
 DEBUG: ===== ATTRS (//entry/experiment_config@NX_class)
-value: NXobject 
-DEBUG: value: NXobject 
+value: NXobject
+DEBUG: value: NXobject
 classpath: ['NXentry', 'NXobject']
 DEBUG: classpath: ['NXentry', 'NXobject']
 classes:
@@ -496,8 +496,8 @@ DEBUG: @NX_class [NX_CHAR]
 DEBUG: 
 ===== FIELD (//entry/experiment_config/count_time): <HDF5 dataset "count_time": shape (1,), type "<f8">
 DEBUG: ===== FIELD (//entry/experiment_config/count_time): <HDF5 dataset "count_time": shape (1,), type "<f8">
-value: [39.27] 
-DEBUG: value: [39.27] 
+value: [39.27]
+DEBUG: value: [39.27]
 classpath: ['NXentry', 'NXobject', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXobject', 'NX_FLOAT']
 classes:
@@ -516,8 +516,8 @@ DEBUG:
                 
 ===== ATTRS (//entry/experiment_config/count_time@units)
 DEBUG: ===== ATTRS (//entry/experiment_config/count_time@units)
-value: s 
-DEBUG: value: s 
+value: s
+DEBUG: value: s
 classpath: ['NXentry', 'NXobject', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXobject', 'NX_FLOAT']
 classes:
@@ -976,8 +976,8 @@ DEBUG:
 	
 ===== ATTRS (//entry/experiment_result@NX_class)
 DEBUG: ===== ATTRS (//entry/experiment_result@NX_class)
-value: NXdata 
-DEBUG: value: NXdata 
+value: NXdata
+DEBUG: value: NXdata
 classpath: ['NXentry', 'NXdata']
 DEBUG: classpath: ['NXentry', 'NXdata']
 classes:
@@ -1002,8 +1002,8 @@ DEBUG: @NX_class [NX_CHAR]
 DEBUG: 
 ===== ATTRS (//entry/experiment_result@axes)
 DEBUG: ===== ATTRS (//entry/experiment_result@axes)
-value: two_theta 
-DEBUG: value: two_theta 
+value: two_theta
+DEBUG: value: two_theta
 classpath: ['NXentry', 'NXdata']
 DEBUG: classpath: ['NXentry', 'NXdata']
 classes:
@@ -1052,8 +1052,8 @@ DEBUG:
 		
 ===== ATTRS (//entry/experiment_result@signal)
 DEBUG: ===== ATTRS (//entry/experiment_result@signal)
-value: intensity 
-DEBUG: value: intensity 
+value: intensity
+DEBUG: value: intensity
 classpath: ['NXentry', 'NXdata']
 DEBUG: classpath: ['NXentry', 'NXdata']
 classes:
@@ -1108,8 +1108,8 @@ DEBUG:
 		
 ===== FIELD (//entry/experiment_result/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
 DEBUG: ===== FIELD (//entry/experiment_result/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
-value: [1305. 1310. 1345. ...  170.  189.  171.] 
-DEBUG: value: [1305. 1310. 1345. ...  170.  189.  171.] 
+value: [1305, 1310, 1345, ..., 170, 189, 171]
+DEBUG: value: [1305, 1310, 1345, ..., 170, 189, 171]
 classpath: ['NXentry', 'NXdata', 'NX_NUMBER']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_NUMBER']
 classes:
@@ -1144,8 +1144,8 @@ DEBUG:
 		
 ===== FIELD (//entry/experiment_result/omega): <HDF5 dataset "omega": shape (5027,), type "<f8">
 DEBUG: ===== FIELD (//entry/experiment_result/omega): <HDF5 dataset "omega": shape (5027,), type "<f8">
-value: [ 2.00328257  2.00984771  2.01641285 ... 34.98655266 34.9931178 ...
-DEBUG: value: [ 2.00328257  2.00984771  2.01641285 ... 34.98655266 34.9931178 ...
+value: [2.00328257, 2.00984771, 2.01641285, ..., 34.98655266, 34.9931178, 34.99968294]
+DEBUG: value: [2.00328257, 2.00984771, 2.01641285, ..., 34.98655266, 34.9931178, 34.99968294]
 classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 classes:
@@ -1164,8 +1164,8 @@ DEBUG:
                 
 ===== ATTRS (//entry/experiment_result/omega@units)
 DEBUG: ===== ATTRS (//entry/experiment_result/omega@units)
-value: deg 
-DEBUG: value: deg 
+value: deg
+DEBUG: value: deg
 classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 classes:
@@ -1176,8 +1176,8 @@ NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega@units [NX_ANGLE]
 DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/omega@units [NX_ANGLE]
 ===== FIELD (//entry/experiment_result/phi): <HDF5 dataset "phi": shape (1,), type "<f8">
 DEBUG: ===== FIELD (//entry/experiment_result/phi): <HDF5 dataset "phi": shape (1,), type "<f8">
-value: [260.6] 
-DEBUG: value: [260.6] 
+value: [260.6]
+DEBUG: value: [260.6]
 classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 classes:
@@ -1196,8 +1196,8 @@ DEBUG:
                 
 ===== ATTRS (//entry/experiment_result/phi@units)
 DEBUG: ===== ATTRS (//entry/experiment_result/phi@units)
-value: deg 
-DEBUG: value: deg 
+value: deg
+DEBUG: value: deg
 classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 classes:
@@ -1208,8 +1208,8 @@ NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi@units [NX_ANGLE]
 DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/experiment_result/phi@units [NX_ANGLE]
 ===== FIELD (//entry/experiment_result/two_theta): <HDF5 dataset "two_theta": shape (5027,), type "<f8">
 DEBUG: ===== FIELD (//entry/experiment_result/two_theta): <HDF5 dataset "two_theta": shape (5027,), type "<f8">
-value: [ 4.00656514  4.01969542  4.03282571 ... 69.9731053  69.98623559 ...
-DEBUG: value: [ 4.00656514  4.01969542  4.03282571 ... 69.9731053  69.98623559 ...
+value: [4.00656514, 4.01969542, 4.03282571, ..., 69.9731053, 69.98623559, 69.99936587]
+DEBUG: value: [4.00656514, 4.01969542, 4.03282571, ..., 69.9731053, 69.98623559, 69.99936587]
 classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 classes:
@@ -1228,8 +1228,8 @@ DEBUG:
                 
 ===== ATTRS (//entry/experiment_result/two_theta@units)
 DEBUG: ===== ATTRS (//entry/experiment_result/two_theta@units)
-value: deg 
-DEBUG: value: deg 
+value: deg
+DEBUG: value: deg
 classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 classes:
@@ -1316,8 +1316,8 @@ DEBUG:
 	
 ===== ATTRS (//entry/instrument@NX_class)
 DEBUG: ===== ATTRS (//entry/instrument@NX_class)
-value: NXinstrument 
-DEBUG: value: NXinstrument 
+value: NXinstrument
+DEBUG: value: NXinstrument
 classpath: ['NXentry', 'NXinstrument']
 DEBUG: classpath: ['NXentry', 'NXinstrument']
 classes:
@@ -1412,8 +1412,8 @@ DEBUG:
 	
 ===== ATTRS (//entry/instrument/detector@NX_class)
 DEBUG: ===== ATTRS (//entry/instrument/detector@NX_class)
-value: NXdetector 
-DEBUG: value: NXdetector 
+value: NXdetector
+DEBUG: value: NXdetector
 classpath: ['NXentry', 'NXinstrument', 'NXdetector']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXdetector']
 classes:
@@ -1438,8 +1438,8 @@ DEBUG: @NX_class [NX_CHAR]
 DEBUG: 
 ===== FIELD (//entry/instrument/detector/scan_axis): <HDF5 dataset "scan_axis": shape (), type "|O">
 DEBUG: ===== FIELD (//entry/instrument/detector/scan_axis): <HDF5 dataset "scan_axis": shape (), type "|O">
-value: Gonio 
-DEBUG: value: Gonio 
+value: Gonio
+DEBUG: value: Gonio
 classpath: ['NXentry', 'NXinstrument', 'NXdetector', 'NX_CHAR']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXdetector', 'NX_CHAR']
 classes:
@@ -1458,8 +1458,8 @@ DEBUG:
                     
 ===== FIELD (//entry/instrument/detector/scan_mode): <HDF5 dataset "scan_mode": shape (), type "|O">
 DEBUG: ===== FIELD (//entry/instrument/detector/scan_mode): <HDF5 dataset "scan_mode": shape (), type "|O">
-value: line 
-DEBUG: value: line 
+value: line
+DEBUG: value: line
 classpath: ['NXentry', 'NXinstrument', 'NXdetector', 'NX_CHAR']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXdetector', 'NX_CHAR']
 classes:
@@ -1550,8 +1550,8 @@ DEBUG:
 	
 ===== ATTRS (//entry/instrument/source@NX_class)
 DEBUG: ===== ATTRS (//entry/instrument/source@NX_class)
-value: NXsource 
-DEBUG: value: NXsource 
+value: NXsource
+DEBUG: value: NXsource
 classpath: ['NXentry', 'NXinstrument', 'NXsource']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource']
 classes:
@@ -1574,8 +1574,8 @@ DEBUG: @NX_class [NX_CHAR]
 DEBUG: 
 ===== FIELD (//entry/instrument/source/k_alpha_one): <HDF5 dataset "k_alpha_one": shape (), type "<f8">
 DEBUG: ===== FIELD (//entry/instrument/source/k_alpha_one): <HDF5 dataset "k_alpha_one": shape (), type "<f8">
-value: 1.540598 
-DEBUG: value: 1.540598 
+value: 1.540598
+DEBUG: value: 1.540598
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1594,8 +1594,8 @@ DEBUG:
                     
 ===== ATTRS (//entry/instrument/source/k_alpha_one@units)
 DEBUG: ===== ATTRS (//entry/instrument/source/k_alpha_one@units)
-value: Å 
-DEBUG: value: Å 
+value: Å
+DEBUG: value: Å
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1606,8 +1606,8 @@ NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one@units [NX_WAVELENGTH]
 DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_one@units [NX_WAVELENGTH]
 ===== ATTRS (//entry/instrument/source/k_alpha_one@units_custom)
 DEBUG: ===== ATTRS (//entry/instrument/source/k_alpha_one@units_custom)
-value: True 
-DEBUG: value: True 
+value: True
+DEBUG: value: True
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1620,8 +1620,8 @@ DEBUG: @units_custom - IS NOT IN SCHEMA
 DEBUG: 
 ===== FIELD (//entry/instrument/source/k_alpha_two): <HDF5 dataset "k_alpha_two": shape (), type "<f8">
 DEBUG: ===== FIELD (//entry/instrument/source/k_alpha_two): <HDF5 dataset "k_alpha_two": shape (), type "<f8">
-value: 1.544426 
-DEBUG: value: 1.544426 
+value: 1.544426
+DEBUG: value: 1.544426
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1640,8 +1640,8 @@ DEBUG:
                     
 ===== ATTRS (//entry/instrument/source/k_alpha_two@units)
 DEBUG: ===== ATTRS (//entry/instrument/source/k_alpha_two@units)
-value: Å 
-DEBUG: value: Å 
+value: Å
+DEBUG: value: Å
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1652,8 +1652,8 @@ NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two@units [NX_WAVELENGTH]
 DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/k_alpha_two@units [NX_WAVELENGTH]
 ===== ATTRS (//entry/instrument/source/k_alpha_two@units_custom)
 DEBUG: ===== ATTRS (//entry/instrument/source/k_alpha_two@units_custom)
-value: True 
-DEBUG: value: True 
+value: True
+DEBUG: value: True
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1666,8 +1666,8 @@ DEBUG: @units_custom - IS NOT IN SCHEMA
 DEBUG: 
 ===== FIELD (//entry/instrument/source/kbeta): <HDF5 dataset "kbeta": shape (), type "<f8">
 DEBUG: ===== FIELD (//entry/instrument/source/kbeta): <HDF5 dataset "kbeta": shape (), type "<f8">
-value: 1.39225 
-DEBUG: value: 1.39225 
+value: 1.39225
+DEBUG: value: 1.39225
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1686,8 +1686,8 @@ DEBUG:
                     
 ===== FIELD (//entry/instrument/source/ratio_k_alphatwo_k_alphaone): <HDF5 dataset "ratio_k_alphatwo_k_alphaone": shape (), type "<f8">
 DEBUG: ===== FIELD (//entry/instrument/source/ratio_k_alphatwo_k_alphaone): <HDF5 dataset "ratio_k_alphatwo_k_alphaone": shape (), type "<f8">
-value: 0.5 
-DEBUG: value: 0.5 
+value: 0.5
+DEBUG: value: 0.5
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1706,8 +1706,8 @@ DEBUG:
                     
 ===== ATTRS (//entry/instrument/source/ratio_k_alphatwo_k_alphaone@units)
 DEBUG: ===== ATTRS (//entry/instrument/source/ratio_k_alphatwo_k_alphaone@units)
-value:  
-DEBUG: value:  
+value: 
+DEBUG: value: 
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1718,8 +1718,8 @@ NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone@units [N
 DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/ratio_k_alphatwo_k_alphaone@units [NX_DIMENSIONLESS]
 ===== FIELD (//entry/instrument/source/xray_tube_current): <HDF5 dataset "xray_tube_current": shape (), type "<f8">
 DEBUG: ===== FIELD (//entry/instrument/source/xray_tube_current): <HDF5 dataset "xray_tube_current": shape (), type "<f8">
-value: 40.0 
-DEBUG: value: 40.0 
+value: 40
+DEBUG: value: 40
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1738,8 +1738,8 @@ DEBUG:
                     
 ===== ATTRS (//entry/instrument/source/xray_tube_current@units)
 DEBUG: ===== ATTRS (//entry/instrument/source/xray_tube_current@units)
-value: mA 
-DEBUG: value: mA 
+value: mA
+DEBUG: value: mA
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1750,8 +1750,8 @@ NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current@units [NX_CURRENT]
 DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_current@units [NX_CURRENT]
 ===== FIELD (//entry/instrument/source/xray_tube_material): <HDF5 dataset "xray_tube_material": shape (), type "|O">
 DEBUG: ===== FIELD (//entry/instrument/source/xray_tube_material): <HDF5 dataset "xray_tube_material": shape (), type "|O">
-value: Cu 
-DEBUG: value: Cu 
+value: Cu
+DEBUG: value: Cu
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_CHAR']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_CHAR']
 classes:
@@ -1786,8 +1786,8 @@ DEBUG:
                     
 ===== FIELD (//entry/instrument/source/xray_tube_voltage): <HDF5 dataset "xray_tube_voltage": shape (), type "<f8">
 DEBUG: ===== FIELD (//entry/instrument/source/xray_tube_voltage): <HDF5 dataset "xray_tube_voltage": shape (), type "<f8">
-value: 45.0 
-DEBUG: value: 45.0 
+value: 45
+DEBUG: value: 45
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1806,8 +1806,8 @@ DEBUG:
                     
 ===== ATTRS (//entry/instrument/source/xray_tube_voltage@units)
 DEBUG: ===== ATTRS (//entry/instrument/source/xray_tube_voltage@units)
-value: kV 
-DEBUG: value: kV 
+value: kV
+DEBUG: value: kV
 classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXinstrument', 'NXsource', 'NX_FLOAT']
 classes:
@@ -1818,8 +1818,8 @@ NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage@units [NX_VOLTAGE]
 DEBUG: NXxrd_pan.nxdl.xml:/ENTRY/INSTRUMENT/SOURCE/xray_tube_voltage@units [NX_VOLTAGE]
 ===== FIELD (//entry/measurement_type): <HDF5 dataset "measurement_type": shape (), type "|O">
 DEBUG: ===== FIELD (//entry/measurement_type): <HDF5 dataset "measurement_type": shape (), type "|O">
-value: Scan 
-DEBUG: value: Scan 
+value: Scan
+DEBUG: value: Scan
 classpath: ['NXentry', 'NX_CHAR']
 DEBUG: classpath: ['NXentry', 'NX_CHAR']
 classes:
@@ -1838,8 +1838,8 @@ DEBUG:
             
 ===== FIELD (//entry/method): <HDF5 dataset "method": shape (), type "|O">
 DEBUG: ===== FIELD (//entry/method): <HDF5 dataset "method": shape (), type "|O">
-value: X-Ray Diffraction (XRD) 
-DEBUG: value: X-Ray Diffraction (XRD) 
+value: X-Ray Diffraction (XRD)
+DEBUG: value: X-Ray Diffraction (XRD)
 classpath: ['NXentry', 'NX_CHAR']
 DEBUG: classpath: ['NXentry', 'NX_CHAR']
 classes:
@@ -2310,8 +2310,8 @@ DEBUG:
 	
 ===== ATTRS (//entry/q_data@NX_class)
 DEBUG: ===== ATTRS (//entry/q_data@NX_class)
-value: NXdata 
-DEBUG: value: NXdata 
+value: NXdata
+DEBUG: value: NXdata
 classpath: ['NXentry', 'NXdata']
 DEBUG: classpath: ['NXentry', 'NXdata']
 classes:
@@ -2336,8 +2336,8 @@ DEBUG: @NX_class [NX_CHAR]
 DEBUG: 
 ===== FIELD (//entry/q_data/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
 DEBUG: ===== FIELD (//entry/q_data/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
-value: [1305. 1310. 1345. ...  170.  189.  171.] 
-DEBUG: value: [1305. 1310. 1345. ...  170.  189.  171.] 
+value: [1305, 1310, 1345, ..., 170, 189, 171]
+DEBUG: value: [1305, 1310, 1345, ..., 170, 189, 171]
 classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 classes:
@@ -2360,8 +2360,8 @@ DEBUG:
                 
 ===== ATTRS (//entry/q_data/intensity@target)
 DEBUG: ===== ATTRS (//entry/q_data/intensity@target)
-value: /entry/experiment_result/intensity 
-DEBUG: value: /entry/experiment_result/intensity 
+value: /entry/experiment_result/intensity
+DEBUG: value: /entry/experiment_result/intensity
 classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 DEBUG: classpath: ['NXentry', 'NXdata', 'NX_FLOAT']
 classes:
@@ -2390,24 +2390,24 @@ DEBUG: NXdata group has been identified: /entry/experiment_result
 DEBUG: ===== GROUP (//entry/experiment_result [NXxrd_pan::/NXentry/NXdata]): <HDF5 group "/entry/experiment_result" (4 members)>
 ===== ATTRS (//entry/experiment_result@NX_class)
 DEBUG: ===== ATTRS (//entry/experiment_result@NX_class)
-value: NXdata 
-DEBUG: value: NXdata 
+value: NXdata
+DEBUG: value: NXdata
 ===== ATTRS (//entry/experiment_result@axes)
 DEBUG: ===== ATTRS (//entry/experiment_result@axes)
-value: two_theta 
-DEBUG: value: two_theta 
+value: two_theta
+DEBUG: value: two_theta
 ===== ATTRS (//entry/experiment_result@signal)
 DEBUG: ===== ATTRS (//entry/experiment_result@signal)
-value: intensity 
-DEBUG: value: intensity 
+value: intensity
+DEBUG: value: intensity
 
 DEBUG: 
 Signal has been identified: /entry/experiment_result/intensity
 DEBUG: Signal has been identified: /entry/experiment_result/intensity
 ===== FIELD (//entry/experiment_result/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
 DEBUG: ===== FIELD (//entry/experiment_result/intensity): <HDF5 dataset "intensity": shape (5027,), type "<f8">
-value: [1305. 1310. 1345. ...  170.  189.  171.] 
-DEBUG: value: [1305. 1310. 1345. ...  170.  189.  171.] 
+value: [1305, 1310, 1345, ..., 170, 189, 171]
+DEBUG: value: [1305, 1310, 1345, ..., 170, 189, 171]
 Dataset referenced as NXdata SIGNAL
 DEBUG: Dataset referenced as NXdata SIGNAL
 
