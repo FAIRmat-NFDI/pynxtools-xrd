@@ -1,4 +1,3 @@
-"""XRD reader."""
 # Copyright The NOMAD Authors.
 #
 # This file is part of NOMAD. See https://nomad-lab.eu for further info.
@@ -14,6 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+"""XRD reader built on MultiFormatReader."""
 
 import json
 import os
@@ -72,9 +72,7 @@ class XRDReader(MultiFormatReader):
             os.path.dirname(os.path.realpath(__file__)) + os.sep + "xrd.mapping.json"
         ) as mapping_file:
             self._base_mapping = json.load(mapping_file)
-        self.extensions = {
-            ext: self._handle_xrd_file for ext in self.supported_formats
-        }
+        self.extensions = {ext: self._handle_xrd_file for ext in self.supported_formats}
 
     def convert_quantity_to_value_units(self, data_dict):
         """
