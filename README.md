@@ -8,7 +8,12 @@
 ![](https://coveralls.io/repos/github/FAIRmat-NFDI/pynxtools_xrd/badge.svg?branch=master)
 [![DOI](https://zenodo.org/badge/759916501.svg)](https://doi.org/10.5281/zenodo.16606402)
 
-# A reader for XRD data
+# `pynxtools-xrd`: A `pynxtools` reader for XRD data
+
+`pynxtools-xrd` is a `pynxtools` reader for X-ray diffraction (XRD) data.
+
+This `pynxtools` plugin was generated with [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) using the [`pynxtools-plugin-template`](https://github.com/FAIRmat-NFDI/pynxtools-plugin-template) template.
+
 
 ## Installation
 
@@ -25,10 +30,9 @@ pip install pynxtools[xrd]
 
 for the latest development version.
 
-## Purpose
-This reader plugin for [`pynxtools`](https://github.com/FAIRmat-NFDI/pynxtools) is used to read X-ray diffraction experiment data and metadata and convert these into a NeXus file (HDF5 file with extension .nxs)
-according to the [NeXus](https://github.com/FAIRmat-NFDI/nexus_definitions) application definition [NXxrd_pan](https://github.com/FAIRmat-NFDI/nexus_definitions/blob/fairmat/contributed_definitions/NXxrd_pan.nxdl.xml). 
-Specifically, the plugin maps data and metadata from `.xrdml` files that were obtained with PANalytical X'Pert PRO version 1.5 (instruments).
+## Docs
+
+More information about this pynxtools plugin is available in the [documentation](https://fairmat-nfdi.github.io/pynxtools-xrd/). You will find information about getting started, how-to guides, the supported file formats, how to get involved, and much more there.
 
 ## Status quo
 This reader is considered in development.

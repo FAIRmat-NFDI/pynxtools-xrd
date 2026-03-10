@@ -9,7 +9,7 @@ nav:
   - Tutorials:
     - tutorial/installation.md
     - tutorial/standalone.md
-    - tutorial/dev_installation.md
+    - tutorial/contributing.md
   # - How-tos:
   #   - how-tos/dummy.md
   # - Learn:
@@ -34,6 +34,7 @@ theme:
     - navigation.footer
     - content.code.copy
     - content.code.annotate
+    - search.suggest
   custom_dir: docs/theme
   icon:
     repo: fontawesome/brands/github
@@ -52,6 +53,7 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji
+  - mkdocs-click
   - pymdownx.extra
   - pymdownx.tabbed:
       alternate_style: true
@@ -71,5 +73,4 @@ extra_css:
 
 extra_javascript:
   - javascript.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

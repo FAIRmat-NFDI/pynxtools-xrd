@@ -19,7 +19,7 @@ The tool standardizes these data such that it is compliant with the NeXus applic
 
 - [Installation guide](tutorial/installation.md)
 - [Standalone usage](tutorial/standalone.md)
-- [Development install](tutorial/dev_installation.md)
+- [Development guide](tutorial/contributing.md)
 
 </div>
 <div markdown="block">
@@ -52,9 +52,11 @@ The tool standardizes these data such that it is compliant with the NeXus applic
 For questions or suggestions:
 
 - Open an issue on the [`pynxtools-xrd` GitHub](https://github.com/FAIRmat-NFDI/pynxtools-xrd/issues)
-- Join our [Discord channel ](https://discord.gg/Gyzx3ukUw8)
+- Join our [Discord channel](https://discord.gg/Gyzx3ukUw8)
 - Get in contact with our [lead developers](contact.md).
 
 <h2>Project and community</h2>
 
-The work is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) - [460197019 (FAIRmat)](https://gepris.dfg.de/gepris/projekt/460197019?language=en).
+- [NOMAD code guidelines](https://nomad-lab.eu/prod/v1/staging/docs/reference/code_guidelines.html)
+
+[The work is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) - 460197019 (FAIRmat).](https://gepris.dfg.de/gepris/projekt/460197019?language=en)
