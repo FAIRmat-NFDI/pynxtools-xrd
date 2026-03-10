@@ -37,7 +37,6 @@ dev = [
     "types-pyyaml",
     "types-pytz",
     "types-requests",
-    "uv",
     "pre-commit",
 ]
 docs = [
