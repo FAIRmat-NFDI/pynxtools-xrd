@@ -15,21 +15,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import Tuple, Any
 import json
 import os
 import re
+from typing import Any, Tuple
 
 import pint
 from fairmat_readers_xrd import read_file
-from pynxtools.dataconverter.readers.base.reader import BaseReader
-from pynxtools.dataconverter.readers.json_map.reader import (
-    fill_undocumented,
-    fill_documented,
-)
+from pynxtools.dataconverter.readers.multi.reader import MultiFormatReader
 
 
-# pylint: disable=too-few-public-methods
 def convert_to_hdf_file_path(nexus_path):
     """Converts a nexus path to a hdf file path"""
     pattern = r"\[(.*?)]"
@@ -44,45 +39,46 @@ def convert_to_hdf_file_path(nexus_path):
     return "/".join(hdf_path_component)
 
 
-def clean_unavailable_data_path(mapping):
-    def is_link_path_exists(link_dict, mapping):
-        """Checks if data exists at a given path in the data dictionary"""
-        data_path = link_dict["link"]
-        if mapping.get(data_path, None):
-            return True
-        return False
-
-    for key, value in list(mapping.items()):
-        if isinstance(value, dict):
-            if "link" in value:
-                if not is_link_path_exists(value, mapping):
-                    del mapping[key]
-                else:
-                    value["link"] = convert_to_hdf_file_path(value["link"])
-
-        elif not value:
-            del mapping[key]
+def _get_nested(path: str, data: dict) -> Any:
+    """Traverse a slash-separated path into a nested dict."""
+    keys = path.split("/")
+    current = data
+    for key in keys:
+        current = current[key]
+    return current
 
 
-class XRDReader(BaseReader):
+def _mapping_to_config(mapping: dict) -> dict:
+    """Convert /data/path values to @data:data/path for fill_from_config."""
+    result = {}
+    for k, v in mapping.items():
+        if isinstance(v, str) and v.startswith("/"):
+            result[k] = f"@data:{v[1:]}"
+        else:
+            result[k] = v
+    return result
+
+
+class XRDReader(MultiFormatReader):
     """Reader for XRD."""
 
     supported_nxdls = ["NXxrd_pan"]
     supported_formats = [".rasx", ".xrdml", ".brml"]
 
-    def __init__(self):
-        """Initializes the reader and sets up the supported mapping."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.data: dict = {}
         with open(
             os.path.dirname(os.path.realpath(__file__)) + os.sep + "xrd.mapping.json"
         ) as mapping_file:
-            self.mapping = json.load(mapping_file)
+            self._base_mapping = json.load(mapping_file)
+        self.extensions = {
+            ext: self._handle_xrd_file for ext in self.supported_formats
+        }
 
     def convert_quantity_to_value_units(self, data_dict):
         """
-        In a dict, recursively convert every pint.Quantity into value and @units for template
-
-        Args:
-            data_dict (dict): A nested dictionary containing pint.Quantity and other data.
+        In a dict, recursively convert every pint.Quantity into value and @units for template.
         """
         for k, v in list(data_dict.items()):
             if isinstance(v, pint.Quantity):
@@ -92,41 +88,53 @@ class XRDReader(BaseReader):
                 data_dict[k] = self.convert_quantity_to_value_units(v)
         return data_dict
 
-    def read(
-        self,
-        template: dict = None,
-        file_paths: Tuple[str] = None,
-        objects: Tuple[Any] = None,
-    ):
-        """Read method that returns a filled in pynxtools dataconverter template."""
+    def _handle_xrd_file(self, file_path: str) -> dict[str, Any]:
+        self.data = self.convert_quantity_to_value_units(read_file(file_path))
+        return {}
+
+    def handle_objects(self, objects: tuple[Any]) -> dict[str, Any]:
+        if objects and objects[0] is not None and isinstance(objects[0], dict):
+            self.data = self.convert_quantity_to_value_units(objects[0])
+        elif not self.data:
+            raise ValueError(
+                "You need to provide one of the following file formats as "
+                "--input-file to the converter: " + str(self.supported_formats)
+            )
+        return {}
+
+    def get_data(self, key: str, path: str) -> Any:
+        """Resolve ``@data:path`` tokens by traversal into ``self.data``."""
         try:
-            xrd_file_path = list(
-                filter(
-                    lambda paths: any(
-                        format in paths for format in self.supported_formats
-                    ),
-                    file_paths,
-                )
-            )[0]
-            xrd_data = self.convert_quantity_to_value_units(read_file(xrd_file_path))
-        except IndexError:
-            if objects[0] is not None and isinstance(objects[0], dict):
-                xrd_data = self.convert_quantity_to_value_units(objects[0])
-            else:
-                raise ValueError(
-                    "You need to provide one of the following file formats as --input-file to the converter: "
-                    + str(self.supported_formats)
-                )
-        try:
-            clean_unavailable_data_path(self.mapping)
-            fill_documented(template, dict(self.mapping), template, xrd_data)
-            fill_undocumented(dict(self.mapping), template, xrd_data)
-        except KeyError as e:
-            print(f"Skipping key, {e}, from intermediate dict.")
-        template["//ENTRY[entry]/@default"] = "experiment_result"
-        template["/ENTRY[entry]/experiment_result/@signal"] = "intensity"
-        template["/ENTRY[entry]/experiment_result/@axes"] = "two_theta"
-        return template
+            return _get_nested(path, self.data)
+        except (KeyError, TypeError):
+            return None
+
+    def post_process(self) -> dict[str, Any] | None:
+        """Build the config dict from the mapping file, filtering unavailable paths."""
+        mapping = dict(self._base_mapping)
+        self._clean_mapping(mapping)
+        self.config_dict = _mapping_to_config(mapping)
+        return None
+
+    def _clean_mapping(self, mapping: dict) -> None:
+        """Remove entries whose data path doesn't exist or whose value is empty."""
+        for key in list(mapping.keys()):
+            value = mapping[key]
+            if isinstance(value, dict) and "link" in value:
+                link_path = value["link"]
+                if not mapping.get(link_path):
+                    del mapping[key]
+                else:
+                    value["link"] = convert_to_hdf_file_path(link_path)
+            elif not value:
+                del mapping[key]
+
+    def setup_template(self) -> dict[str, Any]:
+        return {
+            "//ENTRY[entry]/@default": "experiment_result",
+            "/ENTRY[entry]/experiment_result/@signal": "intensity",
+            "/ENTRY[entry]/experiment_result/@axes": "two_theta",
+        }
 
 
 READER = XRDReader
