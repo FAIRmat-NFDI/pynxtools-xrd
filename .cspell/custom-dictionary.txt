@@ -2,6 +2,7 @@
 ARPES
 Brockhauser
 Forschungsgemeinschaft
+José
 Kühbach
 Lukas
 Markus
@@ -13,8 +14,15 @@ Sandor
 Shabih
 Sherjeel
 XRDML
+brml
+caplog
 dataconverter
+fairmat
+lukaspie
+mkuehbach
+nxdls
 orcid
 pynxtools
+rasx
 xrdml
 zenodo
