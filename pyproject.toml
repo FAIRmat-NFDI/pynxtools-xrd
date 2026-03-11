@@ -22,6 +22,8 @@ classifiers = [
 ]
 dependencies = [
     "pynxtools>=0.12.0",
+    "flatdict",
+    "numpy",
     "xmltodict",
     "fairmat-readers-xrd",
 ]

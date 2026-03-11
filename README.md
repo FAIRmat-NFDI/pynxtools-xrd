@@ -38,8 +38,10 @@ More information about this pynxtools plugin is available in the [documentation]
 This reader is considered in development.
 
 ## Contact person in FAIRmat for this reader
+
 Rubel Mozumder
 Markus Kühbach
 
 ## How to cite this work
+
 Mozumder, R., Shabih, S., Kühbach, M., Pielsticker, L. & Brockhauser, S. (2025). pynxtools-xrd: A pynxtools reader plugin for X-ray diffraction data. Zenodo. https://doi.org/10.5281/zenodo.16606403

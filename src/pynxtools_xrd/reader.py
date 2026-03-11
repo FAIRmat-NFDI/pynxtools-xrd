@@ -16,8 +16,10 @@
 """XRD reader built on MultiFormatReader."""
 
 import json
+import numpy as np
 import os
 import re
+import flatdict
 from typing import Any, Tuple
 
 import pint
@@ -48,15 +50,76 @@ def _get_nested(path: str, data: dict) -> Any:
     return current
 
 
-def _mapping_to_config(mapping: dict) -> dict:
-    """Convert /data/path values to @data:data/path for fill_from_config."""
-    result = {}
-    for k, v in mapping.items():
-        if isinstance(v, str) and v.startswith("/"):
-            result[k] = f"@data:{v[1:]}"
-        else:
-            result[k] = v
+def _clean_mapping(mapping: dict[str, Any]) -> dict[str, Any]:
+    """Return a mapping without entries whose data path doesn't exist or whose value is empty."""
+    result: dict[str, Any] = {}
+
+    for key, value in mapping.items():
+        if value.startswith("@link:"):
+            link_path = value.split("@link:", 1)[-1]
+            if mapping.get(link_path):
+                value = value.copy()
+                value["link"] = convert_to_hdf_file_path(link_path)
+                result[key] = value
+        elif value:
+            result[key] = value
+
     return result
+
+
+def _mapping_to_config(mapping: dict[str, Any]) -> dict[str, Any]:
+    """Convert /data/path values to @attr:data/path for fill_from_config."""
+    return {
+        k: f"@attr:{v[1:]}" if isinstance(v, str) and v.startswith("/") else v
+        for k, v in mapping.items()
+    }
+
+
+def _get_minimal_step(lst: list[float] | np.ndarray) -> float:
+    """
+    Return the minimal difference between two consecutive values
+    in a list. Used for extracting minimal difference in a
+    list with (potentially) non-uniform spacing.
+
+    Args:
+        lst (list): List of data points.
+
+    Returns:
+        step (float): Non-zero, minimal distance between consecutive data
+        points in lst.
+
+    """
+    lst1 = np.roll(lst, -1)
+    diff = np.abs(np.subtract(lst, lst1))
+    step = round(np.min(diff[diff != 0]), 2)
+
+    return step
+
+
+def _extract_experiment_config(data: dict[str, Any]) -> dict[str, Any]:
+    """Extract experimental scan parameters from measured axes."""
+    axes = ("2Theta", "Omega")
+    config: dict[str, Any] = {}
+
+    for axis in axes:
+        values = data.get(axis)
+        if values is None:
+            continue
+
+        config[f"{axis}_start"] = values[0]
+        config[f"{axis}_end"] = values[-1]
+        config[f"{axis}_step"] = _get_minimal_step(values)
+
+    return config
+
+
+def _normalize_units(data: dict[str, Any]) -> None:
+    """Normalize unit labels."""
+    unit_map = {"Å": "angstrom"}
+
+    for key, value in data.items():
+        if key.endswith("@units"):
+            data[key] = unit_map.get(value, value)
 
 
 class XRDReader(MultiFormatReader):
@@ -64,15 +127,20 @@ class XRDReader(MultiFormatReader):
 
     supported_nxdls = ["NXxrd_pan"]
     supported_formats = [".rasx", ".xrdml", ".brml"]
+    suppress_warnings = True
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.data: dict = {}
-        with open(
-            os.path.dirname(os.path.realpath(__file__)) + os.sep + "xrd.mapping.json"
-        ) as mapping_file:
-            self._base_mapping = json.load(mapping_file)
+
         self.extensions = {ext: self._handle_xrd_file for ext in self.supported_formats}
+
+        with open(
+            os.path.dirname(os.path.realpath(__file__)) + os.sep + "xrd.config.json"
+        ) as config_file:
+            self.config_dict = json.load(config_file)
+        self.config_dict = _clean_mapping(self.config_dict)
+        self.config_dict = _mapping_to_config(self.config_dict)
 
     def convert_quantity_to_value_units(self, data_dict):
         """
@@ -87,7 +155,14 @@ class XRDReader(MultiFormatReader):
         return data_dict
 
     def _handle_xrd_file(self, file_path: str) -> dict[str, Any]:
-        self.data = self.convert_quantity_to_value_units(read_file(file_path))
+        self.data = flatdict.FlatDict(
+            self.convert_quantity_to_value_units(read_file(file_path)), delimiter="/"
+        )
+
+        # Post process to get the experiment_config and normalize units
+        self.data.update(_extract_experiment_config(self.data))
+        _normalize_units(self.data)
+
         return {}
 
     def handle_objects(self, objects: tuple[Any]) -> dict[str, Any]:
@@ -100,39 +175,26 @@ class XRDReader(MultiFormatReader):
             )
         return {}
 
-    def get_data(self, key: str, path: str) -> Any:
-        """Resolve ``@data:path`` tokens by traversal into ``self.data``."""
+    def get_attr(self, key: str, path: str) -> Any:
+        """Resolve ``@attr:path`` tokens by traversal into ``self.data``."""
         try:
-            return _get_nested(path, self.data)
+            return self.data.get(path)
         except (KeyError, TypeError):
             return None
 
-    def post_process(self) -> dict[str, Any] | None:
-        """Build the config dict from the mapping file, filtering unavailable paths."""
-        mapping = dict(self._base_mapping)
-        self._clean_mapping(mapping)
-        self.config_dict = _mapping_to_config(mapping)
-        return None
-
-    def _clean_mapping(self, mapping: dict) -> None:
-        """Remove entries whose data path doesn't exist or whose value is empty."""
-        for key in list(mapping.keys()):
-            value = mapping[key]
-            if isinstance(value, dict) and "link" in value:
-                link_path = value["link"]
-                if not mapping.get(link_path):
-                    del mapping[key]
-                else:
-                    value["link"] = convert_to_hdf_file_path(link_path)
-            elif not value:
-                del mapping[key]
-
     def setup_template(self) -> dict[str, Any]:
         return {
-            "//ENTRY[entry]/@default": "experiment_result",
-            "/ENTRY[entry]/experiment_result/@signal": "intensity",
-            "/ENTRY[entry]/experiment_result/@axes": "two_theta",
+            "/@default": "entry",
         }
+
+    def read(
+        self,
+        template: dict = None,
+        file_paths: tuple[str] = None,
+        objects: tuple[Any] | None = None,
+        **kwargs,
+    ) -> dict:
+        return super().read(template, file_paths, objects, suppress_warning=True)
 
 
 READER = XRDReader

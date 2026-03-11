@@ -18,8 +18,10 @@ brml
 caplog
 dataconverter
 fairmat
+flatdict
 lukaspie
 mkuehbach
+ndarray
 nxdls
 orcid
 pynxtools
