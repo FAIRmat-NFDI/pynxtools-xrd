@@ -155,13 +155,17 @@ class XRDReader(MultiFormatReader):
         return data_dict
 
     def _handle_xrd_file(self, file_path: str) -> dict[str, Any]:
-        self.data = flatdict.FlatDict(
-            self.convert_quantity_to_value_units(read_file(file_path)), delimiter="/"
+        data = dict(
+            flatdict.FlatDict(
+                self.convert_quantity_to_value_units(read_file(file_path)),
+                delimiter="/",
+            )
         )
-
         # Post process to get the experiment_config and normalize units
-        self.data.update(_extract_experiment_config(self.data))
-        _normalize_units(self.data)
+        data.update(_extract_experiment_config(data))
+        _normalize_units(data)
+
+        self.data = dict(data)
 
         return {}
 
