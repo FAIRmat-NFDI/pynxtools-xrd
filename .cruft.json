@@ -1,0 +1,36 @@
+{
+  "template": "git@github.com:FAIRmat-NFDI/pynxtools-plugin-template.git",
+  "commit": "b036f23c8bfdcd520c82516697713b7dbf1eb9e2",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "reader_name": "xrd",
+      "supported_nxdl": "NXxrd_pan",
+      "short_description": "pynxtools-xrd is a pynxtools reader for X-ray diffraction (XRD) data.",
+      "technique": "XRD",
+      "reader_class": "XRDReader",
+      "author_name": "The NOMAD Authors",
+      "author_email": "fairmat@physik.hu-berlin.de",
+      "github_username": "",
+      "organization_name": "fairmat-nfdi",
+      "license": "Apache Software License 2.0",
+      "zenodo_record": "16606402",
+      "vscode_settings": true,
+      "include_nomad_app": false,
+      "include_nomad_example_upload": false,
+      "include_north_tools": false,
+      "north_tool_name": "xrd",
+      "__package_name": "pynxtools-xrd",
+      "__module_name": "pynxtools_xrd",
+      "__nomad_example": "xrd_example_upload_entry_point",
+      "__nomad_app": "xrd_app_entry_point",
+      "__north_tool_entry_point": "xrd_north_tool_entry_point",
+      "_copy_without_render": [
+        "*.html"
+      ],
+      "_template": "git@github.com:FAIRmat-NFDI/pynxtools-plugin-template.git",
+      "_commit": "b036f23c8bfdcd520c82516697713b7dbf1eb9e2"
+    }
+  },
+  "directory": null
+}

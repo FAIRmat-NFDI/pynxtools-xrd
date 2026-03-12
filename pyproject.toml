@@ -6,9 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "pynxtools-xrd"
 dynamic = ["version"]
 authors = [
-    { name = "The NOMAD Authors" },
+    { name = "The NOMAD Authors", email = "fairmat@physik.hu-berlin.de" },
 ]
-description = "A plugin for pynxtools to convert XRD into NeXus application definitions."
+description = "pynxtools-xrd is a pynxtools reader for X-ray diffraction (XRD) data."
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
@@ -22,6 +22,8 @@ classifiers = [
 ]
 dependencies = [
     "pynxtools>=0.12.0",
+    "flatdict",
+    "numpy",
     "xmltodict",
     "fairmat-readers-xrd",
 ]
@@ -29,29 +31,30 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "mypy",
-    "ruff>=0.12.0",
+    "ruff>=0.15.0",
     "pytest",
     "pytest-cov",
     "pytest-timeout",
-    "structlog",
     "types-pyyaml",
     "types-pytz",
     "types-requests",
-    "uv",
     "pre-commit",
+    "cruft",
 ]
 docs = [
     "mkdocs",
     "mkdocs-material",
     "mkdocs-material-extensions",
     "mkdocs-macros-plugin",
+    "pymdown-extensions",
+    "mkdocs-click"
 ]
 
 [project.urls]
 "Homepage" = "https://github.com/FAIRmat-NFDI/pynxtools-xrd"
 "Parent Project" = "https://github.com/FAIRmat-NFDI"
 
-[project.entry-points."pynxtools.reader"]
+[project.entry-points.'pynxtools.reader']
 xrd = "pynxtools_xrd.reader:XRDReader"
 
 [tool.setuptools.packages.find]
@@ -65,7 +68,7 @@ version_scheme = "no-guess-dev"
 local_scheme = "node-and-date"
 
 [tool.ruff]
-include = ["src/*.py", "tests/*.py"]
+include = ["src/pynxtools_xrd/**/*.py", "tests/**/*.py"]
 line-length = 88
 indent-width = 4
 
@@ -92,6 +95,7 @@ ignore = [
     "PLR5501", # else-if-used
 ]
 fixable = ["ALL"]
+isort.split-on-trailing-comma = false
 
 [tool.ruff.format]
 quote-style = "double"

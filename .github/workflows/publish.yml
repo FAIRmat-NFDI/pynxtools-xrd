@@ -50,18 +50,27 @@ jobs:
       - name: Install latest nomad release
         run: |
           uv pip install nomad-lab[infrastructure]
-      - name: Install pynxtools-xps
+      - name: Install pynxtools-xrd
         run: |
           uv pip install -e ".[dev]"
-      - name: Install latest pynxtools release
-        run: |
-          uv pip install pynxtools
       - name: Test with pytest
         run: pytest tests/
 
+  compare-versions:
+    name: Compare Versions
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if versions mismatch
+        run: |
+          if [ "${{ needs.setup.outputs.git_tag_version }}" != "${{ needs.setup.outputs.citation_version }}" ]; then
+            echo "Version mismatch: Git tag is ${{ needs.setup.outputs.git_tag_version }}, CITATION.cff is ${{ needs.setup.outputs.citation_version }}"
+            exit 1
+          fi
+
   build:
     name: Build Package
-    needs: [test]
+    needs: [compare-versions, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

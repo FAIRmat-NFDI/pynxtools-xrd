@@ -1,0 +1,5 @@
+prune *
+exclude *
+recursive-include src/pynxtools_xrd *.py
+include pyproject.toml README.md
+include src/pynxtools_xrd/xrd.config.json
