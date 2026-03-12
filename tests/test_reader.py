@@ -45,9 +45,7 @@ for test_case in test_cases:
         test_params += [
             pytest.param(
                 nxdl,
-                test_case[0],
-                test_case[1],
-                test_case[2],
+                *test_case[:3],
                 id=f"{test_case[3]}-{nxdl.lower()}",
             )
         ]
