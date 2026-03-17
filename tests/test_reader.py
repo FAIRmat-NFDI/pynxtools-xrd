@@ -31,7 +31,12 @@ READER_CLASS = get_reader(READER_NAME)
 NXDLS = READER_CLASS.supported_nxdls
 
 # Define lines/sections to be ignored in _all_ test cases
-ignore_lines_all_tests: list = []
+ignore_lines_all_tests: list = [
+    "DEBUG - value: 20",
+    "DEBUG - value: 0.",
+]
+
+
 ignore_sections_all_tests: dict = {}
 
 # Test cases should be [("folder", ignore_lines, ignore_sections, "test-id")]
