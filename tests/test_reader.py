@@ -31,16 +31,16 @@ READER_CLASS = get_reader(READER_NAME)
 NXDLS = READER_CLASS.supported_nxdls
 
 # Define lines/sections to be ignored in _all_ test cases
-ignore_lines_all_tests: list = [
+ignore_lines_all_tests: list[str] = [
     "DEBUG - value: 20",
     "DEBUG - value: 0.",
 ]
 
 
-ignore_sections_all_tests: dict = {}
+ignore_sections_all_tests: dict[str, list[str]] = {}
 
 # Test cases should be [("folder", ignore_lines, ignore_sections, "test-id")]
-test_cases: list[tuple[str, list[Any], dict[Any, Any], str]] = [
+test_cases: list[tuple[str, list[str], dict[str, list[str]], str]] = [
     ("xrdml_918-16_10", [], {}, "xrdml"),
 ]
 
@@ -75,7 +75,7 @@ def test_nexus_conversion(
         Test data directory that contains all the files required for running the data
         conversion through one of the sub-readers. All of these data dirs
         are placed within tests/data/...
-    ignore_lines: dict[str, list[str]]
+    ignore_lines: list[str]
         Lines within the log files to ignore.
     ignore_sections: dict[str, list[str]]
         Subsections of the log files to ignore.
