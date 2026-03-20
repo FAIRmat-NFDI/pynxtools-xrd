@@ -21,7 +21,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "pynxtools>=0.12.1",
+    "pynxtools>=0.13.0",
     "flatdict",
     "numpy",
     "xmltodict",
