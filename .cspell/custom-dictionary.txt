@@ -24,6 +24,7 @@ mkuehbach
 ndarray
 nxdls
 orcid
+pynx
 pynxtools
 rasx
 xrdml
