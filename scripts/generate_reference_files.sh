@@ -8,7 +8,7 @@ function update_ref_file {
   fi
   echo "Update $FOLDER reference file for $NXDL"
   files=$(find . -type f \( ! -name "*.log" -a ! -name "*.nxs" \))
-  dataconverter ${files[@]} --reader $READER --nxdl $NXDL --ignore-undocumented --output "${FOLDER}_ref.nxs" # &> ref_output.txt
+  pynx convert ${files[@]} --reader $READER --nxdl $NXDL --ignore-undocumented --output "${FOLDER}_ref.nxs" # &> ref_output.txt
   cd ..
 }
 
