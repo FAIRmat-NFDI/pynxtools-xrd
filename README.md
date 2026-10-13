@@ -5,7 +5,7 @@
 ![](https://img.shields.io/pypi/pyversions/pynxtools-xrd)
 ![](https://img.shields.io/pypi/l/pynxtools-xrd)
 ![](https://img.shields.io/pypi/v/pynxtools-xrd)
-![](https://coveralls.io/repos/github/FAIRmat-NFDI/pynxtools_xrd/badge.svg?branch=master)
+![](https://coveralls.io/repos/github/FAIRmat-NFDI/pynxtools_xrd/badge.svg?branch=main)
 [![DOI](https://zenodo.org/badge/759916501.svg)](https://doi.org/10.5281/zenodo.16606402)
 
 # `pynxtools-xrd`: A `pynxtools` reader for XRD data
