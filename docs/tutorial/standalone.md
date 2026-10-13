@@ -23,7 +23,7 @@ See [the installation tutorial](installation.md) for how to install pynxtools to
 An example script to run the XRD reader in `pynxtools`:
 
 ```console
-user@box:~$ dataconverter $<xrd-file path> $<eln-file path> --reader xrd --nxdl NXxrd_pan --output <output-file path>.nxs
+user@box:~$ pynx convert $<xrd-file path> $<eln-file path> --reader xrd --nxdl NXxrd_pan --output <output-file path>.nxs
 ```
 
 You can find an example `.xrdml` file in `tests/data/xrdml_918-16_10`.

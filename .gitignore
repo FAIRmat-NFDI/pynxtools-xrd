@@ -200,3 +200,4 @@ cython_debug/
 build/
 .python-version
 !.cspell/custom-dictionary.txt
+!ref_nexus.log
