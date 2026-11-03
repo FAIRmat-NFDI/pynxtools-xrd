@@ -20,6 +20,7 @@ dataconverter
 fairmat
 flatdict
 lukaspie
+kbeta
 mkuehbach
 ndarray
 nxdls

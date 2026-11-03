@@ -123,14 +123,14 @@ def _invalid_unit_values(config: dict[str, Any]) -> list[str]:
     token (@attrs:, @data:, @eln, @link:), a fallback list of tokens or
     units, nor a unit that pint can parse.
     """
-    ureg = pint.UnitRegistry()
+    unity_registry = pint.UnitRegistry()
 
     def is_valid(value: str) -> bool:
         value = value.strip().strip("'\"")
         if value.startswith("@"):
             return True
         try:
-            ureg.parse_units(value.replace("Å", "angstrom"))
+            unity_registry.parse_units(value.replace("Å", "angstrom"))
         except Exception:  # pint raises several error types
             return False
         return True
