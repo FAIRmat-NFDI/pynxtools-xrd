@@ -20,8 +20,12 @@ Tests for the pynxtools XRD reader plugin.
 """
 
 import os
+import json
+from pathlib import Path
 from typing import Any
 
+import pint
+import pynxtools_xrd
 import pytest
 from pynxtools.dataconverter.convert import get_reader
 from pynxtools.testing.nexus_conversion import ReaderTest
@@ -111,3 +115,43 @@ def test_nexus_conversion(  # noqa: PLR0917
     test.check_reproducibility_of_nexus(
         ignore_lines=ignore_lines, ignore_sections=ignore_sections
     )
+
+
+def _invalid_unit_values(config: dict[str, Any]) -> list[str]:
+    """
+    Return the @units entries of a config whose value is neither a lookup
+    token (@attrs:, @data:, @eln, @link:), a fallback list of tokens or
+    units, nor a unit that pint can parse.
+    """
+    ureg = pint.UnitRegistry()
+
+    def is_valid(value: str) -> bool:
+        value = value.strip().strip("'\"")
+        if value.startswith("@"):
+            return True
+        try:
+            ureg.parse_units(value.replace("Å", "angstrom"))
+        except Exception:  # pint raises several error types
+            return False
+        return True
+
+    invalid = []
+    for key, value in config.items():
+        if not key.endswith("@units") or not isinstance(value, str) or not value:
+            continue
+        items = value.strip("[]").split(",") if value.startswith("[") else [value]
+        if not all(is_valid(item) for item in items):
+            invalid.append(f"{key}: {value!r}")
+    return invalid
+
+
+def test_config_units_are_lookups_or_units():
+    """
+    Every @units value in the config must be a lookup or a real unit
+    (Bug B23 in https://github.com/FAIRmat-NFDI/pynxtools-plugin-audit/blob/main/pynxtools-unification/FINDINGS.md).
+    """
+    # kbeta/@units was the literal text "kBeta@units" (the "@attrs:" prefix was
+    # missing), so that text was written to the file as the unit.
+    config_path = Path(pynxtools_xrd.__file__).parent / "xrd.config.json"
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    assert _invalid_unit_values(config) == []
