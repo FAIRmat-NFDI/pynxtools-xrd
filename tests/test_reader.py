@@ -155,3 +155,26 @@ def test_config_units_are_lookups_or_units():
     config_path = Path(pynxtools_xrd.__file__).parent / "xrd.config.json"
     config = json.loads(config_path.read_text(encoding="utf-8"))
     assert _invalid_unit_values(config) == []
+
+
+def test_invalid_unit_values_finds_bad_units():
+    """The units check itself must flag invalid @units values (B23)."""
+    # Without this, the check could silently accept everything. Each case:
+    # bad text, missing @attrs: prefix (the original B23 bug), a bad entry in
+    # a fallback list, plus valid values and non-unit keys that must be skipped.
+    config = {
+        "/ENTRY/a/@units": "not a unit",
+        "/ENTRY/b/@units": "kBeta@units",
+        "/ENTRY/c/@units": "['@attrs:x@units', 'bogus unit']",
+        "/ENTRY/d/@units": "@attrs:metadata/d@units",
+        "/ENTRY/e/@units": "['@attrs:x@units', 'eV']",
+        "/ENTRY/f/@units": "Å",
+        "/ENTRY/g/@units": "",
+        "/ENTRY/h/@units": 5,
+        "/ENTRY/i": "not a unit, but not a @units key",
+    }
+    assert _invalid_unit_values(config) == [
+        "/ENTRY/a/@units: 'not a unit'",
+        "/ENTRY/b/@units: 'kBeta@units'",
+        "/ENTRY/c/@units: \"['@attrs:x@units', 'bogus unit']\"",
+    ]
