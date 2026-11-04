@@ -20,8 +20,12 @@ Tests for the pynxtools XRD reader plugin.
 """
 
 import os
+import json
+from pathlib import Path
 from typing import Any
 
+import pint
+import pynxtools_xrd
 import pytest
 from pynxtools.dataconverter.convert import get_reader
 from pynxtools.testing.nexus_conversion import ReaderTest
@@ -111,3 +115,66 @@ def test_nexus_conversion(  # noqa: PLR0917
     test.check_reproducibility_of_nexus(
         ignore_lines=ignore_lines, ignore_sections=ignore_sections
     )
+
+
+def _invalid_unit_values(config: dict[str, Any]) -> list[str]:
+    """
+    Return the @units entries of a config whose value is neither a lookup
+    token (@attrs:, @data:, @eln, @link:), a fallback list of tokens or
+    units, nor a unit that pint can parse.
+    """
+    unity_registry = pint.UnitRegistry()
+
+    def is_valid(value: str) -> bool:
+        value = value.strip().strip("'\"")
+        if value.startswith("@"):
+            return True
+        try:
+            unity_registry.parse_units(value.replace("Å", "angstrom"))
+        except Exception:  # pint raises several error types
+            return False
+        return True
+
+    invalid = []
+    for key, value in config.items():
+        if not key.endswith("@units") or not isinstance(value, str) or not value:
+            continue
+        items = value.strip("[]").split(",") if value.startswith("[") else [value]
+        if not all(is_valid(item) for item in items):
+            invalid.append(f"{key}: {value!r}")
+    return invalid
+
+
+def test_config_units_are_lookups_or_units():
+    """
+    Every @units value in the config must be a lookup or a real unit
+    (Bug B23 in https://github.com/FAIRmat-NFDI/pynxtools-plugin-audit/blob/main/pynxtools-unification/FINDINGS.md).
+    """
+    # kbeta/@units was the literal text "kBeta@units" (the "@attrs:" prefix was
+    # missing), so that text was written to the file as the unit.
+    config_path = Path(pynxtools_xrd.__file__).parent / "xrd.config.json"
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    assert _invalid_unit_values(config) == []
+
+
+def test_invalid_unit_values_finds_bad_units():
+    """The units check itself must flag invalid @units values (B23)."""
+    # Without this, the check could silently accept everything. Each case:
+    # bad text, missing @attrs: prefix (the original B23 bug), a bad entry in
+    # a fallback list, plus valid values and non-unit keys that must be skipped.
+    config = {
+        "/ENTRY/a/@units": "not a unit",
+        "/ENTRY/b/@units": "kBeta@units",
+        "/ENTRY/c/@units": "['@attrs:x@units', 'bogus unit']",
+        "/ENTRY/d/@units": "@attrs:metadata/d@units",
+        "/ENTRY/e/@units": "['@attrs:x@units', 'eV']",
+        "/ENTRY/f/@units": "Å",
+        "/ENTRY/g/@units": "",
+        "/ENTRY/h/@units": 5,
+        "/ENTRY/i": "not a unit, but not a @units key",
+    }
+    assert _invalid_unit_values(config) == [
+        "/ENTRY/a/@units: 'not a unit'",
+        "/ENTRY/b/@units: 'kBeta@units'",
+        "/ENTRY/c/@units: \"['@attrs:x@units', 'bogus unit']\"",
+    ]

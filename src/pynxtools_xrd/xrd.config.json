@@ -46,7 +46,7 @@
     "/ENTRY/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone":"@attrs:metadata/source/ratioKAlpha2KAlpha1",
     "/ENTRY/INSTRUMENT[instrument]/SOURCE[source]/ratio_k_alphatwo_k_alphaone/@units":"@attrs:metadata/source/ratioKAlpha2KAlpha1@units",
     "/ENTRY/INSTRUMENT[instrument]/SOURCE[source]/kbeta":"@attrs:metadata/source/kBeta",
-    "/ENTRY/INSTRUMENT[instrument]/SOURCE[source]/kbeta/@units":"kBeta@units",
+    "/ENTRY/INSTRUMENT[instrument]/SOURCE[source]/kbeta/@units":"@attrs:metadata/source/kBeta@units",
     "/ENTRY/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage":"@attrs:metadata/source/voltage",
     "/ENTRY/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_voltage/@units":"@attrs:metadata/source/voltage@units",
     "/ENTRY/INSTRUMENT[instrument]/SOURCE[source]/xray_tube_current":"@attrs:metadata/source/current",
