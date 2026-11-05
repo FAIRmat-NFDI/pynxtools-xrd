@@ -24,11 +24,14 @@ import json
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import pint
 import pynxtools_xrd
 import pytest
 from pynxtools.dataconverter.convert import get_reader
 from pynxtools.testing.nexus_conversion import ReaderTest
+
+from pynxtools_xrd.reader import _get_minimal_step
 
 READER_NAME = "xrd"
 READER_CLASS = get_reader(READER_NAME)
@@ -178,3 +181,27 @@ def test_invalid_unit_values_finds_bad_units():
         "/ENTRY/b/@units: 'kBeta@units'",
         "/ENTRY/c/@units: \"['@attrs:x@units', 'bogus unit']\"",
     ]
+
+
+@pytest.mark.parametrize(
+    "step, expected",
+    [
+        (0.005, 0.005),
+        (0.002, 0.002),
+        (0.025, 0.025),
+        (0.013130282676, 0.01313),
+        (0.00005, 0.00005),
+    ],
+)
+def test_minimal_step_keeps_six_decimals(step, expected):
+    """
+    The scan step must keep 6 decimals, not be rounded to 2
+    (Bug B21 in https://github.com/FAIRmat-NFDI/pynxtools-plugin-audit/blob/main/pynxtools-unification/FINDINGS.md).
+    """
+    # _get_minimal_step used to round to 2 decimals, so typical XRD steps
+    # became wrong (0.025 -> 0.02, 0.0131 -> 0.01) or zero (0.005 -> 0.0).
+    # 6 decimals also covers high-resolution XRD (steps below 0.0001 degrees,
+    # which 4 decimals would still turn into 0.0) and still hides float noise.
+    axis = 4.0 + step * np.arange(100)
+    found = _get_minimal_step(axis)
+    assert found == expected
